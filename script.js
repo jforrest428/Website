@@ -124,7 +124,7 @@ if (form) {
       submitBtn.disabled = false;
       submitBtn.querySelector('.btn-text').style.display    = 'inline';
       submitBtn.querySelector('.btn-loading').style.display = 'none';
-      alert('Something went wrong. Please email us directly at joshua@forrestanalyticsgroup.com');
+      alert('Something went wrong. Please email us directly at jf10747454@sju.edu');
     }
   });
 }
