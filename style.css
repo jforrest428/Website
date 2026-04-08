@@ -1409,6 +1409,12 @@ footer {
   gap: 24px;
   align-items: start;
 }
+.pricing-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .pricing-col {
   padding: 36px 28px;
   border: 1px solid var(--gray-200);
