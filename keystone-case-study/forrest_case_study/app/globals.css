@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-navy-900 antialiased;
+  }
+  h1, h2, h3 { @apply font-bold; }
+}
+
+@layer components {
+  .prose-fag h2 { @apply text-3xl font-bold text-navy-900 mt-16 mb-4; }
+  .prose-fag h3 { @apply text-xl font-bold text-navy-800 mt-8 mb-3; }
+  .prose-fag p  { @apply text-navy-600 leading-relaxed mb-4; }
+  .stat-pill    { @apply inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-700 rounded-full px-3 py-1 text-sm font-semibold; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}

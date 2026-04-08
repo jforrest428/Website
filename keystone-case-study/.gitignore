@@ -1,0 +1,32 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Cache
+.cache/
+
+# Product outputs (generated — don't commit)
+products/01_daily_briefing/output/*.json
+products/01_daily_briefing/output/*.txt
+products/02_review_reply/approvals.jsonl
+products/03_reengagement/output/*.csv
+products/04_voice_receptionist/call_log.jsonl
+products/04_voice_receptionist/audio/*.mp3
+
+# Node
+node_modules/
+.next/
+.turbo/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp

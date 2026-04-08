@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-navy-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-150 shadow-sm inline-flex items-center gap-2;
+  }
+  .btn-outline {
+    @apply bg-transparent hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-lg border border-white/40 transition-colors duration-150 inline-flex items-center gap-2;
+  }
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-navy-900 leading-tight;
+  }
+  .section-sub {
+    @apply text-lg text-navy-600 mt-3 leading-relaxed max-w-2xl;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-navy-100 p-6;
+  }
+}
+
+/* Phone bubble animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.bubble-enter { animation: slideUp 0.35s ease-out; }
+
+/* Typing cursor blink */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.typing-cursor::after { content: '|'; animation: blink 0.9s infinite; }
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
