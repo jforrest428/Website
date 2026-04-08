@@ -500,6 +500,8 @@ p { max-width: 68ch; }
 #process .section-header h2 { color: var(--white); }
 #process .eyebrow { color: var(--gold-400); }
 #process .gold-rule { background: var(--gold-500); }
+#process .process-step h3 { color: var(--white); }
+#process .process-step p { color: rgba(255,255,255,0.55); }
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -523,14 +525,14 @@ p { max-width: 68ch; }
 }
 .process-step h3 {
   font-size: 0.9375rem;
-  color: var(--white);
+  color: var(--gray-900);
   margin-bottom: 10px;
   font-family: var(--font-sans);
   font-weight: 600;
 }
 .process-step p {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.55);
+  color: var(--gray-600);
   line-height: 1.65;
   max-width: 22ch;
   margin: 0 auto;
