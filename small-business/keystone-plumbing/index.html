@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keystone Plumbing Case Study — AI Tools in Action | Forrest Analytics Group</title>
+  <meta name="description" content="See how AI tools were designed for a representative plumbing operation with 850 customers and 3,200 inbound calls. A real look at what the data reveals, where revenue slips, and how each product addresses it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Forrest Analytics Group home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" class="nav-logo-icon" aria-hidden="true">
+        <rect x="14" y="25" width="7" height="15" rx="3" fill="#6B4F18"/>
+        <rect x="13" y="24" width="7" height="15" rx="3" fill="#8B6F24"/>
+        <rect x="15" y="26" width="2" height="10" rx="1" fill="#A07828" opacity="0.55"/>
+        <circle cx="10" cy="21" r="9" fill="#A07828"/>
+        <circle cx="22" cy="21" r="9" fill="#A07828"/>
+        <circle cx="16" cy="15" r="11" fill="#C9A84C"/>
+        <circle cx="16" cy="20" r="9" fill="#D4B462"/>
+        <circle cx="13" cy="9" r="5" fill="#F0D898"/>
+        <circle cx="19" cy="13" r="1.2" fill="#8B6F24" opacity="0.45"/>
+        <circle cx="13" cy="17" r="1" fill="#8B6F24" opacity="0.35"/>
+        <circle cx="21" cy="19" r="1" fill="#8B6F24" opacity="0.35"/>
+      </svg>
+      Forrest Analytics Group
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu" role="list">
+      <li><a href="/#services" class="nav-link">Services</a></li>
+      <li><a href="/#about" class="nav-link">About</a></li>
+      <li><a href="/#faq" class="nav-link">FAQ</a></li>
+      <li><a href="/small-business/" class="nav-link nav-link-active">For Business</a></li>
+      <li><a href="/#contact" class="nav-link nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="product-hero">
+  <div class="product-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/small-business/">For Business</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Keystone Plumbing Case Study</span>
+    </nav>
+    <p class="product-eyebrow">Case Study</p>
+    <h1>Built on Real Data. Here's What It Showed.</h1>
+    <p class="product-hero-tagline">Keystone Plumbing is a representative sample business used to design and demonstrate every AI tool in this suite. The dataset is realistic, the numbers are real, and the findings apply to most service businesses at similar scale.</p>
+  </div>
+</div>
+
+<!-- ===== DISCLAIMER + BUSINESS OVERVIEW ===== -->
+<section class="product-section" aria-label="About this case study">
+  <div class="section-inner">
+
+    <div class="cs-disclaimer-box" role="note">
+      <p><strong>About this case study:</strong> Keystone Plumbing is a representative sample business — not a specific client. It was constructed using realistic operational parameters for a mid-size residential plumbing company: 850 active customers, 2,400 completed jobs, and 3,200 inbound calls tracked over a 12-month period. The dataset was built to reflect patterns common across the trades, and was used to design, configure, and validate each AI product in this suite. Results shown reflect what the data revealed, not projected or hypothetical outcomes.</p>
+    </div>
+
+    <div class="section-header">
+      <p class="eyebrow">Business Profile</p>
+      <h2>Keystone Plumbing — By the Numbers</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">A residential plumbing operation doing what most well-run shops do: solid work, steady repeat customers, and a few expensive blind spots.</p>
+    </div>
+
+    <div class="cs-biz-stats">
+      <div class="cs-biz-stat" data-reveal>
+        <span class="cs-biz-stat-num">850</span>
+        <span class="cs-biz-stat-label">Active Customers</span>
+      </div>
+      <div class="cs-biz-stat" data-reveal>
+        <span class="cs-biz-stat-num">2,400</span>
+        <span class="cs-biz-stat-label">Jobs Completed</span>
+      </div>
+      <div class="cs-biz-stat" data-reveal>
+        <span class="cs-biz-stat-num">3,200</span>
+        <span class="cs-biz-stat-label">Inbound Calls</span>
+      </div>
+      <div class="cs-biz-stat" data-reveal>
+        <span class="cs-biz-stat-num">$415</span>
+        <span class="cs-biz-stat-label">Avg. Job Ticket</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PAIN POINTS ===== -->
+<section class="product-section-alt" aria-label="What the data revealed">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">What the Data Revealed</p>
+      <h2>Four Pain Points. Four Leaks in the Revenue Bucket.</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">The audit ran across call logs, job history, customer records, and review activity. Here's what surfaced — and which tool was built to address it.</p>
+    </div>
+
+    <!-- Pain Point 1 -->
+    <div class="pain-point-card" data-reveal>
+      <div>
+        <div class="pain-point-num" aria-hidden="true">01</div>
+        <h3>34% of Inbound Calls Went Unanswered</h3>
+        <p>Out of 3,200 inbound calls over 12 months, 1,088 went to voicemail or were abandoned. The pattern was consistent: afternoons during peak field hours, evenings after 5 PM, and all day Saturday. The business was fully operational — the phones just weren't being answered.</p>
+        <p style="margin-top:14px;">At $415 per job and an industry average booking rate for captured calls of roughly 60%, that gap represents approximately $270,000 in recoverable annual revenue from calls the business never had a chance to win.</p>
+      </div>
+      <div class="pain-solution-box">
+        <p class="solution-label">Solution</p>
+        <h4>24/7 AI Voice Receptionist</h4>
+        <p>Intercepts every unanswered call within two rings. Qualifies the lead, captures contact info and service type, escalates emergencies, and hands a clean summary to the team each morning. Nothing hits voicemail.</p>
+        <a href="/small-business/ai-voice-receptionist/" class="btn btn-outline">See This Product &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Pain Point 2 -->
+    <div class="pain-point-card" data-reveal>
+      <div>
+        <div class="pain-point-num" aria-hidden="true">02</div>
+        <h3>44% of Customers Hadn't Been Contacted in 14+ Months</h3>
+        <p>Of 850 active customers, 374 had not received any outreach — promotional, maintenance reminder, or follow-up — in over 14 months. Analysis of their job history showed many were statistically overdue for service: drain maintenance, water heater inspections, seasonal prep.</p>
+        <p style="margin-top:14px;">This dormant segment represented an estimated $155,000 in serviceable revenue that could be reactivated through a single targeted outreach campaign — at zero acquisition cost, because the relationship already existed.</p>
+      </div>
+      <div class="pain-solution-box">
+        <p class="solution-label">Solution</p>
+        <h4>Customer Re-Engagement Engine</h4>
+        <p>Analyzes job history to identify who's overdue, builds personalized outreach sequences timed to season and service type, and converts dormant customers into booked jobs — without a single ad dollar spent.</p>
+        <a href="/small-business/customer-reengagement/" class="btn btn-outline">See This Product &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Pain Point 3 -->
+    <div class="pain-point-card" data-reveal>
+      <div>
+        <div class="pain-point-num" aria-hidden="true">03</div>
+        <h3>Fewer Than 1 in 5 Reviews Received a Response</h3>
+        <p>Review activity over the 12-month period included 142 new reviews across Google and Yelp. Of those, only 26 received a response from the business — and of the 18 reviews rated 3 stars or below, none received a response within 14 days. Three were never addressed at all.</p>
+        <p style="margin-top:14px;">Keystone's average star rating across platforms was 4.1. Three direct competitors in the same service area — with comparable ratings — were consistently outranking it in local search results. The difference: response rate and recency. Both are Google ranking signals.</p>
+      </div>
+      <div class="pain-solution-box">
+        <p class="solution-label">Solution</p>
+        <h4>Review Reply &amp; Reputation Manager</h4>
+        <p>Monitors all connected review platforms 24/7, drafts professional responses within minutes, routes them for one-tap approval, and flags negative reviews with a suggested recovery action before they cost you the next job.</p>
+        <a href="/small-business/review-reputation-manager/" class="btn btn-outline">See This Product &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Pain Point 4 -->
+    <div class="pain-point-card" data-reveal>
+      <div>
+        <div class="pain-point-num" aria-hidden="true">04</div>
+        <h3>The Owner Had No Daily Operational Picture</h3>
+        <p>Call data lived in one system. Job history in another. Review activity required logging into three different platforms. Revenue trends required pulling from the accounting software. No single view existed, which meant operational decisions were made on instinct and lag — often weeks after a problem had developed.</p>
+        <p style="margin-top:14px;">In one stretch of the dataset, call booking rates dropped 18% over three weeks before the dip was noticed. By the time the pattern was visible, two techs had already had light weeks that could have been filled if the signal had come earlier.</p>
+      </div>
+      <div class="pain-solution-box">
+        <p class="solution-label">Solution</p>
+        <h4>Owner's Daily Briefing</h4>
+        <p>Pulls data from every connected source each morning and delivers a plain-English summary by 7 AM — call volume, booking rate, review activity, outstanding follow-ups, anything that looks unusual. Know before the day starts.</p>
+        <a href="/small-business/owners-daily-briefing/" class="btn btn-outline">See This Product &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SCREENSHOTS (PLACEHOLDERS) ===== -->
+<section class="product-section" aria-label="Sample outputs">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Sample Outputs</p>
+      <h2>What the Tools Actually Produce</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">Screenshots and sample reports will be added here as each product reaches deployment. Each output is drawn from the Keystone dataset.</p>
+    </div>
+
+    <div class="screenshot-placeholder" role="img" aria-label="Call log summary screenshot placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="4" y1="13" x2="36" y2="13" stroke="currentColor" stroke-width="2"/>
+        <circle cx="10" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="20" cy="8.5" r="1.5" fill="currentColor"/>
+      </svg>
+      <!-- TODO: Replace with actual screenshot of AI Voice Receptionist call log output -->
+      AI Voice Receptionist — Daily Call Log Output
+    </div>
+
+    <div class="screenshot-placeholder" style="margin-top:20px;" role="img" aria-label="Review response screenshot placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="4" y1="13" x2="36" y2="13" stroke="currentColor" stroke-width="2"/>
+        <circle cx="10" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="20" cy="8.5" r="1.5" fill="currentColor"/>
+      </svg>
+      <!-- TODO: Replace with actual screenshot of Review Manager approval interface -->
+      Review Reply Manager — Approval Interface
+    </div>
+
+    <div class="screenshot-placeholder" style="margin-top:20px;" role="img" aria-label="Daily briefing screenshot placeholder">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="4" y="4" width="32" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="4" y1="13" x2="36" y2="13" stroke="currentColor" stroke-width="2"/>
+        <circle cx="10" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="8.5" r="1.5" fill="currentColor"/>
+        <circle cx="20" cy="8.5" r="1.5" fill="currentColor"/>
+      </svg>
+      <!-- TODO: Replace with actual screenshot of Owner's Daily Briefing email/SMS -->
+      Owner's Daily Briefing — Sample Morning Report
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="process" aria-label="Call to action">
+  <div class="section-inner" style="text-align:center;">
+    <p class="eyebrow">Ready to Run Your Own Numbers?</p>
+    <h2>Your Business Has a Dataset Too.</h2>
+    <div class="gold-rule" style="margin:20px auto 28px;"></div>
+    <p class="section-sub" style="color:rgba(255,255,255,0.55);margin-bottom:36px;">The Keystone audit took about 15 minutes to set up and immediately surfaced six figures in recoverable revenue. The free audit call does the same thing for your business — no prep required, no commitment expected.</p>
+    <a href="/small-business/#sb-contact" class="btn btn-gold">Request Your Free 15-Minute Audit</a>
+  </div>
+</section>
+
+<!-- ===== BUILT BY ===== -->
+<section class="product-section-alt" aria-label="About the builder">
+  <div class="section-inner">
+    <div class="built-by">
+      <div class="built-by-logo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" style="width:22px;height:28px;">
+          <rect x="14" y="25" width="7" height="15" rx="3" fill="#6B4F18"/>
+          <rect x="13" y="24" width="7" height="15" rx="3" fill="#8B6F24"/>
+          <rect x="15" y="26" width="2" height="10" rx="1" fill="#A07828" opacity="0.55"/>
+          <circle cx="10" cy="21" r="9" fill="#A07828"/>
+          <circle cx="22" cy="21" r="9" fill="#A07828"/>
+          <circle cx="16" cy="15" r="11" fill="#C9A84C"/>
+          <circle cx="16" cy="20" r="9" fill="#D4B462"/>
+          <circle cx="13" cy="9" r="5" fill="#F0D898"/>
+        </svg>
+      </div>
+      <div class="built-by-text">
+        <strong>Built by Josh Forrest &mdash; Forrest Analytics Group LLC</strong>
+        <p>M.S. Business Intelligence &amp; Analytics (Saint Joseph's University) &middot; Instructor, AI for Business (Saint Joseph's University) &middot; Analyst, Tandigm Health. The Keystone dataset was designed and analyzed by Josh as the foundation for every product in this suite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Forrest Analytics Group LLC</p>
+        <p class="footer-tagline">Expert Analytics &amp; AI Support for Researchers, Organizations &amp; Service Businesses</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/small-business/">For Business</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:jf10747454@sju.edu">jf10747454@sju.edu</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Forrest Analytics Group LLC. All rights reserved.</p>
+      <p class="footer-disclaimer">Keystone Plumbing is a representative sample business. Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
