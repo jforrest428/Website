@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools for Plumbers, HVAC &amp; Local Service Businesses | Forrest Analytics Group</title>
+  <meta name="description" content="AI-powered voice receptionist, review management, and customer re-engagement tools built for service businesses. Designed by Josh Forrest — M.S. Business Intelligence &amp; Analytics and Instructor of AI for Business at Saint Joseph's University.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Forrest Analytics Group home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" class="nav-logo-icon" aria-hidden="true">
+        <rect x="14" y="25" width="7" height="15" rx="3" fill="#6B4F18"/>
+        <rect x="13" y="24" width="7" height="15" rx="3" fill="#8B6F24"/>
+        <rect x="15" y="26" width="2" height="10" rx="1" fill="#A07828" opacity="0.55"/>
+        <circle cx="10" cy="21" r="9" fill="#A07828"/>
+        <circle cx="22" cy="21" r="9" fill="#A07828"/>
+        <circle cx="16" cy="15" r="11" fill="#C9A84C"/>
+        <circle cx="16" cy="20" r="9" fill="#D4B462"/>
+        <circle cx="13" cy="9" r="5" fill="#F0D898"/>
+        <circle cx="19" cy="13" r="1.2" fill="#8B6F24" opacity="0.45"/>
+        <circle cx="13" cy="17" r="1" fill="#8B6F24" opacity="0.35"/>
+        <circle cx="21" cy="19" r="1" fill="#8B6F24" opacity="0.35"/>
+      </svg>
+      Forrest Analytics Group
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="nav-menu" role="list">
+      <li><a href="/#services" class="nav-link">Services</a></li>
+      <li><a href="/#about" class="nav-link">About</a></li>
+      <li><a href="/#faq" class="nav-link">FAQ</a></li>
+      <li><a href="/small-business/" class="nav-link nav-link-active">For Business</a></li>
+      <li><a href="/#contact" class="nav-link nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow">AI for Local Service Businesses</p>
+      <h1>AI tools built for the way service businesses <em>actually run.</em></h1>
+      <p class="hero-sub">Answer every call. Win more quotes. Recover lost customers. Built for plumbers, HVAC, lawn care, and local service pros — by Forrest Analytics Group.</p>
+      <div class="hero-actions">
+        <a href="#sb-contact" class="btn btn-gold">Get Your Free 15-Minute Audit</a>
+        <a href="#sb-products" class="btn btn-ghost">See the Products</a>
+      </div>
+    </div>
+  </div>
+  <a href="#trust-strip" class="scroll-indicator" aria-label="Scroll down">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<section id="trust-strip" aria-label="Credentials">
+  <div class="section-inner">
+    <div class="trust-badges">
+
+      <div class="trust-badge">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2L3 6v4c0 3.9 2.9 7.5 7 8.5 4.1-1 7-4.6 7-8.5V6L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>M.S. Business Intelligence &amp; Analytics</strong>
+          <span>Saint Joseph's University</span>
+        </div>
+      </div>
+
+      <div class="trust-badge">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="5" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 9h16" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 2v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M6 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>Instructor — AI for Business</strong>
+          <span>Saint Joseph's University</span>
+        </div>
+      </div>
+
+      <div class="trust-badge">
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <line x1="3" y1="17" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="4" y="11" width="3" height="6" rx="0.5" fill="currentColor" opacity="0.7"/>
+            <rect x="9" y="7" width="3" height="10" rx="0.5" fill="currentColor"/>
+            <rect x="14" y="9" width="3" height="8" rx="0.5" fill="currentColor" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>Built on Real Business Data</strong>
+          <span>Not demos. Not theory.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO THIS IS FOR ===== -->
+<section id="who-for" aria-label="Who this is for">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Built For</p>
+      <h2>If You Run a Service Business, This Is for You</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">These tools are purpose-built for the trades and local service industries — where the work is physical, the margins are tight, and every missed call costs real money.</p>
+    </div>
+    <div class="industry-grid">
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 18L9 13M9 13l1.5-1.5M9 13C7 11 7 8 9 6l1-1 3 3-1 1c-1 1-1 2.5 0 3.5L15 16c1 1 2.5 1 3.5 0l1-1 1 1-2 2c-2 2-5 2-7 0L9 13z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>Plumbing</span>
+      </div>
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 4v2M11 16v2M4 11h2M16 11h2M6.3 6.3l1.4 1.4M14.3 14.3l1.4 1.4M6.3 15.7l1.4-1.4M14.3 7.7l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>HVAC</span>
+      </div>
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 3C8 3 5 6 5 10c0 2 1 4 3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M11 3c3 0 6 3 6 7 0 2-1 4-3 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M11 19V10M8 13l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>Lawn Care</span>
+      </div>
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 3v4M11 15v4M4 11H8M14 11h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="11" cy="11" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <span>Electrical</span>
+      </div>
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M7 11c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M5 7L3 5M5 15l-2 2M17 7l2-2M17 15l2 2M11 5V3M11 19v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>Cleaning</span>
+      </div>
+
+      <div class="industry-tile" data-reveal>
+        <div class="industry-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 18L10 12M10 12l1-3 3-1L18 4M10 12l-3 1-1 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="6" r="2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <span>Pest Control</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="sb-products" aria-label="Products">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">What We Build</p>
+      <h2>Four Tools. One Mission: Stop the Revenue Leak.</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">Most service businesses lose money in the same four places. These tools are built to close those gaps — one at a time, or all at once.</p>
+    </div>
+    <div class="sb-products-grid">
+
+      <article class="sb-product-card" data-reveal>
+        <div class="sb-product-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <path d="M15 12h-3a2 2 0 00-2 2v2c0 8.8 7.2 16 16 16h2a2 2 0 002-2v-3l-5-2-1.5 1.5C21 28 18 25 16 21.5L17.5 20 15 15V12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 14c2 0 4 1 5.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M26 18c1 0 2 .5 2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>24/7 AI Voice Receptionist</h3>
+        <p class="sb-product-tagline">Stop losing $50,000 a year to missed calls. Every call answered, every lead qualified — even at 11 PM on a Sunday.</p>
+        <a href="/small-business/ai-voice-receptionist/" class="sb-product-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="sb-product-card" data-reveal>
+        <div class="sb-product-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <path d="M20 10l2.5 5 5.5.8-4 3.9.94 5.5L20 22.7l-4.94 2.5.94-5.5-4-3.9 5.5-.8L20 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 30h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Review Reply &amp; Reputation Manager</h3>
+        <p class="sb-product-tagline">Every review answered. Every customer recovered. Never let a bad review go unanswered again — or a good one go unacknowledged.</p>
+        <a href="/small-business/review-reputation-manager/" class="sb-product-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="sb-product-card" data-reveal>
+        <div class="sb-product-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <path d="M28 16a10 10 0 11-2-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M26 11h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 20h2l1.5-4 2 8 1.5-4H26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Customer Re-Engagement Engine</h3>
+        <p class="sb-product-tagline">There's $50,000 sitting in your customer list. Let's go get it. Automated outreach that turns dormant customers into booked jobs.</p>
+        <a href="/small-business/customer-reengagement/" class="sb-product-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="sb-product-card" data-reveal>
+        <div class="sb-product-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.2"/>
+            <rect x="12" y="10" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 16h8M16 20h8M16 24h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="28" cy="28" r="5" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M26 28l1.5 1.5 2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Owner's Daily Briefing</h3>
+        <p class="sb-product-tagline">Run your shop from a text message. Every morning: what happened yesterday, what needs attention today — in plain English, in 60 seconds.</p>
+        <a href="/small-business/owners-daily-briefing/" class="sb-product-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="process" aria-label="How it works">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">How It Works</p>
+      <h2>Audit. Build. Run.</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">Three steps. No long implementations, no vendor hand-holding, no learning curve.</p>
+    </div>
+    <div class="process-steps-3">
+
+      <div class="process-step" data-reveal>
+        <div class="process-num" aria-hidden="true">01</div>
+        <h3>Audit</h3>
+        <p>We look at your call volume, customer list, and review profile to find exactly where revenue is slipping through the cracks. No fluff — just a clear picture of what the data shows.</p>
+      </div>
+
+      <div class="process-step" data-reveal>
+        <div class="process-num" aria-hidden="true">02</div>
+        <h3>Build</h3>
+        <p>We configure your AI tools using real data from your business — your services, your pricing, your tone. Every setting is tuned to how you actually operate, not a generic template.</p>
+      </div>
+
+      <div class="process-step" data-reveal>
+        <div class="process-num" aria-hidden="true">03</div>
+        <h3>Run</h3>
+        <p>Your tools go live. We monitor performance, tune as needed, and report back in plain English so you're never flying blind. You run your business. The AI handles the rest.</p>
+      </div>
+
+    </div>
+    <div class="process-cta">
+      <a href="#sb-contact" class="btn btn-gold">Start With a Free Audit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY WORK WITH US ===== -->
+<section id="why-us" aria-label="Why Forrest Analytics Group">
+  <div class="section-inner">
+    <div class="why-inner">
+      <div class="why-content" data-reveal>
+        <p class="eyebrow eyebrow-light">Why Work With Us</p>
+        <h2>I Don't Just Build AI. I Teach It.</h2>
+        <div class="gold-rule"></div>
+        <p>I teach AI for Business at Saint Joseph's University, which means the tools I build for your shop are grounded in the same frameworks I use to help working professionals evaluate and deploy AI responsibly. This isn't hobbyist automation — it's applied AI built to hold up under real operating conditions.</p>
+        <p>My M.S. in Business Intelligence &amp; Analytics, combined with daily work on real healthcare data at Tandigm Health, means I understand what it actually takes to turn raw business data into a decision you can act on. When I audit your business, I'm not guessing — I'm reading the numbers.</p>
+        <p>What that means for you: straightforward tools, honest results, and no AI hype. If a product won't move the needle for your business, I'll tell you that before you spend a dollar.</p>
+        <a href="#sb-contact" class="btn btn-gold" style="margin-top:8px;">Talk to Josh Directly</a>
+      </div>
+      <div class="why-credentials" data-reveal>
+        <div class="why-credential">
+          <div class="why-cred-badge">SJU</div>
+          <div class="why-cred-body">
+            <strong>Instructor — AI for Business</strong>
+            <span>Saint Joseph's University</span>
+          </div>
+        </div>
+        <div class="why-credential">
+          <div class="why-cred-badge">MS</div>
+          <div class="why-cred-body">
+            <strong>M.S. Business Intelligence &amp; Analytics</strong>
+            <span>Data Science specialization, Saint Joseph's University</span>
+          </div>
+        </div>
+        <div class="why-credential">
+          <div class="why-cred-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <line x1="2" y1="14" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="3" y="9" width="2.5" height="5" rx="0.5" fill="currentColor" opacity="0.7"/>
+              <rect x="7" y="5" width="2.5" height="9" rx="0.5" fill="currentColor"/>
+              <rect x="11" y="7" width="2.5" height="7" rx="0.5" fill="currentColor" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="why-cred-body">
+            <strong>Full-Time Analytics Practitioner</strong>
+            <span>Analytics Insights team, Tandigm Health</span>
+          </div>
+        </div>
+        <div class="why-credential">
+          <div class="why-cred-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5 7h4M5 9.5h2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="why-cred-body">
+            <strong>Client Work: Wharton Executive Education</strong>
+            <span>Analytics for Aramco, T-Mobile, Apple programs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDY TEASER ===== -->
+<section id="cs-teaser" aria-label="Case study">
+  <div class="section-inner">
+    <div class="cs-teaser-inner">
+      <div class="cs-teaser-content" data-reveal>
+        <p class="eyebrow">Real Data. Real Results.</p>
+        <h2>Built on a Real Business Dataset.</h2>
+        <p>Every product in this suite was designed and tested against a representative plumbing operation — 850 customers, 2,400 jobs, 3,200 inbound calls. The data told us exactly where the money was walking out the door. See what we found and how each tool addresses it.</p>
+        <a href="/small-business/keystone-plumbing/" class="btn btn-navy">See the Keystone Plumbing Case Study &rarr;</a>
+      </div>
+      <div class="cs-teaser-stats" data-reveal aria-label="Dataset figures">
+        <div class="cs-stat">
+          <span class="cs-stat-num">850</span>
+          <span class="cs-stat-label">Customers</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-stat-num">3,200</span>
+          <span class="cs-stat-label">Inbound Calls</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-stat-num">34%</span>
+          <span class="cs-stat-label">Calls Missed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEAD CAPTURE ===== -->
+<section id="sb-contact" aria-label="Free audit request">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-info" data-reveal>
+        <p class="eyebrow">Free 15-Minute Audit</p>
+        <h2>How Many Calls Did Your Shop Miss Last Month?</h2>
+        <div class="gold-rule"></div>
+        <p>Most service business owners don't know the answer — and that's exactly the problem. Fill out the form and I'll reach out to walk through your numbers, no sales pitch, no commitment required.</p>
+        <p>You'll leave the call with a clear picture of where revenue is slipping and which tools (if any) would actually move the needle for your business.</p>
+        <p class="contact-note">I respond within one business day. All inquiries are confidential.</p>
+      </div>
+      <div class="contact-form-wrap" data-reveal>
+        <!-- TODO: Create a separate Formspree form for small-business leads to keep them
+             separate from research consulting inquiries. Replace the action URL below with
+             the new form endpoint from formspree.io. Current form uses the shared endpoint. -->
+        <form id="contact-form" action="https://formspree.io/f/xbdplvba" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Free Small Business AI Audit Request — Forrest Analytics Group">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name <span aria-label="required">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Mike Johnson">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span aria-label="required">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="mike@johnsonplumbing.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="role">Type of Business</label>
+            <div class="select-wrap">
+              <select id="role" name="role">
+                <option value="">Select one</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="hvac">HVAC</option>
+                <option value="lawn-care">Lawn Care</option>
+                <option value="electrical">Electrical</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="pest-control">Pest Control</option>
+                <option value="other-trades">Other Trades / Services</option>
+              </select>
+              <svg class="select-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">What's your biggest challenge right now? <span aria-label="required">*</span></label>
+            <textarea id="message" name="message" rows="4" required placeholder="e.g. We're missing too many after-hours calls, we have hundreds of old customers we haven't touched in years, our reviews are going unanswered..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-full" id="submit-btn">
+            <span class="btn-text">Request My Free Audit</span>
+            <span class="btn-loading" aria-live="polite">Sending...</span>
+          </button>
+          <p class="form-disclaimer">No commitment required. I respond within one business day.</p>
+        </form>
+        <div id="form-success" class="form-success" hidden role="alert">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 24l7 7 13-13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>You're on the list.</h3>
+          <p>I'll be in touch within one business day to schedule your free audit call.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Forrest Analytics Group LLC</p>
+        <p class="footer-tagline">Expert Analytics &amp; AI Support for Researchers, Organizations &amp; Service Businesses</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/small-business/">For Business</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:jf10747454@sju.edu">jf10747454@sju.edu</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Forrest Analytics Group LLC. All rights reserved.</p>
+      <p class="footer-disclaimer">Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
