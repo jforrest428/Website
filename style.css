@@ -1631,6 +1631,17 @@ footer {
 .product-section-dark .eyebrow { color: var(--gold-400); }
 .product-section-dark .gold-rule { background: var(--gold-500); }
 
+/* process-step text on light-background product pages */
+.product-section-alt .process-step h3,
+.product-section .process-step h3 {
+  color: var(--gray-900);
+}
+.product-section-alt .process-step p,
+.product-section .process-step p {
+  color: var(--gray-600);
+  max-width: none;
+}
+
 .problem-callout {
   font-size: 1.0625rem;
   color: var(--gray-700);
