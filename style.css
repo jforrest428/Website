@@ -2485,23 +2485,24 @@ footer {
   margin-bottom: 48px;
 }
 .cs-roi-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
-  transition: border-color var(--dur) var(--ease);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.cs-roi-card:hover { border-color: rgba(201,168,76,0.30); }
+.cs-roi-card:hover { border-color: var(--gold-500); box-shadow: var(--shadow-md); }
 .cs-roi-product {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold-500);
+  color: var(--gold-600);
   margin-bottom: 10px;
 }
 .cs-roi-card h3 {
-  color: var(--white);
+  color: var(--navy-900);
   font-size: 1.1875rem;
   margin-bottom: 20px;
 }
@@ -2517,24 +2518,24 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gray-500);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
 }
 .cs-roi-table td {
   padding: 8px 0;
-  color: var(--gray-400);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-100);
   vertical-align: top;
 }
-.cs-roi-table td:last-child { color: var(--gray-200); text-align: right; }
+.cs-roi-table td:last-child { color: var(--gray-900); text-align: right; font-weight: 500; }
 .cs-roi-after {
   padding: 14px 16px;
-  background: rgba(74,222,128,0.08);
-  border: 1px solid rgba(74,222,128,0.18);
+  background: rgba(22,163,74,0.08);
+  border: 1px solid rgba(22,163,74,0.20);
   border-radius: var(--radius-md);
   margin-top: 16px;
   font-size: 0.875rem;
-  color: #86EFAC;
+  color: #15803D;
   font-weight: 500;
 }
 
