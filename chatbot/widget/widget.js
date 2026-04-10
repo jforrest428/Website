@@ -10,7 +10,7 @@
 
   // ─── Configuration ──────────────────────────────────────────────────────
   var defaultConfig = {
-    backendUrl: "https://your-api-url.railway.app", // REPLACE after deploying backend
+    backendUrl: "https://noble-trust-production-f3ab.up.railway.app",
     accentColor: "#2563EB",
     accentHover: "#1d4ed8",
     headerName: "Josh from Forrest Analytics",
