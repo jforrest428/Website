@@ -1,5 +1,6 @@
 import os
 import re
+import csv
 import json
 import time
 import uuid
@@ -70,8 +71,15 @@ daily_stats: dict[str, dict] = {}
 MAX_MESSAGES_PER_CONVERSATION = 30
 MAX_CONVERSATIONS_PER_HOUR = 100
 CONVERSATIONS_DIR = "conversations"
+CRM_DIR = "../../lead-crm-output"
+CRM_FILE = os.path.join(CRM_DIR, "leads.csv")
+CRM_HEADERS = ["timestamp", "name", "email", "phone", "business", "recommended_products", "qualification_notes", "conversation_id"]
 
 os.makedirs(CONVERSATIONS_DIR, exist_ok=True)
+os.makedirs(CRM_DIR, exist_ok=True)
+if not os.path.exists(CRM_FILE):
+    with open(CRM_FILE, "w", newline="", encoding="utf-8") as f:
+        csv.DictWriter(f, fieldnames=CRM_HEADERS).writeheader()
 
 # ─── Models ──────────────────────────────────────────────────────────────────
 class ChatRequest(BaseModel):
@@ -197,6 +205,26 @@ def save_conversation_log(conv_id: str, messages: list, meta: dict):
             json.dump(payload, f, indent=2, ensure_ascii=False)
     except Exception as e:
         logger.error(f"Failed to save conversation log: {e}")
+
+
+def save_to_crm(lead: dict, conv_id: str, meta: dict):
+    """Append lead row to lead-crm-output/leads.csv."""
+    row = {
+        "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+        "name": lead.get("name", ""),
+        "email": lead.get("email", ""),
+        "phone": lead.get("phone", ""),
+        "business": lead.get("business", ""),
+        "recommended_products": meta.get("recommended_products", ""),
+        "qualification_notes": meta.get("qualification_notes", ""),
+        "conversation_id": conv_id,
+    }
+    try:
+        with open(CRM_FILE, "a", newline="", encoding="utf-8") as f:
+            csv.DictWriter(f, fieldnames=CRM_HEADERS).writerow(row)
+        logger.info(f"Lead saved to CRM: {row['name']} <{row['email']}>")
+    except Exception as e:
+        logger.error(f"Failed to save lead to CRM: {e}")
 
 
 def send_lead_email(lead: dict, conv_id: str, messages: list, meta: dict):
@@ -394,6 +422,7 @@ async def chat(request: Request, body: ChatRequest):
             meta["qualification_notes"] = f"Business: {lead_data.get('business', 'unknown')}"
             lead_captured = True
             record_daily_stat("lead")
+            save_to_crm(lead_data, conv_id, meta)
             try:
                 send_lead_email(lead_data, conv_id, conversations[conv_id], meta)
             except Exception as e:
