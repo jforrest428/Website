@@ -1556,6 +1556,58 @@ footer {
   max-width: 56ch;
 }
 
+/* ── Demo Callout Block ── */
+.demo-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1.5px solid rgba(34, 197, 94, 0.28);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.demo-callout-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.demo-callout-text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--gray-700);
+}
+.demo-callout-text strong {
+  display: block;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+/* ── Product Page FAQ (non-accordion) ── */
+.product-section .faq-list {
+  border-top: 1px solid var(--gray-200);
+  max-width: 780px;
+  margin: 0 auto;
+}
+.product-section .faq-item {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 28px 0;
+}
+.product-section .faq-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+  font-family: var(--font-sans);
+}
+.product-section .faq-item p {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.72;
+  max-width: 66ch;
+}
+
 /* ── Product Page Hero ── */
 .product-hero {
   background: var(--navy-900);
