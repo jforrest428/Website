@@ -16,6 +16,11 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 
 load_dotenv()  # loads .env in local dev; no-op in prod where vars are injected
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
