@@ -1233,6 +1233,8 @@ footer {
   padding: 36px 28px;
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
+  text-align: center;
+  align-items: center;
   background: var(--white);
   display: flex;
   flex-direction: column;
