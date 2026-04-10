@@ -309,20 +309,13 @@
     text = (text || els.input.value).trim();
     if (!text || state.isTyping) return;
 
-    // Show user message
     addMessage("user", text);
     els.input.value = "";
     autoResizeInput();
     els.sendBtn.disabled = true;
-
-    // Show typing indicator
     showTyping();
 
-    // API call
-    var payload = {
-      conversation_id: state.conversationId,
-      message: text,
-    };
+    var payload = { conversation_id: state.conversationId, message: text };
 
     fetch(config.backendUrl + "/chat", {
       method: "POST",
@@ -330,26 +323,67 @@
       body: JSON.stringify(payload),
     })
       .then(function (res) {
-        if (!res.ok) {
-          return res.json().then(function (e) { throw new Error(e.detail || "Error"); });
-        }
-        return res.json();
-      })
-      .then(function (data) {
-        state.conversationId = data.conversation_id;
-        state.messageCount = data.message_count;
+        if (!res.ok) throw new Error("Server error " + res.status);
+
+        // Create assistant bubble immediately — we'll stream text into it
         hideTyping();
-        addMessage("assistant", data.reply);
-        if (data.lead_captured) {
-          onLeadCaptured();
+        var msgEl = document.createElement("div");
+        msgEl.className = "fag-msg fag-msg-assistant";
+        var bubble = document.createElement("div");
+        bubble.className = "fag-msg-bubble";
+        var timeEl = document.createElement("div");
+        timeEl.className = "fag-msg-time";
+        timeEl.setAttribute("aria-hidden", "true");
+        msgEl.appendChild(bubble);
+        msgEl.appendChild(timeEl);
+        els.messages.insertBefore(msgEl, els.typing);
+
+        var fullText = "";
+        var reader = res.body.getReader();
+        var decoder = new TextDecoder();
+        var buffer = "";
+
+        function pump() {
+          return reader.read().then(function (result) {
+            if (result.done) {
+              // Set final timestamp
+              timeEl.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+              state.messages.push({ role: "assistant", text: fullText, ts: new Date() });
+              return;
+            }
+
+            buffer += decoder.decode(result.value, { stream: true });
+            var lines = buffer.split("\n");
+            buffer = lines.pop(); // keep incomplete line
+
+            lines.forEach(function (line) {
+              if (!line.startsWith("data: ")) return;
+              try {
+                var evt = JSON.parse(line.slice(6));
+                if (evt.type === "delta") {
+                  fullText += evt.text;
+                  // Strip any partial lead capture marker from display
+                  bubble.textContent = fullText.replace(/\[LEAD_CAPTURE:[^\]]*\]?/g, "").trimEnd();
+                  scrollToBottom();
+                } else if (evt.type === "done") {
+                  state.conversationId = evt.conversation_id;
+                  state.messageCount = evt.message_count;
+                  if (evt.lead_captured) onLeadCaptured();
+                } else if (evt.type === "error") {
+                  bubble.textContent = evt.text;
+                }
+              } catch (e) { /* incomplete JSON chunk, wait */ }
+            });
+
+            return pump();
+          });
         }
+
+        return pump();
       })
       .catch(function (err) {
         hideTyping();
-        addMessage(
-          "assistant",
-          "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestanalyticsgroup.com"
-        );
+        addMessage("assistant", "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestanalyticsgroup.com");
         console.error("FAG Chat error:", err);
       });
   }

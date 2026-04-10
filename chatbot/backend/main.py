@@ -22,7 +22,7 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
 from system_prompt import SYSTEM_PROMPT
@@ -308,7 +308,7 @@ async def stats():
     }
 
 
-@app.post("/chat", response_model=ChatResponse)
+@app.post("/chat")
 async def chat(request: Request, body: ChatRequest):
     ip = get_client_ip(request)
 
@@ -322,13 +322,10 @@ async def chat(request: Request, body: ChatRequest):
 
     # Jailbreak guard
     if is_jailbreak_attempt(user_message):
-        return ChatResponse(
-            conversation_id=body.conversation_id or str(uuid.uuid4()),
-            reply="I'm here to help with Forrest Analytics' AI tools for service businesses — what can I help you with?",
-            message_count=0,
-            lead_captured=False,
-            booking_requested=False,
-        )
+        async def jailbreak_stream():
+            yield f"data: {json.dumps({'type': 'delta', 'text': 'I\'m here to help with Forrest Analytics\' AI tools for service businesses — what can I help you with?'})}\n\n"
+            yield f"data: {json.dumps({'type': 'done', 'conversation_id': body.conversation_id or str(uuid.uuid4()), 'lead_captured': False, 'booking_requested': False, 'message_count': 0})}\n\n"
+        return StreamingResponse(jailbreak_stream(), media_type="text/event-stream")
 
     # Get or create conversation
     conv_id = body.conversation_id or str(uuid.uuid4())
@@ -352,78 +349,67 @@ async def chat(request: Request, body: ChatRequest):
 
     # Per-conversation message cap
     if meta["message_count"] >= MAX_MESSAGES_PER_CONVERSATION:
-        return ChatResponse(
-            conversation_id=conv_id,
-            reply="We've covered a lot of ground! To keep the conversation going, please reach out directly at josh@forrestanalyticsgroup.com or grab a free audit call at forrestanalyticsgroup.com/small-business/",
-            message_count=meta["message_count"],
-            lead_captured=meta["lead_captured"],
-            booking_requested=meta["booking_requested"],
-        )
+        msg = "We've covered a lot of ground! To keep the conversation going, reach out directly at josh@forrestanalyticsgroup.com or grab a free audit call at forrestanalyticsgroup.com/small-business/"
+        async def cap_stream():
+            yield f"data: {json.dumps({'type': 'delta', 'text': msg})}\n\n"
+            yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': meta['lead_captured'], 'booking_requested': meta['booking_requested'], 'message_count': meta['message_count']})}\n\n"
+        return StreamingResponse(cap_stream(), media_type="text/event-stream")
 
     # Append user message
     conversations[conv_id].append({"role": "user", "content": user_message})
     meta["message_count"] += 1
     record_daily_stat("message")
 
-    # Build messages for Claude
-    claude_messages = conversations[conv_id]
-
-    # Add session context to system prompt if vertical hint provided
     system = SYSTEM_PROMPT
     if body.session_data and body.session_data.get("vertical_hint"):
         system += f"\n\n[CONTEXT: Visitor may be from the '{body.session_data['vertical_hint']}' vertical based on their entry point.]"
 
-    # Call Claude
-    client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-    try:
-        response = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=600,
-            system=system,
-            messages=claude_messages,
-        )
-        assistant_reply = response.content[0].text
-    except Exception as e:
-        logger.error(f"Claude API error: {e}")
-        raise HTTPException(status_code=502, detail="AI service temporarily unavailable.")
+    claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-    # Append assistant message
-    conversations[conv_id].append({"role": "assistant", "content": assistant_reply})
-
-    # Check for lead capture marker
-    lead_data = extract_lead_capture(assistant_reply)
-    lead_captured = False
-    if lead_data and not meta["lead_captured"]:
-        meta["lead_captured"] = True
-        meta["qualification_notes"] = f"Business: {lead_data.get('business', 'unknown')}"
-        lead_captured = True
-        record_daily_stat("lead")
-        # Send email notification (non-blocking in prod — fire and forget)
+    async def stream_response():
+        full_text = ""
         try:
-            send_lead_email(lead_data, conv_id, conversations[conv_id], meta)
+            with claude_client.messages.stream(
+                model="claude-sonnet-4-6",
+                max_tokens=600,
+                system=system,
+                messages=conversations[conv_id],
+            ) as stream:
+                for text_chunk in stream.text_stream:
+                    full_text += text_chunk
+                    yield f"data: {json.dumps({'type': 'delta', 'text': text_chunk})}\n\n"
+
         except Exception as e:
-            logger.error(f"Lead email error: {e}")
-        # Save log immediately
-        save_conversation_log(conv_id, conversations[conv_id], meta)
+            logger.error(f"Claude streaming error: {e}")
+            yield f"data: {json.dumps({'type': 'error', 'text': 'Sorry, I hit a snag — try again in a moment.'})}\n\n"
+            return
 
-    # Check for booking intent
-    booking_requested = False
-    if extract_booking_intent(assistant_reply) and not meta["booking_requested"]:
-        meta["booking_requested"] = True
-        booking_requested = True
-        record_daily_stat("booking")
+        # Post-stream processing
+        conversations[conv_id].append({"role": "assistant", "content": full_text})
 
-    # Strip the lead capture marker from the visible reply
-    visible_reply = re.sub(r"\[LEAD_CAPTURE:[^\]]*\]", "", assistant_reply).strip()
+        lead_data = extract_lead_capture(full_text)
+        lead_captured = False
+        if lead_data and not meta["lead_captured"]:
+            meta["lead_captured"] = True
+            meta["qualification_notes"] = f"Business: {lead_data.get('business', 'unknown')}"
+            lead_captured = True
+            record_daily_stat("lead")
+            try:
+                send_lead_email(lead_data, conv_id, conversations[conv_id], meta)
+            except Exception as e:
+                logger.error(f"Lead email error: {e}")
+            save_conversation_log(conv_id, conversations[conv_id], meta)
 
-    # Periodic log save (every 5 messages)
-    if meta["message_count"] % 5 == 0:
-        save_conversation_log(conv_id, conversations[conv_id], meta)
+        booking_requested = False
+        if extract_booking_intent(full_text) and not meta["booking_requested"]:
+            meta["booking_requested"] = True
+            booking_requested = True
+            record_daily_stat("booking")
 
-    return ChatResponse(
-        conversation_id=conv_id,
-        reply=visible_reply,
-        message_count=meta["message_count"],
-        lead_captured=lead_captured,
-        booking_requested=booking_requested,
-    )
+        if meta["message_count"] % 5 == 0:
+            save_conversation_log(conv_id, conversations[conv_id], meta)
+
+        # Send done event with metadata
+        yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': lead_captured, 'booking_requested': booking_requested, 'message_count': meta['message_count']})}\n\n"
+
+    return StreamingResponse(stream_response(), media_type="text/event-stream")
