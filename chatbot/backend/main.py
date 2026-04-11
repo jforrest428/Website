@@ -235,7 +235,7 @@ def send_lead_email(lead: dict, conv_id: str, messages: list, meta: dict):
         logger.warning("Zoho SMTP not configured — skipping email")
         return
 
-    to_addr = "josh@forrestanalyticsgroup.com"
+    to_addr = "josh@forrestanalytics.com"
 
     # Build transcript
     transcript_lines = []
@@ -377,7 +377,7 @@ async def chat(request: Request, body: ChatRequest):
 
     # Per-conversation message cap
     if meta["message_count"] >= MAX_MESSAGES_PER_CONVERSATION:
-        msg = "We've covered a lot of ground! To keep the conversation going, reach out directly at josh@forrestanalyticsgroup.com or grab a free audit call at forrestanalyticsgroup.com/small-business/"
+        msg = "We've covered a lot of ground! To keep the conversation going, reach out directly at josh@forrestanalytics.com or grab a free audit call at forrestanalyticsgroup.com/small-business/"
         async def cap_stream():
             yield f"data: {json.dumps({'type': 'delta', 'text': msg})}\n\n"
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': meta['lead_captured'], 'booking_requested': meta['booking_requested'], 'message_count': meta['message_count']})}\n\n"

@@ -1,0 +1,258 @@
+- generic [active] [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - generic [ref=e3]:
+      - link "Forrest Analytics Group home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - text: Forrest Analytics Group
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Services" [ref=e19] [cursor=pointer]:
+            - /url: "#services"
+        - listitem [ref=e20]:
+          - link "About" [ref=e21] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e22]:
+          - link "FAQ" [ref=e23] [cursor=pointer]:
+            - /url: "#faq"
+        - listitem [ref=e24]:
+          - link "For Business" [ref=e25] [cursor=pointer]:
+            - /url: /small-business/
+        - listitem [ref=e26]:
+          - link "Book a Call" [ref=e27] [cursor=pointer]:
+            - /url: "#contact"
+  - region "Hero" [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - paragraph [ref=e31]: Data Analytics & Research Consulting
+        - heading "Statistical Support for Researchers & Organizations" [level=1] [ref=e32]:
+          - text: Statistical Support
+          - text: for
+          - emphasis [ref=e33]: Researchers & Organizations
+        - paragraph [ref=e34]: Stuck on your methodology? Not sure how to interpret your results? Forrest Analytics Group provides expert end-to-end support, from survey design through final interpretation, so you can move forward with confidence.
+        - generic [ref=e35]:
+          - link "Request a Free 15-Minute Consultation" [ref=e36] [cursor=pointer]:
+            - /url: "#contact"
+          - link "View Services" [ref=e37] [cursor=pointer]:
+            - /url: "#services"
+      - generic "Key figures" [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: 3+
+          - generic [ref=e41]: University Engagements
+        - generic [ref=e43]:
+          - generic [ref=e44]: PhD
+          - generic [ref=e45]: Level Methodology Support
+        - generic [ref=e47]:
+          - generic [ref=e48]: R · Python · Excel
+          - generic [ref=e49]: Analysis Tools
+    - link "Scroll down" [ref=e50] [cursor=pointer]:
+      - /url: "#affiliations"
+      - img [ref=e51]
+  - region "Academic affiliations" [ref=e53]:
+    - generic [ref=e54]:
+      - paragraph [ref=e55]: Research & Academic Experience
+      - generic [ref=e56]:
+        - article [ref=e57]:
+          - generic [ref=e58]: Penn
+          - generic [ref=e59]:
+            - heading "University of Pennsylvania (Wharton)" [level=3] [ref=e60]
+            - paragraph [ref=e61]: Part-time research role supporting applied statistical modeling, survey methodology, and ML for executive education research
+        - article [ref=e62]:
+          - generic [ref=e63]: DU
+          - generic [ref=e64]:
+            - heading "Duquesne University" [level=3] [ref=e65]
+            - paragraph [ref=e66]: "End-to-end statistical support for a doctoral dissertation: survey design, IAT, data cleaning, assumption testing, and ANOVA"
+        - article [ref=e67]:
+          - generic [ref=e68]: SJU
+          - generic [ref=e69]:
+            - heading "Saint Joseph's University" [level=3] [ref=e70]
+            - paragraph [ref=e71]: Teaching Assistant and incoming Adjunct Instructor in statistics, data science, and applied analytics
+      - paragraph [ref=e72]: Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.
+  - region "Common research challenges" [ref=e73]:
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - paragraph [ref=e76]: Sound Familiar?
+        - heading "Research Shouldn't Feel This Hard" [level=2] [ref=e77]
+        - paragraph [ref=e79]: Most graduate students and organizations hit the same wall. You have the data, but not the time, tools, or expertise to turn it into defensible results.
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - img [ref=e83]
+          - heading "\"I don't know which statistical test to use for my data.\"" [level=3] [ref=e87]
+          - paragraph [ref=e88]: Choosing the wrong model can undermine your entire methodology. You need someone who understands the difference and when it matters for your specific study design.
+        - generic [ref=e89]:
+          - img [ref=e91]
+          - heading "\"My data is messy and my defense date is getting close.\"" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Inconsistent variables, missing values, and disorganized responses are common, but they must be cleaned correctly before any analysis can be trusted by a committee.
+        - generic [ref=e95]:
+          - img [ref=e97]
+          - heading "\"I have the output but I don't know how to write up the results.\"" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Translating SPSS or R output into clear, committee-ready language, with defensible interpretation and proper formatting, is its own specialized skill set.
+  - region "Services" [ref=e102]:
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - paragraph [ref=e105]: What We Do
+        - heading "Services" [level=2] [ref=e106]
+      - generic [ref=e108]:
+        - article [ref=e109]:
+          - img [ref=e111]
+          - heading "Doctoral Research Design & Methodology Support" [level=3] [ref=e115]
+          - paragraph [ref=e116]: For PhD, DNP, EdD & Master's Students
+          - paragraph [ref=e117]: I help graduate students move past common research roadblocks by strengthening study design and methodology, including support for Qualtrics surveys, variable operationalization, data structure planning, and committee feedback preparation.
+          - list [ref=e118]:
+            - listitem [ref=e119]: Qualtrics survey design, logic, and validation
+            - listitem [ref=e120]: Variable operationalization and measurement
+            - listitem [ref=e121]: Data structure planning and assumption readiness
+            - listitem [ref=e122]: Methodology review and committee feedback support
+        - article [ref=e123]:
+          - generic [ref=e124]: Most Requested
+          - img [ref=e126]
+          - heading "Statistical Analysis & Results Interpretation" [level=3] [ref=e131]
+          - paragraph [ref=e132]: For Theses, Dissertations & Manuscripts
+          - paragraph [ref=e133]: I support graduate students with statistical analysis and results interpretation, including model selection, assumption checking, and translating results into clear, defensible language for committees and reviewers.
+          - list [ref=e134]:
+            - listitem [ref=e135]: Model selection and assumption checking
+            - listitem [ref=e136]: Running analyses and interpreting output
+            - listitem [ref=e137]: Translating results for committees and reviewers
+            - listitem [ref=e138]: Students retain full ownership of all final work
+        - article [ref=e139]:
+          - img [ref=e141]
+          - heading "Applied Analytics & Decision Support" [level=3] [ref=e144]
+          - paragraph [ref=e145]: For Small Organizations & Research Teams
+          - paragraph [ref=e146]: "I help organizations use data to inform real decisions: exploratory analysis, dashboards, and applied modeling using Excel, R, and Python, with emphasis on clarity, speed, and actionable recommendations."
+          - list [ref=e147]:
+            - listitem [ref=e148]: Exploratory data analysis and dashboards
+            - listitem [ref=e149]: Applied modeling in Excel, R, and Python
+            - listitem [ref=e150]: Clear, data-driven recommendations
+            - listitem [ref=e151]: Emphasis on clarity, speed, and actionability
+      - paragraph [ref=e152]: Projects may involve one or more service areas. Scope and pricing are determined after an initial consultation.
+      - link "Request a Consultation" [ref=e154] [cursor=pointer]:
+        - /url: "#contact"
+  - region "How we work" [ref=e155]:
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - paragraph [ref=e158]: How It Works
+        - heading "From First Contact to Final Delivery" [level=2] [ref=e159]
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]: "01"
+          - heading "Free 15-Minute Call" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Tell me about your project and where you're stuck. No commitment, no pitch. Just a clear conversation about what you need.
+        - generic [ref=e166]:
+          - generic [ref=e167]: "02"
+          - heading "Scope & Flat-Rate Proposal" [level=3] [ref=e168]
+          - paragraph [ref=e169]: I send a written scope and fixed price before any work begins. No hourly billing, no surprise invoices.
+        - generic [ref=e170]:
+          - generic [ref=e171]: "03"
+          - heading "Analysis & Delivery" [level=3] [ref=e172]
+          - paragraph [ref=e173]: I run the analysis and deliver well-documented results with interpretation, formatted for your committee or organization.
+        - generic [ref=e174]:
+          - generic [ref=e175]: "04"
+          - heading "Follow-Up Support" [level=3] [ref=e176]
+          - paragraph [ref=e177]: Questions after delivery? I'm available to walk through results so you can present and defend your work with confidence.
+      - link "Book Your Free 15-Minute Call" [ref=e179] [cursor=pointer]:
+        - /url: "#contact"
+  - region "About Forrest Analytics Group" [ref=e180]:
+    - generic [ref=e181]:
+      - img "Forrest Analytics Group consultant" [ref=e184]
+      - generic [ref=e186]:
+        - paragraph [ref=e187]: About
+        - heading "Forrest Analytics Group" [level=2] [ref=e188]
+        - paragraph [ref=e190]: I founded Forrest Analytics Group to give graduate researchers and small organizations access to serious analytical support, without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.
+        - paragraph [ref=e191]: My background spans applied statistics, survey methodology, and machine learning. Recent engagements include end-to-end statistical analysis for doctoral dissertations at institutions including the University of Pennsylvania (Wharton) and Duquesne University, from instrument validation and data cleaning through final results interpretation. I'll be teaching AI for Business at Saint Joseph's University starting this fall.
+        - paragraph [ref=e192]: I work with clients who are serious about their data and need someone who will take their project seriously, whether that means passing a committee review, publishing a manuscript, or making a real business decision.
+        - link "Work With Me" [ref=e193] [cursor=pointer]:
+          - /url: "#contact"
+  - region "Frequently asked questions" [ref=e194]:
+    - generic [ref=e195]:
+      - generic [ref=e196]:
+        - paragraph [ref=e197]: Have Questions?
+        - heading "Frequently Asked Questions" [level=2] [ref=e198]
+      - list [ref=e200]:
+        - listitem [ref=e201]:
+          - button "Do you write dissertations or papers for students?" [ref=e202] [cursor=pointer]:
+            - generic [ref=e203]: Do you write dissertations or papers for students?
+            - img [ref=e205]
+        - listitem [ref=e207]:
+          - button "Is this type of support allowed by my university or IRB?" [ref=e208] [cursor=pointer]:
+            - generic [ref=e209]: Is this type of support allowed by my university or IRB?
+            - img [ref=e211]
+        - listitem [ref=e213]:
+          - button "What parts of the research process do you help with?" [ref=e214] [cursor=pointer]:
+            - generic [ref=e215]: What parts of the research process do you help with?
+            - img [ref=e217]
+        - listitem [ref=e219]:
+          - button "How long does a typical project take?" [ref=e220] [cursor=pointer]:
+            - generic [ref=e221]: How long does a typical project take?
+            - img [ref=e223]
+        - listitem [ref=e225]:
+          - button "What do you charge?" [ref=e226] [cursor=pointer]:
+            - generic [ref=e227]: What do you charge?
+            - img [ref=e229]
+  - region "Contact and consultation request" [ref=e231]:
+    - generic [ref=e233]:
+      - generic [ref=e234]:
+        - paragraph [ref=e235]: Get Started
+        - heading "Request a Free 15-Minute Consultation" [level=2] [ref=e236]:
+          - text: Request a Free
+          - text: 15-Minute Consultation
+        - paragraph [ref=e238]: Tell me about your project. I'll respond within one business day with a clear sense of how I can help and what next steps look like.
+        - generic [ref=e239]:
+          - img [ref=e240]
+          - link "josh@forrestanalytics.com" [ref=e243] [cursor=pointer]:
+            - /url: mailto:josh@forrestanalytics.com
+        - paragraph [ref=e244]: All inquiries are confidential. No commitment required.
+      - generic [ref=e245]:
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: Full Name *
+              - textbox "Full Name required" [ref=e250]:
+                - /placeholder: Dr. Jane Smith
+            - generic [ref=e251]:
+              - generic [ref=e252]: Email Address *
+              - textbox "Email Address required" [ref=e253]:
+                - /placeholder: you@university.edu
+          - generic [ref=e254]:
+            - generic [ref=e255]: I am a...
+            - generic [ref=e256]:
+              - combobox "I am a..." [ref=e257] [cursor=pointer]:
+                - option "Select one" [selected]
+                - option "Doctoral Student (PhD, DNP, EdD)"
+                - option "Master's Student"
+                - option "Independent Researcher"
+                - option "Small Business / Organization"
+                - option "Other"
+              - img
+          - generic [ref=e258]:
+            - generic [ref=e259]: Tell us about your project *
+            - textbox "Tell us about your project required" [ref=e260]:
+              - /placeholder: Describe your research or project, where you are in the process, and what kind of support you're looking for.
+          - button "Request My Consultation" [ref=e261] [cursor=pointer]:
+            - generic [ref=e262]: Request My Consultation
+          - paragraph [ref=e263]: We respond within one business day. All inquiries are confidential.
+        - alert [ref=e264]:
+          - img [ref=e265]
+          - heading "Message Received" [level=3] [ref=e268]
+          - paragraph [ref=e269]: Thank you for reaching out. We'll be in touch within one business day.
+  - contentinfo [ref=e270]:
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - generic [ref=e273]:
+          - paragraph [ref=e274]: Forrest Analytics Group LLC
+          - paragraph [ref=e275]: Expert Analytics & AI Support for Researchers, Organizations & Service Businesses
+        - navigation "Footer navigation" [ref=e276]:
+          - link "Services" [ref=e277] [cursor=pointer]:
+            - /url: "#services"
+          - link "About" [ref=e278] [cursor=pointer]:
+            - /url: "#about"
+          - link "FAQ" [ref=e279] [cursor=pointer]:
+            - /url: "#faq"
+          - link "For Business" [ref=e280] [cursor=pointer]:
+            - /url: /small-business/
+          - link "Contact" [ref=e281] [cursor=pointer]:
+            - /url: "#contact"
+        - link "josh@forrestanalytics.com" [ref=e283] [cursor=pointer]:
+          - /url: mailto:josh@forrestanalytics.com
+      - generic [ref=e284]:
+        - paragraph [ref=e285]: © 2026 Forrest Analytics Group LLC. All rights reserved.
+        - paragraph [ref=e286]: Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.

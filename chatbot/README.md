@@ -84,7 +84,7 @@ Then open any local HTML file and paste the widget script tag in.
 3. Select your repo, set the **Root Directory** to `chatbot/backend`
 4. Add environment variables in the Railway dashboard:
    - `ANTHROPIC_API_KEY` = your key
-   - `ZOHO_EMAIL` = josh@forrestanalyticsgroup.com
+   - `ZOHO_EMAIL` = josh@forrestanalytics.com
    - `ZOHO_APP_PASSWORD` = your Zoho app password
 5. Railway auto-detects the Dockerfile and deploys. You'll get a URL like:
    `https://forrest-analytics-chatbot.up.railway.app`
@@ -112,7 +112,7 @@ chmod +x deploy.sh
 cd chatbot/backend
 fly launch --name fag-chatbot
 fly secrets set ANTHROPIC_API_KEY=sk-ant-...
-fly secrets set ZOHO_EMAIL=josh@forrestanalyticsgroup.com
+fly secrets set ZOHO_EMAIL=josh@forrestanalytics.com
 fly secrets set ZOHO_APP_PASSWORD=your-password
 fly deploy
 ```
