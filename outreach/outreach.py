@@ -26,8 +26,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Config ──────────────────────────────────────────────────────────────────────
-GMAIL_ADDRESS        = os.getenv("GMAIL_ADDRESS")
-GMAIL_APP_PASS       = os.getenv("GMAIL_APP_PASSWORD")
+GMAIL_ADDRESS        = os.getenv("EMAIL_ADDRESS")
+GMAIL_APP_PASS       = os.getenv("EMAIL_APP_PASSWORD")
+SMTP_HOST            = os.getenv("SMTP_HOST", "smtp.zoho.com")
+SMTP_PORT            = int(os.getenv("SMTP_PORT", 465))
 FOLLOW_UP_1_DAYS     = int(os.getenv("FOLLOW_UP_1_DAYS", 4))   # Day 4: short bump
 FOLLOW_UP_2_DAYS     = int(os.getenv("FOLLOW_UP_2_DAYS", 8))   # Day 8: new angle
 FOLLOW_UP_3_DAYS     = int(os.getenv("FOLLOW_UP_3_DAYS", 14))  # Day 14: graceful close
@@ -425,7 +427,7 @@ def send_email(to_email, subject, body):
     msg['To']      = to_email
     msg['Subject'] = subject
 
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as server:
         server.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
         server.sendmail(GMAIL_ADDRESS, to_email, msg.as_string())
 
