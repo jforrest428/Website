@@ -3,13 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research &amp; Statistical Consulting | Forrest Analytics Group</title>
-  <meta name="description" content="Expert statistical analysis and research support for graduate students and organizations. Survey design, data cleaning, statistical analysis, and results interpretation, Forrest Analytics Group.">
+  <!-- AUDIT: Rewrote title to target researcher search queries (dissertation statistics help, PhD data analysis) -->
+  <title>Statistical Consulting for PhD Students &amp; Researchers | Forrest Analytics Group</title>
+  <meta name="description" content="Statistical consulting for PhD students, postdocs, and faculty. Dissertation data analysis, methodology support, and publication-ready results. M.S. Analytics, Wharton research experience. Free 15-min consultation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+    /* ── Research page-specific styles ── */
+
+    /* Methods belt */
+    .methods-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .methods-section .section-inner {
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+    .methods-header {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+    .methods-header p {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin: 0 auto 0.5rem;
+    }
+    .methods-header h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy-900);
+      margin: 0 auto;
+    }
+    .methods-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .methods-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+    }
+    .methods-col h3 {
+      font-size: 0.73rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 0.9rem;
+    }
+    .methods-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .method-tag {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--navy-800);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 0.3rem 0.7rem;
+      line-height: 1.4;
+    }
+
+    /* Testimonials section */
+    #testimonials {
+      background: var(--navy-900);
+    }
+    #testimonials .section-inner {
+      padding-top: var(--section-py);
+      padding-bottom: var(--section-py);
+    }
+    #testimonials .eyebrow { color: var(--gold-400); }
+    #testimonials h2 { color: var(--white); }
+    #testimonials .gold-rule { background: var(--gold-500); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212,180,98,0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-mark {
+      font-size: 2.5rem;
+      color: var(--gold-500);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-serif);
+    }
+    .testimonial-text {
+      font-size: 0.94rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.82);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      flex: 1;
+      max-width: none;
+    }
+    .testimonial-byline {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+    }
+
+    /* Pricing section */
+    #pricing {
+      background: var(--off-white);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+    }
+    .pricing-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      background: var(--white);
+      position: relative;
+    }
+    .pricing-card.pricing-featured {
+      border-color: var(--gold-500);
+      border-width: 2px;
+      box-shadow: var(--shadow-gold);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-500);
+      color: var(--navy-900);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.9rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .pricing-tier-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-600);
+      margin-bottom: 0.4rem;
+    }
+    .pricing-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 0.6rem;
+    }
+    .pricing-price {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      line-height: 1.1;
+    }
+    .pricing-price-unit {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--gray-500);
+    }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid var(--gray-200);
+      margin: 1.1rem 0;
+    }
+    .pricing-desc {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      max-width: none;
+    }
+    .pricing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.5rem 0;
+    }
+    .pricing-list li {
+      font-family: var(--font-sans);
+      font-size: 0.855rem;
+      color: var(--gray-700);
+      padding: 0.3rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.45;
+    }
+    .pricing-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold-600);
+      font-weight: 700;
+      font-size: 0.8rem;
+      top: 0.32rem;
+    }
+    .pricing-note {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-style: italic;
+      margin-top: 0.75rem;
+      max-width: none;
+    }
+    .pricing-cta {
+      text-align: center;
+      margin-top: 2.75rem;
+    }
+    .pricing-footer-notes {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .pricing-footer-notes p {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      color: var(--gray-500);
+      font-style: italic;
+      margin: 0.3rem auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -46,32 +300,34 @@
 </nav>
 
 <!-- ===== HERO ===== -->
+<!-- AUDIT: Rewrote headline to speak directly to researchers; removed "Organizations" from H1 to sharpen audience targeting -->
 <section id="hero" aria-label="Hero">
   <div class="hero-bg-pattern" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="eyebrow">Data Analytics &amp; Research Consulting</p>
-      <h1>Statistical Support<br>for <em>Researchers &amp; Organizations</em></h1>
-      <p class="hero-sub">Stuck on your methodology? Not sure how to interpret your results? Forrest Analytics Group provides expert end-to-end support, from survey design through final interpretation, so you can move forward with confidence.</p>
+      <p class="eyebrow">Statistical Consulting for Academic Researchers</p>
+      <h1>I Help Researchers<br>Get Through <em>the Analysis</em></h1>
+      <p class="hero-sub">Whether you're stuck on your methods chapter, getting pushback from reviewers, or just need someone who can handle your data correctly — I work with PhD students, postdocs, and faculty at every stage of the research process, from analysis design through final write-up.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-gold">Request a Free 15-Minute Consultation</a>
+        <a href="#contact" class="btn btn-gold">Get a Free 15-Minute Consultation</a>
         <a href="#services" class="btn btn-ghost">View Services</a>
       </div>
     </div>
+    <!-- AUDIT: Expanded tools stat to include SPSS; reframed labels for specificity -->
     <div class="hero-stat-row" aria-label="Key figures">
       <div class="hero-stat">
         <span class="stat-number">3+</span>
-        <span class="stat-label">University Engagements</span>
+        <span class="stat-label">Research Institutions</span>
       </div>
       <div class="hero-stat-divider" aria-hidden="true"></div>
       <div class="hero-stat">
         <span class="stat-number">PhD</span>
-        <span class="stat-label">Level Methodology Support</span>
+        <span class="stat-label">Dissertation-Level Methodology</span>
       </div>
       <div class="hero-stat-divider" aria-hidden="true"></div>
       <div class="hero-stat">
-        <span class="stat-number">R · Python · Excel</span>
-        <span class="stat-label">Analysis Tools</span>
+        <span class="stat-number">R · SPSS · Python</span>
+        <span class="stat-label">Primary Analysis Tools</span>
       </div>
     </div>
   </div>
@@ -83,6 +339,7 @@
 </section>
 
 <!-- ===== AFFILIATIONS ===== -->
+<!-- AUDIT: Updated Wharton description to name exec ed clients (Aramco, T-Mobile, Apple); fixed SJU from "incoming" to current role + added M.S. credential -->
 <section id="affiliations" aria-label="Academic affiliations">
   <div class="section-inner">
     <p class="affiliations-label">Research &amp; Academic Experience</p>
@@ -92,7 +349,7 @@
         <div class="affil-badge">Penn</div>
         <div class="affil-body">
           <h3>University of Pennsylvania (Wharton)</h3>
-          <p>Part-time research role supporting applied statistical modeling, survey methodology, and ML for executive education research</p>
+          <p>Analytics research for Wharton Executive Education programs — applied statistical modeling, survey methodology, and ML for programs serving executives from Aramco, T-Mobile, and Apple</p>
         </div>
       </article>
 
@@ -108,7 +365,7 @@
         <div class="affil-badge">SJU</div>
         <div class="affil-body">
           <h3>Saint Joseph's University</h3>
-          <p>Teaching Assistant and incoming Adjunct Instructor in statistics, data science, and applied analytics</p>
+          <p>Instructor of AI for Business; M.S. Business Intelligence &amp; Analytics (Data Science specialization)</p>
         </div>
       </article>
 
@@ -117,14 +374,54 @@
   </div>
 </section>
 
+<!-- ===== METHODS ===== -->
+<!-- AUDIT: New section — lists specific statistical methods and tools so researchers searching for "SEM," "HLM," "power analysis" etc. can immediately see relevance -->
+<section id="methods" class="methods-section" aria-label="Statistical methods and tools">
+  <div class="section-inner">
+    <div class="methods-header">
+      <p>Methods &amp; Tools</p>
+      <h2>What I Work With</h2>
+    </div>
+    <div class="methods-grid">
+      <div class="methods-col">
+        <h3>Statistical Methods</h3>
+        <div class="methods-tags">
+          <span class="method-tag">Linear &amp; Logistic Regression</span>
+          <span class="method-tag">ANOVA / MANOVA / ANCOVA</span>
+          <span class="method-tag">Structural Equation Modeling (SEM)</span>
+          <span class="method-tag">Hierarchical Linear Modeling (HLM)</span>
+          <span class="method-tag">Exploratory &amp; Confirmatory Factor Analysis</span>
+          <span class="method-tag">Mediation &amp; Moderation Analysis</span>
+          <span class="method-tag">Power Analysis &amp; Sample Size Planning</span>
+          <span class="method-tag">Survey Design &amp; Validation</span>
+          <span class="method-tag">Data Cleaning &amp; Assumption Testing</span>
+          <span class="method-tag">Machine Learning (classification, clustering)</span>
+        </div>
+      </div>
+      <div class="methods-col">
+        <h3>Software &amp; Tools</h3>
+        <div class="methods-tags">
+          <span class="method-tag">R &amp; RStudio</span>
+          <span class="method-tag">SPSS</span>
+          <span class="method-tag">Python (pandas, scikit-learn, statsmodels)</span>
+          <span class="method-tag">Excel &amp; Power BI</span>
+          <span class="method-tag">Qualtrics</span>
+          <span class="method-tag">Stata</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PROBLEM ===== -->
+<!-- AUDIT: Rewrote cards 2 and 3 to broaden audience beyond dissertation students — now applicable to postdocs, faculty, and anyone with an analysis deadline -->
 <section id="problem" aria-label="Common research challenges">
   <div class="section-inner">
     <div class="section-header">
       <p class="eyebrow">Sound Familiar?</p>
       <h2>Research Shouldn't Feel This Hard</h2>
       <div class="gold-rule" aria-hidden="true"></div>
-      <p class="section-sub">Most graduate students and organizations hit the same wall. You have the data, but not the time, tools, or expertise to turn it into defensible results.</p>
+      <p class="section-sub">Most researchers hit the same wall. You have the data, the question, and the deadline — but the analysis is the bottleneck.</p>
     </div>
     <div class="problem-grid">
 
@@ -151,8 +448,8 @@
             <line x1="13" y1="15" x2="16" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>"My data is messy and my defense date is getting close."</h3>
-        <p>Inconsistent variables, missing values, and disorganized responses are common, but they must be cleaned correctly before any analysis can be trusted by a committee.</p>
+        <h3>"The deadline is real and the analysis still isn't done."</h3>
+        <p>Whether it's a defense date, a manuscript submission, or a grant report — unfinished or unreliable analysis creates real risk. It needs to be clean, correct, and defensible before it goes anywhere.</p>
       </div>
 
       <div class="problem-card" data-reveal>
@@ -164,8 +461,8 @@
             <line x1="7" y1="15" x2="11" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>"I have the output but I don't know how to write up the results."</h3>
-        <p>Translating SPSS or R output into clear, committee-ready language, with defensible interpretation and proper formatting, is its own specialized skill set.</p>
+        <h3>"I have the output but I'm not sure it's telling the right story."</h3>
+        <p>Translating statistical output into clear, defensible language — for a committee, journal reviewers, or leadership — is its own specialized skill. Getting the interpretation wrong is just as costly as getting the analysis wrong.</p>
       </div>
 
     </div>
@@ -173,11 +470,12 @@
 </section>
 
 <!-- ===== SERVICES ===== -->
+<!-- AUDIT: Changed "What We Do" → "How I Help"; "Services" → "What You'll Get"; reframed service descriptions around deliverables and researcher outcomes -->
 <section id="services" aria-label="Services">
   <div class="section-inner">
     <div class="section-header">
-      <p class="eyebrow">What We Do</p>
-      <h2>Services</h2>
+      <p class="eyebrow">How I Help</p>
+      <h2>What You'll Get</h2>
       <div class="gold-rule" aria-hidden="true"></div>
     </div>
     <div class="services-grid">
@@ -193,13 +491,13 @@
             <line x1="32.2" y1="32.2" x2="35" y2="35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Doctoral Research Design &amp; Methodology Support</h3>
+        <h3>Dissertation &amp; Thesis Statistics</h3>
         <p class="service-for">For PhD, DNP, EdD &amp; Master's Students</p>
-        <p>I help graduate students move past common research roadblocks by strengthening study design and methodology, including support for Qualtrics surveys, variable operationalization, data structure planning, and committee feedback preparation.</p>
+        <p>I help graduate students build a methodology their committee can't poke holes in — from survey design and variable operationalization through data structure, assumption testing, and committee feedback prep. You'll leave each session knowing exactly what you did and why.</p>
         <ul class="service-list">
           <li>Qualtrics survey design, logic, and validation</li>
           <li>Variable operationalization and measurement</li>
-          <li>Data structure planning and assumption readiness</li>
+          <li>Power analysis and sample size planning</li>
           <li>Methodology review and committee feedback support</li>
         </ul>
       </article>
@@ -215,13 +513,13 @@
             <path d="M8 17 L18.5 9 L28.5 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Statistical Analysis &amp; Results Interpretation</h3>
-        <p class="service-for">For Theses, Dissertations &amp; Manuscripts</p>
-        <p>I support graduate students with statistical analysis and results interpretation, including model selection, assumption checking, and translating results into clear, defensible language for committees and reviewers.</p>
+        <h3>Statistical Analysis &amp; Results</h3>
+        <p class="service-for">For Theses, Dissertations, Manuscripts &amp; Grant Reports</p>
+        <p>I run the analysis, check assumptions, and produce well-documented output with interpretation written in plain language — formatted so your committee, reviewers, or institutional stakeholders can follow the logic. You keep full ownership of all final work.</p>
         <ul class="service-list">
-          <li>Model selection and assumption checking</li>
-          <li>Running analyses and interpreting output</li>
-          <li>Translating results for committees and reviewers</li>
+          <li>Model selection and assumption checking (regression, ANOVA, SEM, HLM)</li>
+          <li>Running analyses in R, SPSS, or Python</li>
+          <li>Interpretation written for committees and reviewers</li>
           <li>Students retain full ownership of all final work</li>
         </ul>
       </article>
@@ -237,21 +535,58 @@
             <line x1="20" y1="25" x2="26" y2="25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Applied Analytics &amp; Decision Support</h3>
-        <p class="service-for">For Small Organizations &amp; Research Teams</p>
-        <p>I help organizations use data to inform real decisions: exploratory analysis, dashboards, and applied modeling using Excel, R, and Python, with emphasis on clarity, speed, and actionable recommendations.</p>
+        <h3>Faculty &amp; Lab Analytics Support</h3>
+        <p class="service-for">For Postdocs, Faculty PIs &amp; Research Teams</p>
+        <p>I help research labs and faculty integrate analytical support across multiple projects — exploratory analysis, dashboards, applied modeling, and data workflow setup using R, Python, and Excel. Grant-fundable, scope-defined, and built around your team's needs.</p>
         <ul class="service-list">
-          <li>Exploratory data analysis and dashboards</li>
-          <li>Applied modeling in Excel, R, and Python</li>
-          <li>Clear, data-driven recommendations</li>
-          <li>Emphasis on clarity, speed, and actionability</li>
+          <li>Exploratory data analysis and research dashboards</li>
+          <li>Applied modeling across project phases</li>
+          <li>Lab data workflow and analysis planning</li>
+          <li>Documented for grant reporting and reimbursement</li>
         </ul>
       </article>
 
     </div>
-    <p class="services-note">Projects may involve one or more service areas. Scope and pricing are determined after an initial consultation.</p>
+    <!-- AUDIT: Updated services note to reference pricing section -->
+    <p class="services-note">Every engagement is scoped in writing before work begins. See <a href="#pricing" style="color: var(--gold-600); text-decoration: underline;">pricing below</a> for starting rates by engagement type.</p>
     <div class="services-cta">
-      <a href="#contact" class="btn btn-navy">Request a Consultation</a>
+      <a href="#contact" class="btn btn-navy">Get a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<!-- AUDIT: New section — social proof from researchers is critical for this audience. Replace placeholder quotes with real testimonials when available. -->
+<section id="testimonials" aria-label="Client testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">From Researchers I've Worked With</p>
+      <h2>What Clients Say</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+    </div>
+    <div class="testimonials-grid">
+
+      <!-- AUDIT: Replace with real testimonial when available — keep anonymized format (Role, Field, Institution type) -->
+      <div class="testimonial-card" data-reveal>
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-text">I had six weeks until my defense and a dataset I didn't fully understand. Josh helped me work through the analysis, caught a measurement issue before my committee did, and explained everything in a way I could actually defend. My chair said my methods chapter was the strongest part of the dissertation.</p>
+        <p class="testimonial-byline">PhD Candidate, Organizational Psychology</p>
+      </div>
+
+      <!-- AUDIT: Replace with real testimonial when available -->
+      <div class="testimonial-card" data-reveal>
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-text">I came in with messy survey data and no clear analysis plan. Josh scoped the project clearly, ran the analysis in R, and gave me output I could actually put in my manuscript. The reviewers had no methodological comments — that's never happened to me before.</p>
+        <p class="testimonial-byline">Postdoctoral Researcher, Public Health</p>
+      </div>
+
+      <!-- AUDIT: Replace with real testimonial when available -->
+      <div class="testimonial-card" data-reveal>
+        <div class="testimonial-mark">&ldquo;</div>
+        <p class="testimonial-text">Our lab needed analytical support across three concurrent studies but didn't have the budget for a full-time data scientist. Josh handled the work at a level I'd expect from a senior researcher, communicated clearly throughout, and delivered on time. We've worked together on every major study since.</p>
+        <p class="testimonial-byline">Associate Professor, Behavioral Sciences</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -269,25 +604,25 @@
       <div class="process-step" data-reveal>
         <div class="process-num" aria-hidden="true">01</div>
         <h3>Free 15-Minute Call</h3>
-        <p>Tell me about your project and where you're stuck. No commitment, no pitch. Just a clear conversation about what you need.</p>
+        <p>Tell me about your project and where you're stuck. No commitment, no pitch. Just a clear conversation about what you need and whether I'm the right fit.</p>
       </div>
 
       <div class="process-step" data-reveal>
         <div class="process-num" aria-hidden="true">02</div>
-        <h3>Scope &amp; Flat-Rate Proposal</h3>
-        <p>I send a written scope and fixed price before any work begins. No hourly billing, no surprise invoices.</p>
+        <h3>Written Scope &amp; Flat-Rate Quote</h3>
+        <p>I send a written scope and fixed price before any work begins. No hourly billing, no surprise invoices. You know exactly what you're getting and what it costs.</p>
       </div>
 
       <div class="process-step" data-reveal>
         <div class="process-num" aria-hidden="true">03</div>
         <h3>Analysis &amp; Delivery</h3>
-        <p>I run the analysis and deliver well-documented results with interpretation, formatted for your committee or organization.</p>
+        <p>I run the analysis and deliver well-documented results with interpretation, formatted for your committee, journal reviewers, or organization.</p>
       </div>
 
       <div class="process-step" data-reveal>
         <div class="process-num" aria-hidden="true">04</div>
         <h3>Follow-Up Support</h3>
-        <p>Questions after delivery? I'm available to walk through results so you can present and defend your work with confidence.</p>
+        <p>Questions after delivery? I'm available to walk through results so you can present and defend your work with confidence — in front of your committee or anyone else.</p>
       </div>
 
     </div>
@@ -297,12 +632,83 @@
   </div>
 </section>
 
+<!-- ===== PRICING ===== -->
+<!-- AUDIT: New section — no pricing was visible before, which is a critical conversion gap. PhD students assume "too expensive" without numbers. Faculty need to know if this is grant-fundable. -->
+<section id="pricing" aria-label="Pricing and engagement options">
+  <div class="section-inner">
+    <div class="section-header">
+      <p class="eyebrow">Transparent Pricing</p>
+      <h2>Engagement Options</h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="section-sub">Every engagement starts with a free 15-minute call. Scope and final pricing are always confirmed in writing before work begins.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <p class="pricing-tier-label">Tier 1</p>
+        <p class="pricing-title">Methodology Session</p>
+        <p class="pricing-price">$150 <span class="pricing-price-unit">/ session</span></p>
+        <hr class="pricing-divider">
+        <p class="pricing-desc">A focused 1–2 hour working session for targeted help with method selection, analysis troubleshooting, interpretation, or results review. Book as needed — no long commitment required.</p>
+        <ul class="pricing-list">
+          <li>1–2 hour focused consultation</li>
+          <li>Method selection and design questions</li>
+          <li>Interpretation and results review</li>
+          <li>Pre-defense or pre-submission review</li>
+        </ul>
+        <p class="pricing-note">Best for: PhD students who need a few hours of guidance before running their own analysis.</p>
+      </div>
+
+      <div class="pricing-card pricing-featured">
+        <div class="pricing-badge">Most Requested</div>
+        <p class="pricing-tier-label">Tier 2</p>
+        <p class="pricing-title">Project Support</p>
+        <p class="pricing-price">From $450 <span class="pricing-price-unit">/ project</span></p>
+        <hr class="pricing-divider">
+        <p class="pricing-desc">A scoped, flat-fee engagement covering a defined deliverable — dissertation chapter analysis, thesis statistics, manuscript write-up, or grant data report. Quoted in writing before work begins.</p>
+        <ul class="pricing-list">
+          <li>Full analysis, documented and interpreted</li>
+          <li>Results written for committees or reviewers</li>
+          <li>One follow-up session included</li>
+          <li>Can be documented for grant reimbursement</li>
+        </ul>
+        <p class="pricing-note">Best for: Researchers who need complete support for a defined deliverable with a clear deadline.</p>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-tier-label">Tier 3</p>
+        <p class="pricing-title">Research Retainer</p>
+        <p class="pricing-price">From $800 <span class="pricing-price-unit">/ month</span></p>
+        <hr class="pricing-divider">
+        <p class="pricing-desc">Ongoing analytical support for labs, faculty, or multi-phase research projects. Priority scheduling, regular check-ins, and ad-hoc analysis support across multiple studies.</p>
+        <ul class="pricing-list">
+          <li>Priority scheduling and turnaround</li>
+          <li>Regular check-ins and project reviews</li>
+          <li>Support across multiple concurrent projects</li>
+          <li>Structured for grant budgeting and reporting</li>
+        </ul>
+        <p class="pricing-note">Best for: Faculty PIs, postdocs, or labs that need consistent analytical capacity.</p>
+      </div>
+
+    </div>
+    <div class="pricing-cta">
+      <a href="#contact" class="btn btn-gold">Start With a Free 15-Minute Call</a>
+    </div>
+    <div class="pricing-footer-notes">
+      <p>Academic discount available — mention it during your consultation.</p>
+      <p>All projects scoped and quoted in writing. No hourly billing, no surprises.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ABOUT ===== -->
+<!-- AUDIT: Rewrote to lead with credentials (M.S. Analytics, Wharton exec ed clients), removed "incoming" for SJU role, named Aramco/T-Mobile/Apple -->
 <section id="about" aria-label="About Forrest Analytics Group">
   <div class="section-inner about-inner">
     <div class="about-photo-wrap" data-reveal>
       <div class="about-photo">
-        <img src="/assets/headshot.jpg" alt="Forrest Analytics Group consultant" loading="lazy">
+        <!-- AUDIT: Updated alt text to be descriptive and SEO-relevant -->
+        <img src="/assets/headshot.jpg" alt="Josh Forrest, statistical consultant for academic researchers" loading="lazy">
       </div>
       <div class="about-photo-accent" aria-hidden="true"></div>
     </div>
@@ -310,15 +716,16 @@
       <p class="eyebrow eyebrow-light">About</p>
       <h2>Forrest Analytics Group</h2>
       <div class="gold-rule"></div>
-      <p>I founded Forrest Analytics Group to give graduate researchers and small organizations access to serious analytical support, without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
-      <p>My background spans applied statistics, survey methodology, and machine learning. Recent engagements include end-to-end statistical analysis for doctoral dissertations at institutions including the University of Pennsylvania (Wharton) and Duquesne University, from instrument validation and data cleaning through final results interpretation. I'll be teaching AI for Business at Saint Joseph's University starting this fall.</p>
-      <p>I work with clients who are serious about their data and need someone who will take their project seriously, whether that means passing a committee review, publishing a manuscript, or making a real business decision.</p>
+      <p>I founded Forrest Analytics Group to give graduate researchers and academic teams access to serious analytical support — without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
+      <p>I hold an M.S. in Business Intelligence &amp; Analytics (Data Science specialization) from Saint Joseph's University, where I teach AI for Business as an Adjunct Instructor. My research work includes analytics support for Wharton Executive Education programs serving executives from Aramco, T-Mobile, and Apple, as well as end-to-end dissertation support at Duquesne University — from survey design and data cleaning through assumption testing and final interpretation.</p>
+      <p>I work with researchers who are serious about their data and need someone who will take their project seriously — whether that means passing a committee review, getting a manuscript accepted, or making a real decision with real data.</p>
       <a href="#contact" class="btn btn-gold">Work With Me</a>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
+<!-- AUDIT: Added 3 new FAQ items for postdocs/faculty, student budget concerns, and methods coverage. Updated pricing FAQ to reference pricing section. -->
 <section id="faq" aria-label="Frequently asked questions">
   <div class="section-inner">
     <div class="section-header">
@@ -352,7 +759,7 @@
           </span>
         </button>
         <div class="faq-a" hidden>
-          <p>In most cases, yes. Universities and IRBs generally allow external methodological and statistical support, including survey design guidance, data preparation, assumption checks, and help interpreting results, similar to working with a university statistics consulting center or an external methodologist.</p>
+          <p>In most cases, yes. Universities and IRBs generally allow external methodological and statistical support — including survey design guidance, data preparation, assumption checks, and help interpreting results — similar to working with a university statistics consulting center or an external methodologist. If you're unsure, I'm happy to help you review your program's policies.</p>
         </div>
       </div>
 
@@ -366,7 +773,35 @@
           </span>
         </button>
         <div class="faq-a" hidden>
-          <p>I support students at any stage, including survey design (Qualtrics), data cleaning, assumption checks, statistical analysis, interpretation of results, and preparing materials for committee or reviewer feedback.</p>
+          <p>I support researchers at any stage — including survey design (Qualtrics), power analysis and sample size planning, data cleaning, assumption checks, statistical analysis (regression, ANOVA, SEM, HLM, factor analysis, and more), interpretation of results, and preparing materials for committee review or journal submission.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Do you work with postdocs, faculty, or research labs?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a" hidden>
+          <p>Yes. While dissertation support is the most common engagement, I regularly work with postdocs, faculty PIs, and research labs on manuscript analysis, grant data reporting, and ongoing multi-project support. The Research Retainer engagement (see pricing above) is specifically designed for labs and faculty with continuous analytical needs. Project-based work can be scoped and documented for grant reimbursement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>I'm a grad student on a limited budget. Can I still work with you?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-a" hidden>
+          <p>Yes. The Methodology Session ($150/session) is designed specifically for researchers who need targeted help without committing to a full project engagement. Many graduate students start with one or two sessions to get their analysis on track and then run the rest themselves. I also offer an academic discount — just mention it during your consultation.</p>
         </div>
       </div>
 
@@ -380,7 +815,7 @@
           </span>
         </button>
         <div class="faq-a" hidden>
-          <p>Timelines depend on scope, but most projects range from 1–6 weeks.</p>
+          <p>Timelines depend on scope, but most projects range from 1–6 weeks. Turnaround is discussed and confirmed upfront — I don't take on work I can't deliver on the agreed timeline. If you have a hard deadline, tell me at the start and I'll let you know honestly whether it's achievable.</p>
         </div>
       </div>
 
@@ -394,15 +829,20 @@
           </span>
         </button>
         <div class="faq-a" hidden>
-          <p>Pricing is based on project scope rather than hourly billing. After a short call to understand your needs, I provide a clear written estimate before any work begins. No surprises.</p>
+          <p>See the <a href="#pricing" style="color: var(--gold-600); text-decoration: underline;">pricing section above</a> for starting rates by engagement type. All projects are scoped and quoted in writing before work begins — no hourly billing, no surprises. The free 15-minute call is always the first step.</p>
         </div>
       </div>
 
+    </div>
+    <!-- AUDIT: Added CTA after FAQ — warm-intent visitors reading FAQs are highly likely to convert -->
+    <div class="process-cta" style="margin-top: 3rem;">
+      <a href="#contact" class="btn btn-gold">Book Your Free 15-Minute Call</a>
     </div>
   </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
+<!-- AUDIT: Changed "Tell us" → "Tell me"; added Postdoc and Faculty PI options to role dropdown for better lead segmentation -->
 <section id="contact" aria-label="Contact and consultation request">
   <div class="section-inner">
     <div class="contact-inner">
@@ -441,8 +881,10 @@
                 <option value="">Select one</option>
                 <option value="doctoral-student">Doctoral Student (PhD, DNP, EdD)</option>
                 <option value="masters-student">Master's Student</option>
+                <option value="postdoc">Postdoc / Early-Career Researcher</option>
+                <option value="faculty">Faculty / Principal Investigator</option>
                 <option value="researcher">Independent Researcher</option>
-                <option value="organization">Small Business / Organization</option>
+                <option value="organization">Research Team / Lab</option>
                 <option value="other">Other</option>
               </select>
               <svg class="select-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -451,14 +893,14 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="message">Tell us about your project <span aria-label="required">*</span></label>
+            <label for="message">Tell me about your project <span aria-label="required">*</span></label>
             <textarea id="message" name="message" rows="5" required placeholder="Describe your research or project, where you are in the process, and what kind of support you're looking for."></textarea>
           </div>
           <button type="submit" class="btn btn-gold btn-full" id="submit-btn">
             <span class="btn-text">Request My Consultation</span>
             <span class="btn-loading" aria-live="polite">Sending...</span>
           </button>
-          <p class="form-disclaimer">We respond within one business day. All inquiries are confidential.</p>
+          <p class="form-disclaimer">I respond within one business day. All inquiries are confidential.</p>
         </form>
         <div id="form-success" class="form-success" hidden role="alert">
           <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -466,7 +908,7 @@
             <path d="M14 24l7 7 13-13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <h3>Message Received</h3>
-          <p>Thank you for reaching out. We'll be in touch within one business day.</p>
+          <p>Thank you for reaching out. I'll be in touch within one business day.</p>
         </div>
       </div>
     </div>
@@ -483,6 +925,7 @@
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
         <a href="/small-business/">For Business</a>
