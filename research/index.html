@@ -78,6 +78,29 @@
       line-height: 1.4;
     }
 
+    /* About section — centered single-column layout for research page */
+    #about .about-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+    #about .about-photo-wrap {
+      max-width: 260px;
+      width: 100%;
+    }
+    #about .about-content {
+      max-width: 680px;
+    }
+    #about .about-content .gold-rule {
+      margin: 20px auto 28px;
+    }
+    #about .about-content p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Pricing section */
     #pricing {
       background: var(--off-white);
@@ -544,19 +567,19 @@
 
 <!-- ===== ABOUT ===== -->
 <section id="about" aria-label="About Forrest Analytics Group">
-  <div class="section-inner" style="text-align: center;">
-    <div class="about-photo-wrap" data-reveal style="justify-content: center; margin-bottom: 2rem;">
-      <div class="about-photo" style="margin: 0 auto;">
+  <div class="section-inner about-inner">
+    <div class="about-photo-wrap" data-reveal>
+      <div class="about-photo">
         <img src="/assets/headshot.jpg" alt="Josh Forrest, statistical consultant for academic researchers" loading="lazy">
       </div>
     </div>
-    <div class="about-content" data-reveal style="max-width: 680px; margin: 0 auto;">
+    <div class="about-content" data-reveal>
       <p class="eyebrow eyebrow-light">About</p>
       <h2>Forrest Analytics Group</h2>
-      <div class="gold-rule" style="margin: 1rem auto;"></div>
-      <p style="margin: 0 auto 1rem;">I founded Forrest Analytics Group to give graduate researchers and academic teams access to serious analytical support — without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
-      <p style="margin: 0 auto 1rem;">I hold an M.S. in Business Intelligence &amp; Analytics (Data Science specialization) from Saint Joseph's University, where I teach AI for Business as an Adjunct Instructor. My research work includes analytics support for Wharton Executive Education programs serving executives from Aramco, T-Mobile, and Apple, as well as end-to-end dissertation support at Duquesne University — from survey design and data cleaning through assumption testing and final interpretation.</p>
-      <p style="margin: 0 auto 1.5rem;">I work with researchers who are serious about their data and need someone who will take their project seriously — whether that means passing a committee review, getting a manuscript accepted, or making a real decision with real data.</p>
+      <div class="gold-rule"></div>
+      <p>I founded Forrest Analytics Group to give graduate researchers and academic teams access to serious analytical support — without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
+      <p>I hold an M.S. in Business Intelligence &amp; Analytics (Data Science specialization) from Saint Joseph's University, where I teach AI for Business as an Adjunct Instructor. My research work includes analytics support for Wharton Executive Education programs serving executives from Aramco, T-Mobile, and Apple, as well as end-to-end dissertation support at Duquesne University — from survey design and data cleaning through assumption testing and final interpretation.</p>
+      <p>I work with researchers who are serious about their data and need someone who will take their project seriously — whether that means passing a committee review, getting a manuscript accepted, or making a real decision with real data.</p>
       <a href="#contact" class="btn btn-gold">Work With Me</a>
     </div>
   </div>
