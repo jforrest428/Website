@@ -78,62 +78,6 @@
       line-height: 1.4;
     }
 
-    /* Testimonials section */
-    #testimonials {
-      background: var(--navy-900);
-    }
-    #testimonials .section-inner {
-      padding-top: var(--section-py);
-      padding-bottom: var(--section-py);
-    }
-    #testimonials .eyebrow { color: var(--gold-400); }
-    #testimonials h2 { color: var(--white); }
-    #testimonials .gold-rule { background: var(--gold-500); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    @media (max-width: 900px) {
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
-    .testimonial-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(212,180,98,0.2);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .testimonial-mark {
-      font-size: 2.5rem;
-      color: var(--gold-500);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-      font-family: var(--font-serif);
-    }
-    .testimonial-text {
-      font-size: 0.94rem;
-      line-height: 1.72;
-      color: rgba(255,255,255,0.82);
-      font-style: italic;
-      margin-bottom: 1.25rem;
-      flex: 1;
-      max-width: none;
-    }
-    .testimonial-byline {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold-400);
-    }
-
     /* Pricing section */
     #pricing {
       background: var(--off-white);
@@ -556,38 +500,6 @@
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<!-- AUDIT: New section — social proof from researchers is critical for this audience. Replace placeholder quotes with real testimonials when available. -->
-<section id="testimonials" aria-label="Client testimonials">
-  <div class="section-inner">
-    <div class="section-header">
-      <p class="eyebrow">From Researchers I've Worked With</p>
-      <h2>What Clients Say</h2>
-      <div class="gold-rule" aria-hidden="true"></div>
-    </div>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-mark">&ldquo;</div>
-        <p class="testimonial-text">My advisor told me my methods chapter needed to be "stronger" two weeks before my defense. I had no idea what that meant or how to fix it. Josh looked at my design, found a measurement issue I hadn't caught, walked me through why it mattered, and helped me reframe the analysis so I could actually explain it to my committee. I passed with no major revisions on the methods.</p>
-        <p class="testimonial-byline">PhD Candidate, Educational Leadership</p>
-      </div>
-
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-mark">&ldquo;</div>
-        <p class="testimonial-text">I'd been sitting on a cleaned dataset for three months because I wasn't confident in my analysis plan. Josh helped me figure out the right approach, ran the models in R, and wrote up the output in language I could drop straight into my results section. Reviewers pushed back on a lot of things — the statistics weren't one of them.</p>
-        <p class="testimonial-byline">Doctoral Student, Nursing Science</p>
-      </div>
-
-      <div class="testimonial-card" data-reveal>
-        <div class="testimonial-mark">&ldquo;</div>
-        <p class="testimonial-text">I needed someone who could work with me across multiple projects without me having to re-explain the context every time. Josh gets the research quickly, knows when to ask questions and when to just move, and delivers clean work. He's saved me more hours than I can count and I trust his judgment on the analytical side completely.</p>
-        <p class="testimonial-byline">Assistant Professor, Behavioral Science</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ===== PROCESS ===== -->
 <section id="process" aria-label="How we work">
   <div class="section-inner">
@@ -631,23 +543,20 @@
 
 
 <!-- ===== ABOUT ===== -->
-<!-- AUDIT: Rewrote to lead with credentials (M.S. Analytics, Wharton exec ed clients), removed "incoming" for SJU role, named Aramco/T-Mobile/Apple -->
 <section id="about" aria-label="About Forrest Analytics Group">
-  <div class="section-inner about-inner">
-    <div class="about-photo-wrap" data-reveal>
-      <div class="about-photo">
-        <!-- AUDIT: Updated alt text to be descriptive and SEO-relevant -->
+  <div class="section-inner" style="text-align: center;">
+    <div class="about-photo-wrap" data-reveal style="justify-content: center; margin-bottom: 2rem;">
+      <div class="about-photo" style="margin: 0 auto;">
         <img src="/assets/headshot.jpg" alt="Josh Forrest, statistical consultant for academic researchers" loading="lazy">
       </div>
-      <div class="about-photo-accent" aria-hidden="true"></div>
     </div>
-    <div class="about-content" data-reveal>
+    <div class="about-content" data-reveal style="max-width: 680px; margin: 0 auto;">
       <p class="eyebrow eyebrow-light">About</p>
       <h2>Forrest Analytics Group</h2>
-      <div class="gold-rule"></div>
-      <p>I founded Forrest Analytics Group to give graduate researchers and academic teams access to serious analytical support — without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
-      <p>I hold an M.S. in Business Intelligence &amp; Analytics (Data Science specialization) from Saint Joseph's University, where I teach AI for Business as an Adjunct Instructor. My research work includes analytics support for Wharton Executive Education programs serving executives from Aramco, T-Mobile, and Apple, as well as end-to-end dissertation support at Duquesne University — from survey design and data cleaning through assumption testing and final interpretation.</p>
-      <p>I work with researchers who are serious about their data and need someone who will take their project seriously — whether that means passing a committee review, getting a manuscript accepted, or making a real decision with real data.</p>
+      <div class="gold-rule" style="margin: 1rem auto;"></div>
+      <p style="margin: 0 auto 1rem;">I founded Forrest Analytics Group to give graduate researchers and academic teams access to serious analytical support — without the waiting lists, the overhead, or the jargon that makes statistics feel inaccessible.</p>
+      <p style="margin: 0 auto 1rem;">I hold an M.S. in Business Intelligence &amp; Analytics (Data Science specialization) from Saint Joseph's University, where I teach AI for Business as an Adjunct Instructor. My research work includes analytics support for Wharton Executive Education programs serving executives from Aramco, T-Mobile, and Apple, as well as end-to-end dissertation support at Duquesne University — from survey design and data cleaning through assumption testing and final interpretation.</p>
+      <p style="margin: 0 auto 1.5rem;">I work with researchers who are serious about their data and need someone who will take their project seriously — whether that means passing a committee review, getting a manuscript accepted, or making a real decision with real data.</p>
       <a href="#contact" class="btn btn-gold">Work With Me</a>
     </div>
   </div>
