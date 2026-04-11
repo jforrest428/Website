@@ -325,8 +325,11 @@
       .then(function (res) {
         if (!res.ok) throw new Error("Server error " + res.status);
 
-        // Create assistant bubble immediately — we'll stream text into it
-        hideTyping();
+        // Hide the typing dots but keep state.isTyping = true as a streaming lock
+        // (prevents a second send while the stream is still running)
+        els.typing.classList.remove("fag-show");
+
+        // Create assistant bubble — text streams into it word by word
         var msgEl = document.createElement("div");
         msgEl.className = "fag-msg fag-msg-assistant";
         var bubble = document.createElement("div");
@@ -346,9 +349,13 @@
         function pump() {
           return reader.read().then(function (result) {
             if (result.done) {
-              // Set final timestamp
+              // Stream complete — unlock and restore send button
+              state.isTyping = false;
               timeEl.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
               state.messages.push({ role: "assistant", text: fullText, ts: new Date() });
+              if (els.input.value.trim().length > 0) {
+                els.sendBtn.disabled = false;
+              }
               return;
             }
 
@@ -371,6 +378,8 @@
                   if (evt.lead_captured) onLeadCaptured();
                 } else if (evt.type === "error") {
                   bubble.textContent = evt.text;
+                  state.isTyping = false;
+                  els.sendBtn.disabled = els.input.value.trim().length === 0;
                 }
               } catch (e) { /* incomplete JSON chunk, wait */ }
             });
@@ -382,8 +391,10 @@
         return pump();
       })
       .catch(function (err) {
-        hideTyping();
-        addMessage("assistant", "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestanalyticsgroup.com");
+        state.isTyping = false;
+        els.typing.classList.remove("fag-show");
+        els.sendBtn.disabled = els.input.value.trim().length === 0;
+        addMessage("assistant", "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestanalytics.com");
         console.error("FAG Chat error:", err);
       });
   }
