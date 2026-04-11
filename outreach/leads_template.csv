@@ -1,3 +1,3 @@
-name,organization,email
-Dr. Jane Smith,Drexel University,jane.smith@drexel.edu
-John Doe,Temple University,john.doe@temple.edu
+name,organization,email,research_focus,recent_work
+Dr. Jane Smith,Drexel University,jane.smith@drexel.edu,health disparities,
+John Doe,Temple University,john.doe@temple.edu,,
