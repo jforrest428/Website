@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - generic [ref=e3]:
+      - link "Forrest Analytics Group home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - text: Forrest Analytics Group
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "For Researchers" [ref=e19] [cursor=pointer]:
+            - /url: /research/
+        - listitem [ref=e20]:
+          - link "For Business" [ref=e21] [cursor=pointer]:
+            - /url: /small-business/
+        - listitem [ref=e22]:
+          - link "Book a Call" [ref=e23] [cursor=pointer]:
+            - /url: /research/#contact
+  - generic [ref=e25]:
+    - navigation "Breadcrumb" [ref=e26]:
+      - link "Home" [ref=e27] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e28]: /
+      - link "For Business" [ref=e29] [cursor=pointer]:
+        - /url: /small-business/
+      - generic [ref=e30]: /
+      - generic [ref=e31]: Missed-Call SMS Responder
+    - paragraph [ref=e32]: AI for Small Business
+    - heading "Missed-Call SMS Responder" [level=1] [ref=e33]
+    - paragraph [ref=e34]: When your phone goes unanswered, they get a personal text in 30 seconds — before they dial your competitor.
+    - generic [ref=e35]:
+      - link "Request a Free Audit" [ref=e36] [cursor=pointer]:
+        - /url: /small-business/#sb-contact
+      - link "See All Products" [ref=e37] [cursor=pointer]:
+        - /url: /small-business/
+  - region "The problem" [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: The Problem
+        - heading "They Didn't Leave a Voicemail. They Called the Next Plumber." [level=2] [ref=e42]
+      - generic [ref=e44]:
+        - paragraph [ref=e45]: Studies consistently show that 85% of callers who reach voicemail do not leave a message. For a service business missing 5 calls a week at an average ticket of $600, that's $156,000 a year quietly walking out the door.
+        - paragraph [ref=e46]: The problem isn't just the missed call itself — it's the timing. When someone's toilet is backing up or their water heater is dead, they need help now. The average caller gives you one shot. If your phone rings out, they're already scrolling to the next result. There's no second chance, no voicemail, no callback.
+        - paragraph [ref=e47]: In the Keystone Plumbing dataset — 3,200 inbound calls over two years — 29% went unanswered. Nearly all of those happened after 5 PM, on weekends, and during peak mid-day field hours when every technician was already on a job. Those are exactly the moments when a customer's need is most urgent and their patience is shortest.
+        - paragraph [ref=e48]: The Missed-Call SMS Responder closes that gap. Before the caller has time to open a new tab, they have a text from you — personal, warm, and offering to schedule. Not a robot. Not a voicemail prompt. A real message that sounds like your office sent it.
+  - region "How it works" [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - paragraph [ref=e52]: How It Works
+        - heading "Miss the Call. Win the Job." [level=2] [ref=e53]
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: "01"
+          - heading "Call Goes Unanswered" [level=3] [ref=e58]
+          - paragraph [ref=e59]: Your line rings out — you're on a job, after hours, or all techs are dispatched. Twilio detects the no-answer within seconds and triggers the responder automatically.
+        - generic [ref=e60]:
+          - generic [ref=e61]: "02"
+          - heading "Claude Writes the Text" [level=3] [ref=e62]
+          - paragraph [ref=e63]: Within 30 seconds, Claude composes a personalized SMS in your voice. If the caller is in your CRM, their name and last service history are included. After-hours calls get a different tone than midday calls. No templates — every message is written fresh.
+        - generic [ref=e64]:
+          - generic [ref=e65]: "03"
+          - heading "They Reply. You Book." [level=3] [ref=e66]
+          - paragraph [ref=e67]: The caller gets a friendly, human text before they have time to call someone else. They reply, you respond, and the job is booked — all from a conversation that started with a missed call.
+  - region "What it does for your business" [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - paragraph [ref=e71]: What It Does For Your Business
+        - heading "Turn Every Missed Call Into a Second Chance." [level=2] [ref=e72]
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: 30 sec
+          - heading "Response Time, Every Time" [level=4] [ref=e77]
+          - paragraph [ref=e78]: The SMS goes out in under 30 seconds after the call drops. That's faster than any human answering service and faster than the caller can navigate to a competitor's website.
+        - generic [ref=e79]:
+          - generic [ref=e80]: 20–35%
+          - heading "Missed-Call Recovery Rate" [level=4] [ref=e81]
+          - paragraph [ref=e82]: Industry benchmarks for immediate missed-call SMS show 20–35% of recipients reply and ultimately book. For a shop missing 5 calls a week, that's 1–2 additional jobs per week recovered.
+        - generic [ref=e83]:
+          - generic [ref=e84]: 24/7
+          - heading "After-Hours Coverage Without Staff" [level=4] [ref=e85]
+          - paragraph [ref=e86]: Your most expensive missed calls happen after 5 PM and on weekends. The responder never sleeps, never takes a day off, and never forgets to send the text. After-hours calls get a message that acknowledges the time and sets an expectation.
+        - generic [ref=e87]:
+          - generic [ref=e88]: Personal
+          - heading "Sounds Like You, Not a Bot" [level=4] [ref=e89]
+          - paragraph [ref=e90]: Returning customers get a message that references their name and service history. First-time callers get a warm, plain-English text that reads like your office sent it. Claude writes to match your business voice, not a generic template.
+  - region "Pricing" [ref=e91]:
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - paragraph [ref=e94]: Pricing
+        - heading "Flat Setup. Predictable Monthly." [level=2] [ref=e95]
+        - paragraph [ref=e97]: No hourly billing, no surprise invoices. Scope and pricing confirmed before any work begins.
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - paragraph [ref=e100]: Standard
+          - paragraph [ref=e101]: One-time setup
+          - paragraph [ref=e102]: $497
+          - paragraph [ref=e103]: Then monthly
+          - paragraph [ref=e104]:
+            - text: $197
+            - subscript [ref=e105]: /mo
+          - list [ref=e106]:
+            - listitem [ref=e107]: Missed-call SMS on no-answer
+            - listitem [ref=e108]: After-hours tone detection
+            - listitem [ref=e109]: Up to 300 SMS/month
+            - listitem [ref=e110]: Monthly recovery report
+          - link "Get Started" [ref=e111] [cursor=pointer]:
+            - /url: /small-business/#sb-contact
+        - generic [ref=e112]:
+          - paragraph [ref=e113]: Pro
+          - paragraph [ref=e114]: One-time setup
+          - paragraph [ref=e115]: $997
+          - paragraph [ref=e116]: Then monthly
+          - paragraph [ref=e117]:
+            - text: $297
+            - subscript [ref=e118]: /mo
+          - list [ref=e119]:
+            - listitem [ref=e120]: CRM lookup + caller personalization
+            - listitem [ref=e121]: Unlimited SMS volume
+            - listitem [ref=e122]: Booking link integration
+            - listitem [ref=e123]: Weekly performance summary
+            - listitem [ref=e124]: Priority support
+          - link "Get Started" [ref=e125] [cursor=pointer]:
+            - /url: /small-business/#sb-contact
+      - paragraph [ref=e126]: All plans include a free 15-minute audit call before any commitment. Scope is confirmed in writing before setup begins.
+  - region "About the builder" [ref=e127]:
+    - generic [ref=e129]:
+      - img [ref=e131]
+      - generic [ref=e140]:
+        - strong [ref=e141]: Built by Josh Forrest, Forrest Analytics Group LLC
+        - paragraph [ref=e142]: M.S. Business Intelligence & Analytics (Saint Joseph's University) · Instructor, AI for Business (Saint Joseph's University). Every tool in this suite is designed and configured by Josh directly, no resellers, no offshore teams.
+  - contentinfo [ref=e143]:
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - paragraph [ref=e147]: Forrest Analytics Group LLC
+          - paragraph [ref=e148]: Expert Analytics & AI Support for Researchers, Organizations & Service Businesses
+        - navigation "Footer navigation" [ref=e149]:
+          - link "Services" [ref=e150] [cursor=pointer]:
+            - /url: /#services
+          - link "About" [ref=e151] [cursor=pointer]:
+            - /url: /#about
+          - link "FAQ" [ref=e152] [cursor=pointer]:
+            - /url: /#faq
+          - link "For Business" [ref=e153] [cursor=pointer]:
+            - /url: /small-business/
+          - link "Contact" [ref=e154] [cursor=pointer]:
+            - /url: /#contact
+        - link "jf10747454@sju.edu" [ref=e156] [cursor=pointer]:
+          - /url: mailto:jf10747454@sju.edu
+      - generic [ref=e157]:
+        - paragraph [ref=e158]: © 2026 Forrest Analytics Group LLC. All rights reserved.
+        - paragraph [ref=e159]: Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.

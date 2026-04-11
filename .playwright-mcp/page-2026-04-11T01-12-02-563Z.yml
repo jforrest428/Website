@@ -1,0 +1,98 @@
+- generic [active] [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - generic [ref=e3]:
+      - link "Forrest Analytics Group home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - text: Forrest Analytics Group
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "For Researchers" [ref=e19] [cursor=pointer]:
+            - /url: /research/
+        - listitem [ref=e20]:
+          - link "For Business" [ref=e21] [cursor=pointer]:
+            - /url: /small-business/
+        - listitem [ref=e22]:
+          - link "Book a Call" [ref=e23] [cursor=pointer]:
+            - /url: /research/#contact
+  - region "Hero" [ref=e24]:
+    - generic [ref=e26]:
+      - paragraph [ref=e27]: Forrest Analytics Group LLC
+      - heading "Analytics and AI built on real data." [level=1] [ref=e28]:
+        - text: Analytics and AI
+        - emphasis [ref=e29]: built on real data.
+      - paragraph [ref=e30]: Statistical consulting for researchers and graduate students. AI tools for local service businesses.
+      - generic [ref=e31]:
+        - link "For Researchers" [ref=e32] [cursor=pointer]:
+          - /url: /research/
+        - link "For Service Businesses" [ref=e33] [cursor=pointer]:
+          - /url: /small-business/
+    - link "Scroll down" [ref=e34] [cursor=pointer]:
+      - /url: "#hub-paths"
+      - img [ref=e35]
+  - region "Choose your path" [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: What We Do
+        - heading "Two Verticals. One Standard." [level=2] [ref=e41]
+        - paragraph [ref=e43]: "Whether you're defending a dissertation or running a service business, the approach is the same: honest assessment, rigorous work, and results you can actually use."
+      - generic [ref=e44]:
+        - link "For Researchers & Organizations Expert statistical support for graduate students, doctoral candidates, and research teams, from survey design through final results interpretation. Rigorous methodology, defensible findings, and plain-English guidance at every stage. Dissertation Support Statistical Analysis Survey Design Results Interpretation See research services" [ref=e45] [cursor=pointer]:
+          - /url: /research/
+          - img [ref=e47]
+          - heading "For Researchers & Organizations" [level=2] [ref=e51]
+          - paragraph [ref=e52]: Expert statistical support for graduate students, doctoral candidates, and research teams, from survey design through final results interpretation. Rigorous methodology, defensible findings, and plain-English guidance at every stage.
+          - generic [ref=e53]:
+            - generic [ref=e54]: Dissertation Support
+            - generic [ref=e55]: Statistical Analysis
+            - generic [ref=e56]: Survey Design
+            - generic [ref=e57]: Results Interpretation
+          - generic [ref=e58]:
+            - text: See research services
+            - img [ref=e59]
+        - link "For Service Businesses AI tools built for plumbers, HVAC, lawn care, and local service pros, voice receptionist, reputation management, customer re-engagement, and daily business briefing. Built on real data, not demos. AI Voice Receptionist Review Management Re-Engagement Daily Briefing See AI products" [ref=e61] [cursor=pointer]:
+          - /url: /small-business/
+          - img [ref=e63]
+          - heading "For Service Businesses" [level=2] [ref=e69]
+          - paragraph [ref=e70]: AI tools built for plumbers, HVAC, lawn care, and local service pros, voice receptionist, reputation management, customer re-engagement, and daily business briefing. Built on real data, not demos.
+          - generic [ref=e71]:
+            - generic [ref=e72]: AI Voice Receptionist
+            - generic [ref=e73]: Review Management
+            - generic [ref=e74]: Re-Engagement
+            - generic [ref=e75]: Daily Briefing
+          - generic [ref=e76]:
+            - text: See AI products
+            - img [ref=e77]
+  - region "About Josh Forrest" [ref=e79]:
+    - generic [ref=e81]:
+      - paragraph [ref=e82]: About
+      - heading "Josh Forrest, Forrest Analytics Group" [level=2] [ref=e83]
+      - paragraph [ref=e85]: I founded Forrest Analytics Group to bring the same analytical rigor I use professionally to clients who need it most, graduate researchers under deadline pressure and service business owners who don't have a data team.
+      - paragraph [ref=e86]: I teach at Saint Joseph's University and will be launching an AI for Business course there this fall. I have supported research engagements at institutions including the University of Pennsylvania (Wharton). The credentials aren't the point, the work they make possible is.
+      - link "Book a Free 15-Minute Call" [ref=e87] [cursor=pointer]:
+        - /url: /research/#contact
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - strong [ref=e90]: M.S. Business Intelligence & Analytics
+          - text: Saint Joseph's University
+        - generic [ref=e91]:
+          - strong [ref=e92]: Instructor, AI for Business
+          - text: Saint Joseph's University
+  - contentinfo [ref=e93]:
+    - generic [ref=e94]:
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - paragraph [ref=e97]: Forrest Analytics Group LLC
+          - paragraph [ref=e98]: Expert Analytics & AI Support for Researchers, Organizations & Service Businesses
+        - navigation "Footer navigation" [ref=e99]:
+          - link "For Researchers" [ref=e100] [cursor=pointer]:
+            - /url: /research/
+          - link "For Business" [ref=e101] [cursor=pointer]:
+            - /url: /small-business/
+          - link "Contact" [ref=e102] [cursor=pointer]:
+            - /url: /research/#contact
+        - link "jf10747454@sju.edu" [ref=e104] [cursor=pointer]:
+          - /url: mailto:jf10747454@sju.edu
+      - generic [ref=e105]:
+        - paragraph [ref=e106]: © 2026 Forrest Analytics Group LLC. All rights reserved.
+        - paragraph [ref=e107]: Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.

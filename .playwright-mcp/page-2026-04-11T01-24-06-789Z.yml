@@ -1,0 +1,401 @@
+- generic [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - generic [ref=e3]:
+      - link "Forrest Analytics Group home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img [ref=e5]
+        - text: Forrest Analytics Group
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "For Researchers" [ref=e19] [cursor=pointer]:
+            - /url: /research/
+        - listitem [ref=e20]:
+          - link "For Business" [ref=e21] [cursor=pointer]:
+            - /url: /small-business/
+        - listitem [ref=e22]:
+          - link "Book a Call" [ref=e23] [cursor=pointer]:
+            - /url: /research/#contact
+  - region "Hero" [ref=e24]:
+    - generic [ref=e26]:
+      - paragraph [ref=e27]: AI for Local Service Businesses
+      - heading "AI tools built for the way service businesses actually run." [level=1] [ref=e28]:
+        - text: AI tools built for the way service businesses
+        - emphasis [ref=e29]: actually run.
+      - paragraph [ref=e30]: Answer every call. Win more quotes. Recover lost customers. Built for any service business where the phone is your lifeline.
+      - generic [ref=e31]:
+        - link "Get Your Free 15-Minute Audit" [ref=e32] [cursor=pointer]:
+          - /url: "#sb-contact"
+        - link "See the Products" [ref=e33] [cursor=pointer]:
+          - /url: "#sb-products"
+    - link "Scroll down" [ref=e34] [cursor=pointer]:
+      - /url: "#trust-strip"
+      - img [ref=e35]
+  - region "Credentials" [ref=e37]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - img [ref=e42]
+        - generic [ref=e45]:
+          - strong [ref=e46]: M.S. Business Intelligence & Analytics
+          - text: Saint Joseph's University
+      - generic [ref=e47]:
+        - img [ref=e49]
+        - generic [ref=e51]:
+          - strong [ref=e52]: Instructor, AI for Business
+          - text: Saint Joseph's University
+      - generic [ref=e53]:
+        - img [ref=e55]
+        - generic [ref=e59]:
+          - strong [ref=e60]: Built on Real Business Data
+          - text: Not demos. Not theory.
+  - region "Who this is for" [ref=e61]:
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - paragraph [ref=e64]: Built For
+        - heading "If You Run a Service Business, This Is for You" [level=2] [ref=e65]
+        - paragraph [ref=e67]: These tools are built for any service business where the phone is your pipeline — trades, health & wellness, auto, and beyond.
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - img [ref=e71]
+          - generic [ref=e73]: Plumbing
+        - generic [ref=e74]:
+          - img [ref=e76]
+          - generic [ref=e79]: HVAC
+        - generic [ref=e80]:
+          - img [ref=e82]
+          - generic [ref=e86]: Lawn Care
+        - generic [ref=e87]:
+          - img [ref=e89]
+          - generic [ref=e92]: Electrical
+        - generic [ref=e93]:
+          - img [ref=e95]
+          - generic [ref=e98]: Cleaning
+        - generic [ref=e99]:
+          - img [ref=e101]
+          - generic [ref=e104]: Pest Control
+        - generic [ref=e105]:
+          - img [ref=e107]
+          - generic [ref=e110]: Roofing
+        - generic [ref=e111]:
+          - img [ref=e113]
+          - generic [ref=e115]: Auto Repair
+        - generic [ref=e116]:
+          - img [ref=e118]
+          - generic [ref=e122]: Salon & Spa
+        - generic [ref=e123]:
+          - img [ref=e125]
+          - generic [ref=e128]: Painting
+        - generic [ref=e129]:
+          - img [ref=e131]
+          - generic [ref=e134]: Contracting
+        - generic [ref=e135]:
+          - img [ref=e137]
+          - generic [ref=e141]: Property Mgmt
+  - region "Products" [ref=e142]:
+    - generic [ref=e143]:
+      - generic [ref=e144]:
+        - paragraph [ref=e145]: What We Build
+        - 'heading "Five Tools. One Mission: Stop the Revenue Leak." [level=2] [ref=e146]'
+        - paragraph [ref=e148]: Most service businesses lose money in the same five places. These tools are built to close those gaps, one at a time, or all at once.
+      - generic [ref=e149]:
+        - article [ref=e150]:
+          - img [ref=e152]
+          - heading "Missed-Call SMS Responder" [level=3] [ref=e156]
+          - paragraph [ref=e157]: When your phone goes unanswered, they get a personal text in 30 seconds — before they dial your competitor.
+          - link "Learn more" [ref=e158] [cursor=pointer]:
+            - /url: /small-business/missed-call-sms/
+            - text: Learn more
+            - img [ref=e159]
+        - article [ref=e161]:
+          - img [ref=e163]
+          - heading "Review Reply & Reputation Manager" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Every review answered. Every customer recovered. Never let a bad review go unanswered again, or a good one go unacknowledged.
+          - link "Learn more" [ref=e168] [cursor=pointer]:
+            - /url: /small-business/review-reputation-manager/
+            - text: Learn more
+            - img [ref=e169]
+        - article [ref=e171]:
+          - img [ref=e173]
+          - heading "Customer Re-Engagement Engine" [level=3] [ref=e178]
+          - paragraph [ref=e179]: There's $25,000 sitting dormant in your customer list. Automated outreach that turns lapsed customers into booked jobs.
+          - link "Learn more" [ref=e180] [cursor=pointer]:
+            - /url: /small-business/customer-reengagement/
+            - text: Learn more
+            - img [ref=e181]
+        - article [ref=e183]:
+          - img [ref=e185]
+          - heading "Estimate Follow-Up Automation" [level=3] [ref=e190]
+          - paragraph [ref=e191]: You sent the estimate. Most owners never follow up. This does it for you — personally, automatically, three times.
+          - link "Learn more" [ref=e192] [cursor=pointer]:
+            - /url: /small-business/estimate-followup/
+            - text: Learn more
+            - img [ref=e193]
+        - article [ref=e195]:
+          - img [ref=e197]
+          - heading "AI Website Chatbot" [level=3] [ref=e202]
+          - paragraph [ref=e203]: Your website gets visitors at 2 AM. This answers them — qualifies the lead, captures their info, and books the job while you sleep.
+          - link "Learn more" [ref=e204] [cursor=pointer]:
+            - /url: /small-business/ai-website-chatbot/
+            - text: Learn more
+            - img [ref=e205]
+  - region "How it works" [ref=e207]:
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - paragraph [ref=e210]: How It Works
+        - heading "Audit. Build. Run." [level=2] [ref=e211]
+        - paragraph [ref=e213]: Three steps. No long implementations, no vendor hand-holding, no learning curve.
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - generic [ref=e216]: "01"
+          - heading "Audit" [level=3] [ref=e217]
+          - paragraph [ref=e218]: We look at your call volume, customer list, and review profile to find exactly where revenue is slipping through the cracks. No fluff, just a clear picture of what the data shows.
+        - generic [ref=e219]:
+          - generic [ref=e220]: "02"
+          - heading "Build" [level=3] [ref=e221]
+          - paragraph [ref=e222]: We configure your AI tools using real data from your business, your services, your pricing, your tone. Every setting is tuned to how you actually operate, not a generic template.
+        - generic [ref=e223]:
+          - generic [ref=e224]: "03"
+          - heading "Run" [level=3] [ref=e225]
+          - paragraph [ref=e226]: Your tools go live. We monitor performance, tune as needed, and report back in plain English so you're never flying blind. You run your business. The AI handles the rest.
+      - link "Start With a Free Audit" [ref=e228] [cursor=pointer]:
+        - /url: "#sb-contact"
+  - region "Why Forrest Analytics Group" [ref=e229]:
+    - generic [ref=e231]:
+      - generic [ref=e232]:
+        - paragraph [ref=e233]: Why Work With Us
+        - heading "I Don't Just Build AI. I Teach It." [level=2] [ref=e234]
+        - paragraph [ref=e236]: I'll be teaching AI for Business at Saint Joseph's University starting this fall, which means the tools I build for your shop are grounded in the same frameworks I use to help working professionals evaluate and deploy AI responsibly. This isn't hobbyist automation, it's applied AI built to hold up under real operating conditions.
+        - paragraph [ref=e237]: My M.S. in Business Intelligence & Analytics means I understand what it actually takes to turn raw business data into a decision you can act on. When I audit your business, I'm not guessing, I'm reading the numbers.
+        - paragraph [ref=e238]: "What that means for you: straightforward tools, honest results, and no AI hype. If a product won't move the needle for your business, I'll tell you that before you spend a dollar."
+        - link "Talk to Josh Directly" [ref=e239] [cursor=pointer]:
+          - /url: "#sb-contact"
+      - generic [ref=e240]:
+        - generic [ref=e241]:
+          - generic [ref=e242]: SJU
+          - generic [ref=e243]:
+            - strong [ref=e244]: Instructor, AI for Business
+            - text: Saint Joseph's University
+        - generic [ref=e245]:
+          - generic [ref=e246]: MS
+          - generic [ref=e247]:
+            - strong [ref=e248]: M.S. Business Intelligence & Analytics
+            - text: Data Science specialization, Saint Joseph's University
+        - generic [ref=e249]:
+          - img [ref=e251]
+          - generic [ref=e254]:
+            - strong [ref=e255]: "Client Work: Wharton Executive Education"
+            - text: Analytics for Aramco, T-Mobile, Apple programs
+  - region "Case study" [ref=e256]:
+    - generic [ref=e258]:
+      - generic [ref=e259]:
+        - paragraph [ref=e260]: Real Data. Real Results.
+        - heading "Built on a Real Business Dataset." [level=2] [ref=e261]
+        - paragraph [ref=e262]: Every product in this suite was designed and tested against a representative plumbing operation, 850 customers, 2,400 jobs, 3,200 inbound calls. The data told us exactly where the money was walking out the door. See what we found and how each tool addresses it.
+        - link "See the Keystone Plumbing Case Study →" [ref=e263] [cursor=pointer]:
+          - /url: /small-business/keystone-plumbing/
+      - generic "Dataset figures" [ref=e264]:
+        - generic [ref=e265]:
+          - generic [ref=e266]: "850"
+          - text: Customers
+        - generic [ref=e267]:
+          - generic [ref=e268]: 3,200
+          - text: Inbound Calls
+        - generic [ref=e269]:
+          - generic [ref=e270]: 34%
+          - text: Calls Missed
+  - region "Pricing" [ref=e271]:
+    - generic [ref=e272]:
+      - generic [ref=e273]:
+        - paragraph [ref=e274]: Pricing
+        - heading "Flat Setup. Predictable Monthly. No Surprises." [level=2] [ref=e275]
+        - paragraph [ref=e277]: Every engagement starts with a free audit. Scope and pricing confirmed in writing before any work begins.
+      - generic [ref=e278]:
+        - generic [ref=e279]:
+          - paragraph [ref=e280]: Missed-Call SMS Responder
+          - paragraph [ref=e281]: One-time setup from
+          - paragraph [ref=e282]: $497
+          - paragraph [ref=e283]: Then monthly from
+          - paragraph [ref=e284]:
+            - text: $197
+            - subscript [ref=e285]: /mo
+          - list [ref=e286]:
+            - listitem [ref=e287]: 30-second auto-text on every missed call
+            - listitem [ref=e288]: After-hours tone detection
+            - listitem [ref=e289]: Monthly recovery report
+          - link "See Details" [ref=e290] [cursor=pointer]:
+            - /url: /small-business/missed-call-sms/
+        - generic [ref=e291]:
+          - paragraph [ref=e292]: Review & Reputation Manager
+          - paragraph [ref=e293]: One-time setup from
+          - paragraph [ref=e294]: $497
+          - paragraph [ref=e295]: Then monthly from
+          - paragraph [ref=e296]:
+            - text: $197
+            - subscript [ref=e297]: /mo
+          - list [ref=e298]:
+            - listitem [ref=e299]: AI-written replies to every review
+            - listitem [ref=e300]: Automated review request campaigns
+            - listitem [ref=e301]: Reputation dashboard
+          - link "See Details" [ref=e302] [cursor=pointer]:
+            - /url: /small-business/review-reputation-manager/
+        - generic [ref=e303]:
+          - paragraph [ref=e304]: Estimate Follow-Up Automation
+          - paragraph [ref=e305]: One-time setup from
+          - paragraph [ref=e306]: $597
+          - paragraph [ref=e307]: Then monthly from
+          - paragraph [ref=e308]:
+            - text: $247
+            - subscript [ref=e309]: /mo
+          - list [ref=e310]:
+            - listitem [ref=e311]: Automated 3-touch follow-up sequence
+            - listitem [ref=e312]: Personalized by job type and estimate size
+            - listitem [ref=e313]: Close rate and revenue reporting
+          - link "See Details" [ref=e314] [cursor=pointer]:
+            - /url: /small-business/estimate-followup/
+        - generic [ref=e315]:
+          - paragraph [ref=e316]: Customer Re-Engagement Engine
+          - paragraph [ref=e317]: One-time setup from
+          - paragraph [ref=e318]: $597
+          - paragraph [ref=e319]: Then monthly from
+          - paragraph [ref=e320]:
+            - text: $197
+            - subscript [ref=e321]: /mo
+          - list [ref=e322]:
+            - listitem [ref=e323]: Lapsed customer outreach sequences
+            - listitem [ref=e324]: Job-type and recency targeting
+            - listitem [ref=e325]: Monthly revenue recovery report
+          - link "See Details" [ref=e326] [cursor=pointer]:
+            - /url: /small-business/customer-reengagement/
+        - generic [ref=e327]:
+          - paragraph [ref=e328]: AI Website Chatbot
+          - paragraph [ref=e329]: One-time setup from
+          - paragraph [ref=e330]: $297
+          - paragraph [ref=e331]: Then monthly from
+          - paragraph [ref=e332]:
+            - text: $149
+            - subscript [ref=e333]: /mo
+          - list [ref=e334]:
+            - listitem [ref=e335]: 24/7 lead capture and qualification
+            - listitem [ref=e336]: Configured with your services, pricing, and hours
+            - listitem [ref=e337]: Books jobs and appointments automatically
+            - listitem [ref=e338]: Full conversation history, yours to keep
+          - link "See Details" [ref=e339] [cursor=pointer]:
+            - /url: /small-business/ai-website-chatbot/
+      - generic [ref=e340]:
+        - generic [ref=e341]: Best Value
+        - paragraph [ref=e342]: Full Stack Bundle — All 5 Products
+        - paragraph [ref=e343]: One-time setup
+        - paragraph [ref=e344]: $1,297
+        - paragraph [ref=e345]: Then monthly
+        - paragraph [ref=e346]:
+          - text: $697
+          - subscript [ref=e347]: /mo
+        - list [ref=e348]:
+          - listitem [ref=e349]: All 5 tools configured and integrated together
+          - listitem [ref=e350]: Save $290/month vs. buying individually
+          - listitem [ref=e351]: Missed-call recovery, reputation management, estimate follow-up, re-engagement, and 24/7 chatbot — all running in sync
+          - listitem [ref=e352]: Single point of contact for setup and support
+          - listitem [ref=e353]: Priority support and monthly performance report
+        - link "Get Started with the Bundle" [ref=e354] [cursor=pointer]:
+          - /url: "#sb-contact"
+      - paragraph [ref=e355]: All plans include a free 15-minute audit call before any commitment. Scope is confirmed in writing before setup begins.
+  - region "Free audit request" [ref=e356]:
+    - generic [ref=e358]:
+      - generic [ref=e359]:
+        - paragraph [ref=e360]: Free 15-Minute Audit
+        - heading "How Many Calls Did Your Shop Miss Last Month?" [level=2] [ref=e361]
+        - paragraph [ref=e363]: Most service business owners don't know the answer, and that's exactly the problem. Fill out the form and I'll reach out to walk through your numbers, no sales pitch, no commitment required.
+        - paragraph [ref=e364]: You'll leave the call with a clear picture of where revenue is slipping and which tools (if any) would actually move the needle for your business.
+        - paragraph [ref=e365]: I respond within one business day. All inquiries are confidential.
+      - generic [ref=e366]:
+        - generic [ref=e367]:
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - generic [ref=e370]: Your Name *
+              - textbox "Your Name required" [ref=e371]:
+                - /placeholder: Mike Johnson
+            - generic [ref=e372]:
+              - generic [ref=e373]: Email Address *
+              - textbox "Email Address required" [ref=e374]:
+                - /placeholder: mike@johnsonplumbing.com
+          - generic [ref=e375]:
+            - generic [ref=e376]: Type of Business
+            - generic [ref=e377]:
+              - combobox "Type of Business" [ref=e378] [cursor=pointer]:
+                - option "Select one" [selected]
+                - option "Plumbing"
+                - option "HVAC"
+                - option "Electrical"
+                - option "Roofing"
+                - option "General Contracting"
+                - option "Lawn Care"
+                - option "Pest Control"
+                - option "Painting"
+                - option "Cleaning"
+                - option "Auto Repair"
+                - option "Salon & Spa"
+                - option "Property Management"
+                - option "Other Service Business"
+              - img
+          - generic [ref=e379]:
+            - generic [ref=e380]: What's your biggest challenge right now? *
+            - textbox "What's your biggest challenge right now? required" [ref=e381]:
+              - /placeholder: e.g. We're missing too many after-hours calls, we have hundreds of old customers we haven't touched in years, our reviews are going unanswered...
+          - button "Request My Free Audit" [ref=e382] [cursor=pointer]:
+            - generic [ref=e383]: Request My Free Audit
+          - paragraph [ref=e384]: No commitment required. I respond within one business day.
+        - alert [ref=e385]:
+          - img [ref=e386]
+          - heading "You're on the list." [level=3] [ref=e389]
+          - paragraph [ref=e390]: I'll be in touch within one business day to schedule your free audit call.
+  - contentinfo [ref=e391]:
+    - generic [ref=e392]:
+      - generic [ref=e393]:
+        - generic [ref=e394]:
+          - paragraph [ref=e395]: Forrest Analytics Group LLC
+          - paragraph [ref=e396]: Expert Analytics & AI Support for Researchers, Organizations & Service Businesses
+        - navigation "Footer navigation" [ref=e397]:
+          - link "Services" [ref=e398] [cursor=pointer]:
+            - /url: /#services
+          - link "About" [ref=e399] [cursor=pointer]:
+            - /url: /#about
+          - link "FAQ" [ref=e400] [cursor=pointer]:
+            - /url: /#faq
+          - link "For Business" [ref=e401] [cursor=pointer]:
+            - /url: /small-business/
+          - link "Contact" [ref=e402] [cursor=pointer]:
+            - /url: /#contact
+        - link "jf10747454@sju.edu" [ref=e404] [cursor=pointer]:
+          - /url: mailto:jf10747454@sju.edu
+      - generic [ref=e405]:
+        - paragraph [ref=e406]: © 2026 Forrest Analytics Group LLC. All rights reserved.
+        - paragraph [ref=e407]: Institutional affiliations reflect prior academic and research experience and do not imply institutional endorsement.
+  - generic:
+    - button "Open chat" [expanded] [ref=e408] [cursor=pointer]:
+      - img [ref=e441]
+    - dialog "Chat with Forrest Analytics" [ref=e416]:
+      - generic [ref=e417]:
+        - generic [ref=e418]: JF
+        - generic [ref=e419]:
+          - generic [ref=e420]: Josh from Forrest Analytics
+          - generic [ref=e421]: AI Tools for Service Businesses
+        - button "Close chat" [ref=e423] [cursor=pointer]:
+          - img [ref=e424]
+      - log "Conversation" [ref=e426]:
+        - generic [ref=e427]:
+          - generic [ref=e428]: Hey! I'm here to help you figure out which AI tools make the most sense for your business — no pitch, just honest answers. What kind of work do you run?
+          - generic [ref=e429]: 09:23 PM
+        - generic [ref=e443]:
+          - generic [ref=e444]: What do you offer for plumbing companies?
+          - generic [ref=e445]: 09:23 PM
+        - generic "Assistant is typing" [ref=e446]
+      - generic "Quick reply options" [ref=e430]:
+        - button "What do you offer for service businesses?" [ref=e431] [cursor=pointer]
+        - button "How much does it cost?" [ref=e432] [cursor=pointer]
+        - button "I want a free audit call" [ref=e433] [cursor=pointer]
+      - generic [ref=e434]:
+        - textbox "Message input" [active] [ref=e435]:
+          - /placeholder: Type a message…
+        - button "Send message" [disabled] [ref=e436]:
+          - img [ref=e437]
+      - link "Powered by Forrest Analytics" [ref=e440] [cursor=pointer]:
+        - /url: https://forrestanalyticsgroup.com
