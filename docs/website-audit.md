@@ -69,7 +69,7 @@ This is a student ID email address displayed as the contact for a business charg
 - You're using institutional infrastructure you don't control
 - The email will stop working when you graduate
 
-**The fix:** Replace with either a custom domain email (`josh@forrestanalyticsgroup.com`) via Google Workspace ($6/mo) or, at minimum, a branded Gmail. Update everywhere it appears (footer, research page contact form, any email automations).
+**The fix:** Replace with either a custom domain email (`josh@forrestanalytics.com`) via Google Workspace ($6/mo) or, at minimum, a branded Gmail. Update everywhere it appears (footer, research page contact form, any email automations).
 
 ---
 
@@ -463,7 +463,7 @@ Every change, ordered by impact, with effort estimate. **Fix items 1–6 before 
 | # | Action | Impact | Effort |
 |---|--------|--------|--------|
 | 1 | Fix "Book a Call" nav link — point to Calendly or `#sb-contact` | 🔴 Critical | Quick fix |
-| 2 | Replace `jf10747454@sju.edu` with `josh@forrestanalyticsgroup.com` in footer and all pages | 🔴 Critical | Quick fix |
+| 2 | Replace `jf10747454@sju.edu` with `josh@forrestanalytics.com` in footer and all pages | 🔴 Critical | Quick fix |
 | 3 | Fix mobile pricing overflow with CSS media query in Squarespace Custom CSS | 🔴 Critical | Quick fix |
 | 4 | Update main page case study copy to say "synthetic dataset" explicitly | 🟠 High | Quick fix |
 | 5 | Add OG tags (title, description, image) in Squarespace SEO panel | 🟠 High | Quick fix |
