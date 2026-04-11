@@ -12,7 +12,7 @@ Commands:
 CSV columns: name, organization, email, research_focus (optional), recent_work (optional)
 """
 
-import smtplib
+import imaplib
 import sqlite3
 import csv
 import os
@@ -20,6 +20,7 @@ import argparse
 import random
 import time
 from email.mime.text import MIMEText
+from email.utils import formatdate
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
@@ -28,8 +29,9 @@ load_dotenv()
 # ── Config ──────────────────────────────────────────────────────────────────────
 GMAIL_ADDRESS        = os.getenv("EMAIL_ADDRESS")
 GMAIL_APP_PASS       = os.getenv("EMAIL_APP_PASSWORD")
-SMTP_HOST            = os.getenv("SMTP_HOST", "smtp.zoho.com")
-SMTP_PORT            = int(os.getenv("SMTP_PORT", 465))
+IMAP_HOST            = os.getenv("IMAP_HOST", "imap.zoho.com")
+IMAP_PORT            = int(os.getenv("IMAP_PORT", 993))
+DRAFTS_FOLDER        = os.getenv("DRAFTS_FOLDER", "Drafts")
 FOLLOW_UP_1_DAYS     = int(os.getenv("FOLLOW_UP_1_DAYS", 4))   # Day 4: short bump
 FOLLOW_UP_2_DAYS     = int(os.getenv("FOLLOW_UP_2_DAYS", 8))   # Day 8: new angle
 FOLLOW_UP_3_DAYS     = int(os.getenv("FOLLOW_UP_3_DAYS", 14))  # Day 14: graceful close
@@ -416,20 +418,29 @@ def select_leads_for_batch(conn, limit):
 
 
 # ── Sending ──────────────────────────────────────────────────────────────────────
-def send_email(to_email, subject, body):
+def create_draft(to_email, subject, body):
     """
-    Send a plain-text email via SMTP SSL.
-    Plain text outperforms HTML for .edu domains -- academic spam filters
-    aggressively flag HTML-formatted cold email.
+    Save email as a draft in Zoho Mail via IMAP APPEND.
+    Drafts appear in your Zoho Drafts folder for review before sending.
+    Plain text only -- HTML avoided for .edu deliverability.
+
+    Requires IMAP access enabled in Zoho:
+      mail.zoho.com > Settings > Mail Accounts > IMAP Access > Enable
     """
     msg = MIMEText(body, 'plain')
     msg['From']    = GMAIL_ADDRESS
     msg['To']      = to_email
     msg['Subject'] = subject
+    msg['Date']    = formatdate(localtime=True)
 
-    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as server:
-        server.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
-        server.sendmail(GMAIL_ADDRESS, to_email, msg.as_string())
+    with imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT) as mail:
+        mail.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
+        mail.append(
+            DRAFTS_FOLDER,
+            '\\Draft',
+            imaplib.Time2Internaldate(time.time()),
+            msg.as_bytes()
+        )
 
 
 def _delay(dry_run):
@@ -476,13 +487,13 @@ def run_outreach(conn, dry_run=False):
             sent_today += 1
             continue
         try:
-            send_email(email, subject, body)
+            create_draft(email, subject, body)
             conn.execute(
                 "UPDATE leads SET status='sent', initial_sent_at=?, initial_subject=? WHERE id=?",
                 (now.isoformat(), subject, lead_id)
             )
             conn.commit()
-            print(f"[SENT] INITIAL  -> {name} <{email}>  [{org}]")
+            print(f"[DRAFT] INITIAL  -> {name} <{email}>  [{org}]")
             sent_today += 1
             _delay(dry_run)
         except Exception as e:
@@ -511,10 +522,10 @@ def run_outreach(conn, dry_run=False):
             sent_today += 1
             continue
         try:
-            send_email(email, subject, body)
+            create_draft(email, subject, body)
             conn.execute("UPDATE leads SET follow_up_1_at=? WHERE id=?", (now.isoformat(), lead_id))
             conn.commit()
-            print(f"[SENT] FU-1  -> {name} <{email}>")
+            print(f"[DRAFT] FU-1  -> {name} <{email}>")
             sent_today += 1
             _delay(dry_run)
         except Exception as e:
@@ -544,10 +555,10 @@ def run_outreach(conn, dry_run=False):
             sent_today += 1
             continue
         try:
-            send_email(email, subject, body)
+            create_draft(email, subject, body)
             conn.execute("UPDATE leads SET follow_up_2_at=? WHERE id=?", (now.isoformat(), lead_id))
             conn.commit()
-            print(f"[SENT] FU-2  -> {name} <{email}>")
+            print(f"[DRAFT] FU-2  -> {name} <{email}>")
             sent_today += 1
             _delay(dry_run)
         except Exception as e:
@@ -577,20 +588,22 @@ def run_outreach(conn, dry_run=False):
             sent_today += 1
             continue
         try:
-            send_email(email, subject, body)
+            create_draft(email, subject, body)
             conn.execute(
                 "UPDATE leads SET follow_up_3_at=?, status='closed' WHERE id=?",
                 (now.isoformat(), lead_id)
             )
             conn.commit()
-            print(f"[SENT] FU-3 (close)  -> {name} <{email}>")
+            print(f"[DRAFT] FU-3 (close)  -> {name} <{email}>")
             sent_today += 1
             _delay(dry_run)
         except Exception as e:
             print(f"[ERROR] {email}: {e}")
 
-    label = "would be " if dry_run else ""
-    print(f"\nDone. {sent_today} email(s) {label}sent today.")
+    if dry_run:
+        print(f"\nDone. {sent_today} email(s) previewed (nothing drafted or sent).")
+    else:
+        print(f"\nDone. {sent_today} draft(s) saved to your Zoho Drafts folder.")
 
 
 # ── Status / Reporting ────────────────────────────────────────────────────────────
