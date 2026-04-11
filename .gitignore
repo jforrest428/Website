@@ -1,3 +1,13 @@
+# Playwright MCP session files (screenshots, snapshots) — not part of site
+.playwright-mcp/
+
+# Claude Code local config — not part of site
+.claude/
+
+# Audit screenshots generated during development
+audit-*.png
+after-*.png
+
 # Credentials -- never commit these
 .env
 *.env
