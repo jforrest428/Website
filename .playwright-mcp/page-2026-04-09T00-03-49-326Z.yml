@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "Yelp" [ref=e4] [cursor=pointer]:
+        - /url: https://yelp.com
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - textbox "Search for" [ref=e7]:
+          - /placeholder: tacos, cheap dinner, Max’s
+        - textbox "Near" [ref=e8]:
+          - /placeholder: address, neighborhood, city, state or zip
+        - button "Search" [ref=e9] [cursor=pointer]
+      - navigation [ref=e10]:
+        - link "Yelp for Business" [ref=e11] [cursor=pointer]:
+          - /url: https://biz.yelp.com
+        - link "Contact us" [ref=e12] [cursor=pointer]:
+          - /url: https://yelp.com/support
+    - main [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - heading "We’re sorry. We can’t find the page you’re looking for." [level=1] [ref=e16]
+          - paragraph [ref=e17]:
+            - text: Please try a new
+            - link "search" [ref=e18] [cursor=pointer]:
+              - /url: https://yelp.com/search
+            - text: .
+        - figure [ref=e19]:
+          - img [ref=e21]
+  - contentinfo [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Discover" [level=2] [ref=e25]
+        - list [ref=e26]:
+          - listitem [ref=e27]:
+            - link "Home" [ref=e28] [cursor=pointer]:
+              - /url: https://yelp.com
+          - listitem [ref=e29]:
+            - link "My Profile" [ref=e30] [cursor=pointer]:
+              - /url: https://yelp.com/user_details
+          - listitem [ref=e31]:
+            - link "Write a Review" [ref=e32] [cursor=pointer]:
+              - /url: https://yelp.com/writeareview
+          - listitem [ref=e33]:
+            - link "Yelp Project Cost Guides" [ref=e34] [cursor=pointer]:
+              - /url: https://yelp.com/costs
+          - listitem [ref=e35]:
+            - link "Collections" [ref=e36] [cursor=pointer]:
+              - /url: https://yelp.com/collections
+          - listitem [ref=e37]:
+            - link "The Local Yelp" [ref=e38] [cursor=pointer]:
+              - /url: https://yelp.com/local_yelp
+          - listitem [ref=e39]:
+            - link "Yelp Blog" [ref=e40] [cursor=pointer]:
+              - /url: https://blog.yelp.com
+      - generic [ref=e41]:
+        - heading "About" [level=2] [ref=e42]
+        - list [ref=e43]:
+          - listitem [ref=e44]:
+            - link "About Yelp" [ref=e45] [cursor=pointer]:
+              - /url: https://yelp.com/about
+          - listitem [ref=e46]:
+            - link "Trust & Safety" [ref=e47] [cursor=pointer]:
+              - /url: https://trust.yelp.com
+          - listitem [ref=e48]:
+            - link "Content Guidelines" [ref=e49] [cursor=pointer]:
+              - /url: https://yelp.com/guidelines
+          - listitem [ref=e50]:
+            - link "Accessibility Statement" [ref=e51] [cursor=pointer]:
+              - /url: https://www.yelp-support.com/article/Yelp-Accessibility-Statement
+          - listitem [ref=e52]:
+            - link "Terms of Service" [ref=e53] [cursor=pointer]:
+              - /url: https://www.yelp.com/static?p=tos
+          - listitem [ref=e54]:
+            - link "Privacy Policy" [ref=e55] [cursor=pointer]:
+              - /url: https://www.yelp.com/tos/privacy_policy
+      - paragraph [ref=e56]:
+        - generic [ref=e57]:
+          - text: Copyright © 2004–2026 Yelp Inc. Yelp,
+          - img "Yelp logo" [ref=e58]
+          - text: ","
+          - img "Yelp burst" [ref=e59]
+          - text: and related marks are registered trademarks of Yelp.
