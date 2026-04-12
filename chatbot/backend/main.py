@@ -353,7 +353,11 @@ async def chat(request: Request, body: ChatRequest):
         async def jailbreak_stream():
             yield f"data: {json.dumps({'type': 'delta', 'text': 'I\'m here to help with Forrest Analytics\' AI tools for service businesses — what can I help you with?'})}\n\n"
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': body.conversation_id or str(uuid.uuid4()), 'lead_captured': False, 'booking_requested': False, 'message_count': 0})}\n\n"
-        return StreamingResponse(jailbreak_stream(), media_type="text/event-stream")
+        return StreamingResponse(
+        jailbreak_stream(),
+        media_type="text/event-stream",
+        headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+    )
 
     # Get or create conversation
     conv_id = body.conversation_id or str(uuid.uuid4())
@@ -381,7 +385,11 @@ async def chat(request: Request, body: ChatRequest):
         async def cap_stream():
             yield f"data: {json.dumps({'type': 'delta', 'text': msg})}\n\n"
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': meta['lead_captured'], 'booking_requested': meta['booking_requested'], 'message_count': meta['message_count']})}\n\n"
-        return StreamingResponse(cap_stream(), media_type="text/event-stream")
+        return StreamingResponse(
+            cap_stream(),
+            media_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+        )
 
     # Append user message
     conversations[conv_id].append({"role": "user", "content": user_message})
@@ -441,4 +449,8 @@ async def chat(request: Request, body: ChatRequest):
         # Send done event with metadata
         yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': lead_captured, 'booking_requested': booking_requested, 'message_count': meta['message_count']})}\n\n"
 
-    return StreamingResponse(stream_response(), media_type="text/event-stream")
+    return StreamingResponse(
+        stream_response(),
+        media_type="text/event-stream",
+        headers={"X-Accel-Buffering": "no", "Cache-Control": "no-cache"},
+    )

@@ -97,6 +97,10 @@
       ".fag-typing-dots span:nth-child(3) { animation-delay: 0.4s; }",
       "@keyframes fag-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }",
 
+      /* ── Streaming cursor ── */
+      ".fag-msg-bubble.fag-streaming::after { content: '|'; display: inline-block; margin-left: 1px; animation: fag-blink 0.7s step-end infinite; color: #64748b; }",
+      "@keyframes fag-blink { 0%,100%{opacity:1} 50%{opacity:0} }",
+
       /* ── Quick replies ── */
       "#fag-quick-replies { padding: 8px 14px 10px; display: flex; flex-direction: column; gap: 6px; }",
       ".fag-qr { background: #fff; border: 1.5px solid #e2e8f0; color: #1e293b; border-radius: 20px; padding: 7px 14px; font-size: 12.5px; cursor: pointer; text-align: left; transition: border-color 0.15s, background 0.15s; line-height: 1.3; }",
@@ -325,33 +329,44 @@
       .then(function (res) {
         if (!res.ok) throw new Error("Server error " + res.status);
 
-        // Hide the typing dots but keep state.isTyping = true as a streaming lock
-        // (prevents a second send while the stream is still running)
-        els.typing.classList.remove("fag-show");
-
-        // Create assistant bubble — text streams into it word by word
-        var msgEl = document.createElement("div");
-        msgEl.className = "fag-msg fag-msg-assistant";
-        var bubble = document.createElement("div");
-        bubble.className = "fag-msg-bubble";
-        var timeEl = document.createElement("div");
-        timeEl.className = "fag-msg-time";
-        timeEl.setAttribute("aria-hidden", "true");
-        msgEl.appendChild(bubble);
-        msgEl.appendChild(timeEl);
-        els.messages.insertBefore(msgEl, els.typing);
-
+        // Keep typing dots visible until the first text delta actually arrives.
+        // Bubble and cursor are created lazily on first delta so the user sees
+        // the dots → text transition rather than dots → empty bubble → text.
+        var msgEl = null;
+        var bubble = null;
+        var timeEl = null;
         var fullText = "";
         var reader = res.body.getReader();
         var decoder = new TextDecoder();
         var buffer = "";
 
+        function initBubble() {
+          if (msgEl) return;
+          els.typing.classList.remove("fag-show");
+          msgEl = document.createElement("div");
+          msgEl.className = "fag-msg fag-msg-assistant";
+          bubble = document.createElement("div");
+          bubble.className = "fag-msg-bubble fag-streaming";
+          timeEl = document.createElement("div");
+          timeEl.className = "fag-msg-time";
+          timeEl.setAttribute("aria-hidden", "true");
+          msgEl.appendChild(bubble);
+          msgEl.appendChild(timeEl);
+          els.messages.insertBefore(msgEl, els.typing);
+        }
+
         function pump() {
           return reader.read().then(function (result) {
             if (result.done) {
-              // Stream complete — unlock and restore send button
+              // Stream complete — remove cursor, unlock, restore send button
+              if (bubble) {
+                bubble.classList.remove("fag-streaming");
+                bubble.textContent = fullText.replace(/\[LEAD_CAPTURE:[^\]]*\]?/g, "").trimEnd();
+              }
+              if (timeEl) {
+                timeEl.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+              }
               state.isTyping = false;
-              timeEl.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
               state.messages.push({ role: "assistant", text: fullText, ts: new Date() });
               if (els.input.value.trim().length > 0) {
                 els.sendBtn.disabled = false;
@@ -368,6 +383,7 @@
               try {
                 var evt = JSON.parse(line.slice(6));
                 if (evt.type === "delta") {
+                  initBubble(); // create bubble on first real text
                   fullText += evt.text;
                   // Strip any partial lead capture marker from display
                   bubble.textContent = fullText.replace(/\[LEAD_CAPTURE:[^\]]*\]?/g, "").trimEnd();
@@ -377,6 +393,8 @@
                   state.messageCount = evt.message_count;
                   if (evt.lead_captured) onLeadCaptured();
                 } else if (evt.type === "error") {
+                  initBubble();
+                  bubble.classList.remove("fag-streaming");
                   bubble.textContent = evt.text;
                   state.isTyping = false;
                   els.sendBtn.disabled = els.input.value.trim().length === 0;
