@@ -73,7 +73,7 @@ MAX_CONVERSATIONS_PER_HOUR = 100
 CONVERSATIONS_DIR = "conversations"
 CRM_DIR = "../../lead-crm-output"
 CRM_FILE = os.path.join(CRM_DIR, "leads.csv")
-CRM_HEADERS = ["timestamp", "name", "email", "phone", "business", "recommended_products", "qualification_notes", "conversation_id"]
+CRM_HEADERS = ["timestamp", "name", "email", "phone", "business", "pain_point", "recommended_products", "urgency", "qualification_notes", "conversation_id"]
 
 os.makedirs(CONVERSATIONS_DIR, exist_ok=True)
 os.makedirs(CRM_DIR, exist_ok=True)
@@ -215,7 +215,9 @@ def save_to_crm(lead: dict, conv_id: str, meta: dict):
         "email": lead.get("email", ""),
         "phone": lead.get("phone", ""),
         "business": lead.get("business", ""),
-        "recommended_products": meta.get("recommended_products", ""),
+        "pain_point": lead.get("pain_point", ""),
+        "recommended_products": lead.get("products", meta.get("recommended_products", "")),
+        "urgency": lead.get("urgency", ""),
         "qualification_notes": meta.get("qualification_notes", ""),
         "conversation_id": conv_id,
     }
@@ -248,7 +250,9 @@ def send_lead_email(lead: dict, conv_id: str, messages: list, meta: dict):
     email = lead.get("email", "Unknown")
     phone = lead.get("phone", "Unknown")
     business = lead.get("business", "Unknown")
-    recommended = meta.get("recommended_products", "Not specified")
+    pain_point = lead.get("pain_point", "Not captured")
+    recommended = lead.get("products", meta.get("recommended_products", "Not specified"))
+    urgency = lead.get("urgency", "Not assessed")
     qualification_notes = meta.get("qualification_notes", "")
 
     subject = f"New Lead from Chatbot: {name} — {business}"
@@ -262,12 +266,14 @@ Email:         {email}
 Phone:         {phone}
 Business Type: {business}
 
-AI RECOMMENDATION
-─────────────────
-{recommended}
+QUALIFICATION
+─────────────
+Pain Point:    {pain_point}
+Recommended:   {recommended}
+Urgency:       {urgency}
 
-QUALIFICATION NOTES
-───────────────────
+NOTES
+─────
 {qualification_notes}
 
 CONVERSATION TRANSCRIPT
