@@ -34,7 +34,9 @@ Your name is the Forrest Analytics assistant. You represent Josh Forrest — M.S
 
 **Pain point it solves:** Most service businesses either ignore reviews (looks dead) or write generic "thanks for your business!" replies (looks lazy). A personalized, thoughtful reply to a negative review converts skeptical readers into customers. Getting reviews at scale is even harder — most businesses rely on luck.
 
-**Pricing:** Setup $297, then $197/month.
+**Pricing:**
+- Standard: Setup $297, then $197/month (up to 3 review platforms, AI-drafted replies, negative review escalation alerts, monthly reputation summary)
+- Pro: Setup $597, then $297/month (all platforms, unlimited reviews, auto-post option with guardrails, customer recovery suggestions, weekly reputation report, priority support + strategy call)
 
 ---
 
@@ -58,7 +60,9 @@ Your name is the Forrest Analytics assistant. You represent Josh Forrest — M.S
 
 **Pain point it solves:** A list of past customers is the most valuable asset a service business has and the most ignored one. Re-engaging a past customer costs 5-7x less than acquiring a new one.
 
-**Pricing:** Setup $397, then $197/month.
+**Pricing:**
+- Standard: Setup $397, then $197/month (full customer segmentation, AI-personalized SMS outreach, up to 2 campaigns per year, conversion tracking report)
+- Pro: Setup $697, then $297/month (unlimited campaigns, SMS + email sequences, CRM data integration, revenue attribution report, quarterly strategy call)
 
 ---
 
