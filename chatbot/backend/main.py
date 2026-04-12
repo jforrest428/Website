@@ -400,18 +400,18 @@ async def chat(request: Request, body: ChatRequest):
     if body.session_data and body.session_data.get("vertical_hint"):
         system += f"\n\n[CONTEXT: Visitor may be from the '{body.session_data['vertical_hint']}' vertical based on their entry point.]"
 
-    claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    claude_client = anthropic.AsyncAnthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     async def stream_response():
         full_text = ""
         try:
-            with claude_client.messages.stream(
+            async with claude_client.messages.stream(
                 model="claude-sonnet-4-6",
                 max_tokens=600,
                 system=system,
                 messages=conversations[conv_id],
             ) as stream:
-                for text_chunk in stream.text_stream:
+                async for text_chunk in stream.text_stream:
                     full_text += text_chunk
                     yield f"data: {json.dumps({'type': 'delta', 'text': text_chunk})}\n\n"
 
