@@ -88,6 +88,38 @@ document.querySelectorAll('.faq-q').forEach(button => {
   });
 });
 
+/* ── Calendly Badge Widget (floats on every page) ── */
+(function () {
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = 'https://assets.calendly.com/assets/external/widget.css';
+  document.head.appendChild(css);
+
+  // Only load the script if it isn't already on the page (inline embed pages load it too)
+  if (!document.querySelector('script[src*="calendly.com/assets/external/widget.js"]')) {
+    var js = document.createElement('script');
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.async = true;
+    js.onload = initBadge;
+    document.head.appendChild(js);
+  } else {
+    // Script already present (inline embed page) — wait for it to finish loading
+    window.addEventListener('load', initBadge);
+  }
+
+  function initBadge() {
+    if (typeof Calendly !== 'undefined') {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/jf10747454-sju/30min',
+        text: 'Book a Free 30-Min Call',
+        color: '#C9A84C',
+        textColor: '#ffffff',
+        branding: false
+      });
+    }
+  }
+})();
+
 /* ── Contact Form (Formspree) ── */
 const form       = document.getElementById('contact-form');
 const submitBtn  = document.getElementById('submit-btn');
