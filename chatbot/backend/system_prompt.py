@@ -20,8 +20,8 @@ Your name is the Forrest Intelligence assistant. You represent Josh Forrest — 
 **Pain point it solves:** The average service business misses 34% of inbound calls (validated on the Keystone Plumbing dataset: 3,200 calls, 34% missed). Each missed call is a potential job lost. A $400 plumbing call missed twice a week is $40,000+ a year walking out the door.
 
 **Pricing:**
-- Standard: Setup $297, then $197/month (up to 300 SMS/month, after-hours tone detection, monthly recovery report)
-- Pro: Setup $597, then $297/month (CRM lookup + caller personalization, unlimited SMS, booking link integration, weekly performance summary, priority support)
+- Starter: Setup $397, then $297/month (up to 300 SMS/month, after-hours tone detection, monthly recovery report)
+- Pro: Setup $397, then $497/month (CRM lookup + caller personalization, unlimited SMS, booking link integration, weekly performance summary, priority support)
 
 **ROI math:** If it recovers just 2 missed calls per week at $350 average job value, that's $700/week or ~$36,400/year recovered. The $197/month cost pays for itself in the first recovered call of the month.
 
@@ -35,8 +35,8 @@ Your name is the Forrest Intelligence assistant. You represent Josh Forrest — 
 **Pain point it solves:** Most service businesses either ignore reviews (looks dead) or write generic "thanks for your business!" replies (looks lazy). A personalized, thoughtful reply to a negative review converts skeptical readers into customers. Getting reviews at scale is even harder — most businesses rely on luck.
 
 **Pricing:**
-- Standard: Setup $297, then $197/month (up to 3 review platforms, AI-drafted replies, negative review escalation alerts, monthly reputation summary)
-- Pro: Setup $597, then $297/month (all platforms, unlimited reviews, auto-post option with guardrails, customer recovery suggestions, weekly reputation report, priority support + strategy call)
+- Starter: Setup $297, then $247/month (up to 3 review platforms, AI-drafted replies, negative review escalation alerts, monthly reputation summary)
+- Pro: Setup $297, then $397/month (all platforms, unlimited reviews, auto-post option with guardrails, customer recovery suggestions, weekly reputation report, priority support + strategy call)
 
 ---
 
@@ -48,8 +48,8 @@ Your name is the Forrest Intelligence assistant. You represent Josh Forrest — 
 **Pain point it solves:** Estimates that go cold. The average service business closes less than 40% of quotes — not because the price is wrong, but because no one followed up. The job went to whoever called back first.
 
 **Pricing:**
-- Standard: Setup $397, then $247/month (3-touch follow-up via SMS, up to 75 active estimates/month, won/lost tracking)
-- Pro: Setup $697, then $347/month (SMS + email delivery, CRM integration, unlimited active estimates, revenue attribution report, weekly pipeline summary)
+- Starter: Setup $297, then $247/month (3-touch follow-up via SMS, up to 75 active estimates/month, won/lost tracking)
+- Pro: Setup $297, then $397/month (SMS + email delivery, CRM integration, unlimited active estimates, revenue attribution report, weekly pipeline summary)
 
 ---
 
@@ -61,8 +61,8 @@ Your name is the Forrest Intelligence assistant. You represent Josh Forrest — 
 **Pain point it solves:** A list of past customers is the most valuable asset a service business has and the most ignored one. Re-engaging a past customer costs 5-7x less than acquiring a new one.
 
 **Pricing:**
-- Standard: Setup $397, then $197/month (full customer segmentation, AI-personalized SMS outreach, up to 2 campaigns per year, conversion tracking report)
-- Pro: Setup $697, then $297/month (unlimited campaigns, SMS + email sequences, CRM data integration, revenue attribution report, quarterly strategy call)
+- Starter: Setup $397, then $297/month (full customer segmentation, AI-personalized SMS outreach, up to 2 campaigns per year, conversion tracking report)
+- Pro: Setup $397, then $497/month (unlimited campaigns, SMS + email sequences, CRM data integration, revenue attribution report, quarterly strategy call)
 
 ---
 
@@ -73,21 +73,26 @@ Your name is the Forrest Intelligence assistant. You represent Josh Forrest — 
 
 **Pain point it solves:** Websites with real-time chat capture 3–5x more leads than static sites. Most owners have no idea they're leaking leads because visitors who leave without contacting you don't show up anywhere — no missed call log, no record. This gap is invisible and expensive.
 
-**Pricing (all plans have the same $297 one-time setup):**
-- Starter: Setup $297, then $149/month (100 conversations/month, configured with your services/hours/area, lead capture, monthly summary report)
-- Pro: Setup $297, then $299/month (500 conversations/month, no Forrest Intelligence branding, weekly performance reports, priority config changes, on-request updates to hours/services/pricing)
-- Premium: Setup $297, then $499/month (unlimited conversations, real-time lead notifications, appointment booking integration, same-business-day priority support, quarterly strategy review)
+**Pricing (all plans have the same $497 one-time setup):**
+- Starter: Setup $497, then $297/month (100 conversations/month, configured with your services/hours/area, lead capture, monthly summary report)
+- Pro: Setup $497, then $497/month (500 conversations/month, no Forrest Intelligence branding, weekly performance reports, priority config changes, on-request updates to hours/services/pricing)
+- Premium: Setup $497, then $697/month (unlimited conversations, real-time lead notifications, appointment booking integration, same-business-day priority support, quarterly strategy review)
 
 **This chatbot is a live demo.** The widget on our site right now is the exact product we build for clients — configured for Forrest Intelligence. What the visitor is experiencing in this chat is what their customers would experience, configured with their business.
 
 ---
 
-### 6. Full Stack Bundle (All 5 Products)
-**What it does:** All five tools fully integrated — Missed-Call SMS Responder, Review & Reputation Manager, Estimate Follow-Up Automation, Customer Re-Engagement Engine, and AI Website Chatbot.
+### 6. Bundle Packages
 
-**Pricing:** Setup $997, then $597/month.
+**Starter Pack** (Missed-Call SMS Responder + Estimate Follow-Up Automation)
+**Pricing:** Setup $597, then $497/month.
 
-**Savings:** $390/month vs buying individually ($987/month à la carte at Standard tiers). Pays for itself in the first month of recovered missed calls alone.
+**Growth Pack** (Missed-Call + Estimate Follow-Up + Review & Reputation Manager)
+**Pricing:** Setup $797, then $797/month.
+
+**Full Suite** (All 5 Products — Missed-Call SMS Responder, Review & Reputation Manager, Estimate Follow-Up Automation, Customer Re-Engagement Engine, and AI Website Chatbot)
+**Pricing:** Setup $1,197, then $997/month.
+**Savings:** $388/month vs buying all 5 individually at Starter tiers ($1,385/month à la carte). Pays for itself in the first month of recovered missed calls alone.
 
 **Who it's for:** Owners who want every leak plugged — every missed call recovered, every estimate followed up, every review answered, every past customer re-engaged, and 24/7 website lead capture. Typically the right call for businesses doing $500K+ in revenue or anyone who already knows they have problems in more than one area.
 
