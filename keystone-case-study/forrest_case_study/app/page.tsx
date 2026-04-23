@@ -119,8 +119,8 @@ function Header() {
   return (
     <header className="bg-navy-950 text-white py-5 px-6 sticky top-0 z-50 border-b border-navy-800">
       <div className="max-w-4xl mx-auto flex items-center justify-between">
-        <Link href="https://forrestanalyticsgroup.com" className="font-bold text-sm tracking-tight hover:text-orange-400 transition-colors">
-          Forrest Analytics Group
+        <Link href="https://forrestintelligence.com" className="font-bold text-sm tracking-tight hover:text-orange-400 transition-colors">
+          Forrest Intelligence
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm text-navy-300">
           <a href="#pain-points" className="hover:text-white transition-colors">The Problem</a>
@@ -177,7 +177,7 @@ function CompanyProfile() {
             <p className="text-navy-600 leading-relaxed mb-4">
               <strong className="text-navy-800">Keystone Plumbing &amp; Drain</strong> is a fictional
               Philadelphia-area plumbing and light-HVAC company built as a representative sample of
-              the service businesses Forrest Analytics Group targets for AI implementation.
+              the service businesses Forrest Intelligence targets for AI implementation.
             </p>
             <p className="text-navy-600 leading-relaxed">
               The accompanying dataset contains two years of realistic operational data:
@@ -389,7 +389,7 @@ function Cta() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://forrestanalyticsgroup.com"
+            href="https://forrestintelligence.com"
             className="bg-white text-orange-600 hover:bg-orange-50 font-bold px-8 py-4 rounded-xl text-lg shadow-sm transition-colors flex items-center justify-center gap-2"
             target="_blank" rel="noopener"
           >
@@ -406,8 +406,8 @@ function Cta() {
         <p className="text-orange-200 text-sm mt-6">
           Built in Philly. Built for service businesses like yours.
           <br />
-          <a href="https://forrestanalyticsgroup.com" className="underline hover:text-white" target="_blank" rel="noopener">
-            forrestanalyticsgroup.com
+          <a href="https://forrestintelligence.com" className="underline hover:text-white" target="_blank" rel="noopener">
+            forrestintelligence.com
           </a>
         </p>
       </div>
@@ -419,7 +419,7 @@ function Footer() {
   return (
     <footer className="bg-navy-950 text-navy-400 py-8 px-6">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-        <p>© 2026 Forrest Analytics Group LLC. All rights reserved.</p>
+        <p>© 2026 Forrest Intelligence. All rights reserved.</p>
         <p>Keystone Plumbing &amp; Drain is a fictional company created for demonstration purposes.</p>
       </div>
     </footer>

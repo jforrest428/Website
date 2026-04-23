@@ -1,5 +1,5 @@
 # Keystone Plumbing — AI Voice Receptionist Demo Script
-**For marketing video narration | Forrest Analytics Group**
+**For marketing video narration | Forrest Intelligence**
 
 ---
 
@@ -163,4 +163,4 @@ Which works best for you?"
 >
 > She doesn't get tired. She doesn't take lunch. And she costs less than 3% of a part-time employee.
 >
-> This is Product 1 of the Keystone AI Operating System — built by Forrest Analytics Group."
+> This is Product 1 of the Keystone AI Operating System — built by Forrest Intelligence."

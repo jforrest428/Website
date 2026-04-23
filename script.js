@@ -1,5 +1,5 @@
 /* ================================================
-   FORREST ANALYTICS GROUP — SCRIPTS
+   FORREST INTELLIGENCE — SCRIPTS
    ================================================ */
 
 /* ── Navbar: transparent → solid on scroll ── */

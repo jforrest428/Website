@@ -33,11 +33,11 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 logger = logging.getLogger(__name__)
 
 # ─── App ────────────────────────────────────────────────────────────────────
-app = FastAPI(title="Forrest Analytics Chatbot API", version="1.0.0")
+app = FastAPI(title="Forrest Intelligence Chatbot API", version="1.0.0")
 
 ALLOWED_ORIGINS = [
-    "https://forrestanalyticsgroup.com",
-    "https://www.forrestanalyticsgroup.com",
+    "https://forrestintelligence.com",
+    "https://www.forrestintelligence.com",
     "http://localhost",
     "http://localhost:3000",
     "http://localhost:8000",
@@ -237,7 +237,7 @@ def send_lead_email(lead: dict, conv_id: str, messages: list, meta: dict):
         logger.warning("Zoho SMTP not configured — skipping email")
         return
 
-    to_addr = "josh@forrestanalytics.com"
+    to_addr = "josh@forrestintelligence.com"
 
     # Build transcript
     transcript_lines = []
@@ -257,7 +257,7 @@ def send_lead_email(lead: dict, conv_id: str, messages: list, meta: dict):
 
     subject = f"New Lead from Chatbot: {name} — {business}"
 
-    body = f"""New lead captured via the Forrest Analytics chatbot.
+    body = f"""New lead captured via the Forrest Intelligence chatbot.
 
 LEAD INFORMATION
 ────────────────
@@ -357,7 +357,7 @@ async def chat(request: Request, body: ChatRequest):
     # Jailbreak guard
     if is_jailbreak_attempt(user_message):
         async def jailbreak_stream():
-            yield f"data: {json.dumps({'type': 'delta', 'text': 'I\'m here to help with Forrest Analytics\' AI tools for service businesses — what can I help you with?'})}\n\n"
+            yield f"data: {json.dumps({'type': 'delta', 'text': 'I\'m here to help with Forrest Intelligence\' AI tools for service businesses — what can I help you with?'})}\n\n"
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': body.conversation_id or str(uuid.uuid4()), 'lead_captured': False, 'booking_requested': False, 'message_count': 0})}\n\n"
         return StreamingResponse(
         jailbreak_stream(),
@@ -387,7 +387,7 @@ async def chat(request: Request, body: ChatRequest):
 
     # Per-conversation message cap
     if meta["message_count"] >= MAX_MESSAGES_PER_CONVERSATION:
-        msg = "We've covered a lot of ground! To keep the conversation going, reach out directly at josh@forrestanalytics.com or grab a free audit call at forrestanalyticsgroup.com/small-business/"
+        msg = "We've covered a lot of ground! To keep the conversation going, reach out directly at josh@forrestintelligence.com or grab a free audit call at forrestintelligence.com/small-business/"
         async def cap_stream():
             yield f"data: {json.dumps({'type': 'delta', 'text': msg})}\n\n"
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv_id, 'lead_captured': meta['lead_captured'], 'booking_requested': meta['booking_requested'], 'message_count': meta['message_count']})}\n\n"

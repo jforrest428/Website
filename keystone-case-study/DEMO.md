@@ -13,7 +13,7 @@
 ---
 
 ## Segment 1: The Problem (0:00 – 0:45)
-*Show the Forrest Analytics case study page in the browser*
+*Show the Forrest Intelligence case study page in the browser*
 
 **Narration:**
 > "Keystone Plumbing & Drain — $2.1M in annual revenue, 8 licensed technicians, 850 customers.
@@ -141,7 +141,7 @@ streamlit run products/03_reengagement/app.py
 ---
 
 ## Segment 6: The Close (4:30 – 5:00)
-*Switch to Forrest Analytics case study page, scroll to CTA*
+*Switch to Forrest Intelligence case study page, scroll to CTA*
 
 **Narration:**
 > "Four products. One dataset. One Claude API.
@@ -163,4 +163,4 @@ streamlit run products/03_reengagement/app.py
 - Add captions during the briefing and receptionist segments (the text is fast)
 - Cut the terminal spinner animations down to 0.5x speed if needed
 - Background music: low-key lo-fi, fade out during narration
-- End card: your face + logo + forrestanalyticsgroup.com + "Book a free audit"
+- End card: your face + logo + forrestintelligence.com + "Book a free audit"

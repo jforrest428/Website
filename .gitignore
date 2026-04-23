@@ -38,7 +38,7 @@ desktop.ini
 # Excel lock files
 .~lock.*
 
-# Node (for fag-outreach / lead-crm)
+# Node (for outreach / lead-crm)
 node_modules/
 .next/
 .nuxt/

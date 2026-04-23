@@ -25,21 +25,21 @@
 ## Pre-Deployment Steps
 
 ### 1. Set up professional email (before deploying)
-The code now references `josh@forrestanalytics.com`. This email must exist before users see it.
+The code now references `josh@forrestintelligence.com`. This email must exist before users see it.
 
 **Option A — Google Workspace (recommended):** $6/mo
 1. Go to workspace.google.com
-2. Add forrestanalyticsgroup.com as your domain
-3. Create `josh@forrestanalytics.com`
+2. Add forrestintelligence.com as your domain
+3. Create `josh@forrestintelligence.com`
 4. Verify domain ownership (add a TXT record in your DNS)
 
 **Option B — Zoho Mail (free tier):** zoho.com/mail
 1. Create a free account
 2. Add your domain
-3. Create `josh@forrestanalytics.com`
+3. Create `josh@forrestintelligence.com`
 4. Add MX records to your DNS
 
-> ⚠️ Do NOT skip this step. If users click `mailto:josh@forrestanalytics.com` before the email exists, it will bounce.
+> ⚠️ Do NOT skip this step. If users click `mailto:josh@forrestintelligence.com` before the email exists, it will bounce.
 
 ### 2. Create OG image (recommended before deploying)
 The OG tags reference `/assets/og-small-business.png`. This image doesn't exist yet — without it, the OG tags will load but social previews won't show an image.
@@ -62,7 +62,7 @@ start small-business/index.html
 Check:
 - [ ] Hero sub-headline says "Stop losing jobs to missed calls, dead estimates..."
 - [ ] "Book a Call" nav links to `#sb-contact` (not `/research/#contact`)
-- [ ] Footer email shows `josh@forrestanalytics.com`
+- [ ] Footer email shows `josh@forrestintelligence.com`
 - [ ] Josh's headshot appears in the "Why Work With Us" section
 - [ ] FAQ section appears above the contact form
 - [ ] Pricing grid collapses to single column (resize browser to 375px to verify)
@@ -90,18 +90,18 @@ GitHub Pages automatically redeploys on every push to `main`. No build step requ
 After pushing, wait 2–3 minutes then check:
 
 ### Quick checks (browser):
-1. **https://forrestanalyticsgroup.com/small-business/**
+1. **https://forrestintelligence.com/small-business/**
    - [ ] Hero sub-headline is updated
    - [ ] "Book a Call" in nav goes to the Free Audit form (not the research contact)
-   - [ ] Footer email shows `josh@forrestanalytics.com`
+   - [ ] Footer email shows `josh@forrestintelligence.com`
    - [ ] Headshot photo visible in "Why Work With Us" section
    - [ ] FAQ section visible between Pricing and the contact form
    - [ ] Resize to 375px wide — pricing section should NOT have a horizontal scrollbar
 
-2. **https://forrestanalyticsgroup.com/small-business/missed-call-sms/**
+2. **https://forrestintelligence.com/small-business/missed-call-sms/**
    - [ ] Step 2 says "AI Writes the Text" (not "Claude Writes the Text")
 
-3. **https://forrestanalyticsgroup.com/small-business/estimate-followup/**
+3. **https://forrestintelligence.com/small-business/estimate-followup/**
    - [ ] Body copy no longer references "Claude" by name
 
 ### OG/meta tag check:
@@ -111,7 +111,7 @@ Paste the URL into https://www.opengraph.xyz to verify OG tags are reading corre
 Paste the URL into https://validator.schema.org to verify LocalBusiness + FAQPage schema.
 
 ### Email check:
-Send a test email to `josh@forrestanalytics.com` and confirm it arrives (only relevant after Step 1 above is completed).
+Send a test email to `josh@forrestintelligence.com` and confirm it arrives (only relevant after Step 1 above is completed).
 
 ---
 

@@ -1,5 +1,5 @@
 """
-Forrest Analytics Group -- Email Outreach Script (v2)
+Forrest Intelligence -- Email Outreach Script (v2)
 
 Commands:
   python outreach.py --import-leads leads.csv     import leads from CSV
@@ -179,7 +179,7 @@ def template_initial(lead_id, name, organization, research_focus="", recent_work
         # Shortest (~60 words). Direct ask, no opt-out, signed "Josh".
         body = (
             f"Hi {fname},\n\n"
-            f"{ref} I run Forrest Analytics Group, a small consulting firm that does stats and methodology work for researchers. "
+            f"{ref} I run Forrest Intelligence, a small consulting firm that does stats and methodology work for researchers. "
             f"The clients I work with are usually faculty or grad students who need help getting through the analytical side of applied projects.\n\n"
             f"Would you have 15 minutes? If this isn't relevant to what you're working on, no worries.\n\n"
             f"Josh"
@@ -190,7 +190,7 @@ def template_initial(lead_id, name, organization, research_focus="", recent_work
         body = (
             f"Hi {fname},\n\n"
             f"{ref}\n\n"
-            f"I do analytics and methodology consulting through Forrest Analytics Group. "
+            f"I do analytics and methodology consulting through Forrest Intelligence. "
             f"Mostly I work with researchers on stats, survey design, and data analysis when projects need it.\n\n"
             f"{conn_line}\n\n"
             f"Any chance you'd have 15 minutes to connect? Nothing heavy on my end, just curious if there's a fit. "
@@ -203,14 +203,14 @@ def template_initial(lead_id, name, organization, research_focus="", recent_work
         body = (
             f"Hi {fname},\n\n"
             f"{ref}\n\n"
-            f"I'm a data analyst who does research methods consulting through Forrest Analytics Group. "
+            f"I'm a data analyst who does research methods consulting through Forrest Intelligence. "
             f"I work with faculty and doctoral students on applied projects, mostly on the quantitative side "
             f"(stats, methodology, data analysis).\n\n"
             f"{conn_line}\n\n"
             f"I'd be happy to do a quick call if any of this resonates with what you're working on. "
             f"15 minutes is plenty. If it's not a fit, I'd honestly rather know that early.\n\n"
             f"Josh Forrest\n"
-            f"forrestanalyticsgroup.com"
+            f"forrestintelligence.com"
         )
 
     return subject, body
@@ -256,7 +256,7 @@ def template_follow_up_2(lead_id, name, organization, research_focus="", initial
             f"Hi {fname},\n\n"
             f"{angle} If stats or methodology support is ever something on your radar, I'm easy to reach.\n\n"
             f"Josh Forrest\n"
-            f"forrestanalyticsgroup.com"
+            f"forrestintelligence.com"
         ),
         (
             f"Hi {fname},\n\n"
@@ -275,9 +275,9 @@ def template_follow_up_3(lead_id, name, organization, initial_subject=""):
     subject = f"re: {initial_subject}" if initial_subject else "re: analytics consulting"
     rng = _rng(lead_id, suffix=12)
     variants = [
-        f"Hi {fname},\n\nI'll leave it here. If the timing ever shifts, you can find me at forrestanalyticsgroup.com.\n\nJosh",
-        f"Hi {fname},\n\nI'll assume the timing isn't right. If it ever is, I'm at forrestanalyticsgroup.com.\n\nJosh",
-        f"Hi {fname},\n\nLast note, I promise. If you ever need analytics or methodology help, forrestanalyticsgroup.com.\n\nJosh",
+        f"Hi {fname},\n\nI'll leave it here. If the timing ever shifts, you can find me at forrestintelligence.com.\n\nJosh",
+        f"Hi {fname},\n\nI'll assume the timing isn't right. If it ever is, I'm at forrestintelligence.com.\n\nJosh",
+        f"Hi {fname},\n\nLast note, I promise. If you ever need analytics or methodology help, forrestintelligence.com.\n\nJosh",
     ]
     return subject, rng.choice(variants)
 
@@ -643,7 +643,7 @@ def show_status(conn):
 
 # ── CLI ────────────────────────────────────────────────────────────────────────────
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Forrest Analytics Group -- Outreach Tool v2')
+    parser = argparse.ArgumentParser(description='Forrest Intelligence -- Outreach Tool v2')
     parser.add_argument('--import-leads',      metavar='CSV',   help='Import leads from CSV')
     parser.add_argument('--send',              action='store_true', help='Send pending emails and follow-ups')
     parser.add_argument('--dry-run',           action='store_true', help='Preview emails without sending')

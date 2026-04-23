@@ -186,7 +186,7 @@ function AiDemoStrip({ onOpen }: { onOpen: (id: string) => void }) {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
           <div className="inline-block bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-1.5 text-orange-400 text-sm font-medium mb-4">
-            Powered by AI · Built by Forrest Analytics Group
+            Powered by AI · Built by Forrest Intelligence
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             The Keystone AI Operating System
@@ -221,8 +221,8 @@ function AiDemoStrip({ onOpen }: { onOpen: (id: string) => void }) {
           These tools run on{" "}
           <span className="text-navy-300">real operational data</span> from Keystone&apos;s 850-customer dataset.
           Built by{" "}
-          <a href="https://forrestanalyticsgroup.com" className="text-orange-400 hover:underline" target="_blank" rel="noopener">
-            Forrest Analytics Group
+          <a href="https://forrestintelligence.com" className="text-orange-400 hover:underline" target="_blank" rel="noopener">
+            Forrest Intelligence
           </a>.
         </p>
       </div>
@@ -328,8 +328,8 @@ function Footer() {
           <p>© 2026 Keystone Plumbing &amp; Drain LLC. PA License #PA-047821.</p>
           <p>
             AI-powered by{" "}
-            <a href="https://forrestanalyticsgroup.com" className="text-orange-400 hover:underline font-medium" target="_blank" rel="noopener">
-              Forrest Analytics Group — AI for service businesses
+            <a href="https://forrestintelligence.com" className="text-orange-400 hover:underline font-medium" target="_blank" rel="noopener">
+              Forrest Intelligence — AI for service businesses
             </a>
           </p>
         </div>

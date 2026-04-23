@@ -63,7 +63,7 @@ and writes personalized SMS + email outreach for each customer.
         st.rerun()
 
     st.divider()
-    st.caption("Built by [Forrest Analytics Group](https://forrestanalyticsgroup.com)")
+    st.caption("Built by [Forrest Intelligence](https://forrestintelligence.com)")
 
 # ── Load segment data ──────────────────────────────────────────────────────────
 segment_dfs: dict[str, pd.DataFrame] = {}

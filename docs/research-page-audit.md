@@ -1,4 +1,4 @@
-# Research Page Audit — forrestanalyticsgroup.com/research/
+# Research Page Audit — forrestintelligence.com/research/
 **Conducted:** April 10, 2026  
 **Auditor:** Claude Code (via Playwright MCP + source review)  
 **Scope:** /research/ full page + all linked destinations
@@ -46,7 +46,7 @@
 | Methods too generic | Can't rank for specific method searches | Medium |
 | "Tell us" (not "Tell me") in contact form | Inconsistent tone for a solo practice | Low |
 | No postdoc/faculty option in dropdown | Limits form segmentation | Low |
-| Hero sub-copy uses "Forrest Analytics Group" in 3rd person | Inconsistent with first-person voice throughout | Low |
+| Hero sub-copy uses "Forrest Intelligence" in 3rd person | Inconsistent with first-person voice throughout | Low |
 
 ---
 
@@ -93,7 +93,7 @@
 - **Rewrite:** "I Help Researchers Get Through *the Analysis*"
 
 ### Hero Sub-Copy
-- **Current:** "Stuck on your methodology? Not sure how to interpret your results? Forrest Analytics Group provides expert end-to-end support, from survey design through final interpretation, so you can move forward with confidence."
+- **Current:** "Stuck on your methodology? Not sure how to interpret your results? Forrest Intelligence provides expert end-to-end support, from survey design through final interpretation, so you can move forward with confidence."
 - **Rewrite:** "Whether you're stuck on your methods chapter, getting pushback from reviewers, or just need someone who can handle your data correctly — I work with PhD students, postdocs, and faculty at every stage of the research process, from analysis design through final write-up."
 
 ### Stats Row
@@ -210,7 +210,7 @@ Rename services around what the **researcher needs**, not what you do:
 ## 9. SEO Gaps
 
 ### Current
-- **Title:** "Research & Statistical Consulting | Forrest Analytics Group" — no keywords a researcher would search
+- **Title:** "Research & Statistical Consulting | Forrest Intelligence" — no keywords a researcher would search
 - **Description:** Redundant phrasing, no location, no method terms, no target audience called out
 
 ### Target Keywords (primary)
@@ -228,7 +228,7 @@ Rename services around what the **researcher needs**, not what you do:
 - "dissertation committee statistics"
 
 ### Updated Title
-`Statistical Consulting for PhD Students & Researchers | Forrest Analytics Group`
+`Statistical Consulting for PhD Students & Researchers | Forrest Intelligence`
 
 ### Updated Description
 `Statistical consulting for PhD students, postdocs, and faculty. Dissertation data analysis, methodology support, and publication-ready results. M.S. Analytics, Wharton research experience. Free 15-min consultation.`
@@ -239,7 +239,7 @@ Rename services around what the **researcher needs**, not what you do:
 - H3s: Individual service names, process steps, FAQ items
 
 ### Additional SEO Notes
-- Alt text on headshot image: currently "Forrest Analytics Group consultant" — should be "Josh Forrest, statistical consultant for academic researchers"
+- Alt text on headshot image: currently "Forrest Intelligence consultant" — should be "Josh Forrest, statistical consultant for academic researchers"
 - No schema markup (LocalBusiness or Person) — consider adding for search visibility
 - Page has no internal links to specific method pages or blog posts — long-term, building content around "how to choose a statistical test" type queries would drive organic traffic
 

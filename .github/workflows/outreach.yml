@@ -1,0 +1,64 @@
+name: Email Outreach
+
+on:
+  schedule:
+    # Tue / Wed / Thu at 9 AM ET (13:00 UTC — adjust to 14:00 during EDT→EST shift)
+    - cron: '0 13 * * 2,3,4'
+  workflow_dispatch:   # lets you trigger manually from the Actions tab
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r outreach/requirements.txt
+
+      # Pull the SQLite database saved from the previous run.
+      # On the very first run there is no artifact yet — continue-on-error handles that.
+      - name: Restore database
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          name: outreach-db
+          path: outreach/
+          if_no_artifact_found: warn
+        continue-on-error: true
+
+      - name: Run outreach
+        working-directory: outreach
+        env:
+          EMAIL_ADDRESS:           ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD:      ${{ secrets.EMAIL_APP_PASSWORD }}
+          IMAP_HOST:               imap.zoho.com
+          IMAP_PORT:               '993'
+          DAILY_LIMIT:             '40'
+          FOLLOW_UP_1_DAYS:        '3'
+          FOLLOW_UP_2_DAYS:        '8'
+          FOLLOW_UP_3_DAYS:        '14'
+          EMAIL_DELAY_MIN:         '30'
+          EMAIL_DELAY_MAX:         '90'
+          INSTITUTION_COOLDOWN_DAYS: '3'
+        run: |
+          python outreach.py --send
+          echo ""
+          echo "━━━ Pipeline status ━━━"
+          python outreach.py --status
+
+      # Save the updated database so the next scheduled run picks up where this one left off.
+      # runs even if the send step fails so we never lose state.
+      - name: Save database
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: outreach-db
+          path: outreach/outreach.db
+          retention-days: 90
+          overwrite: true

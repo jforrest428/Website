@@ -1,14 +1,14 @@
 # Keystone Plumbing AI Case Study — Build Prompt for Claude Code
 
-> Paste this entire prompt into Claude Code in VS Code. Open the **`Forrest Analytics Group LLC`** folder as your project root. The dataset file `Keystone_Plumbing_Sample_Dataset.xlsx` and the case study doc `Keystone_AI_Products_Case_Study.docx` are already sitting in that folder.
+> Paste this entire prompt into Claude Code in VS Code. Open the **`Forrest Intelligence`** folder as your project root. The dataset file `Keystone_Plumbing_Sample_Dataset.xlsx` and the case study doc `Keystone_AI_Products_Case_Study.docx` are already sitting in that folder.
 >
-> **Read them from the project root (`./Keystone_Plumbing_Sample_Dataset.xlsx` and `./Keystone_AI_Products_Case_Study.docx`) and, as your very first step, create the `keystone-case-study/` subfolder and copy the xlsx into `keystone-case-study/data/`.** Everything you build lives inside that subfolder so the parent Forrest Analytics folder stays clean.
+> **Read them from the project root (`./Keystone_Plumbing_Sample_Dataset.xlsx` and `./Keystone_AI_Products_Case_Study.docx`) and, as your very first step, create the `keystone-case-study/` subfolder and copy the xlsx into `keystone-case-study/data/`.** Everything you build lives inside that subfolder so the parent Forrest Intelligence folder stays clean.
 >
 > **Put the `.env` file with `ANTHROPIC_API_KEY` (and optionally `ELEVENLABS_API_KEY`) inside `keystone-case-study/`, not the parent folder**, so all scripts pick it up automatically with `python-dotenv`.
 >
 > Expected final layout:
 > ```
-> Forrest Analytics Group LLC/
+> Forrest Intelligence/
 > ├── Keystone_Plumbing_Sample_Dataset.xlsx   (original, untouched)
 > ├── Keystone_AI_Products_Case_Study.docx    (original, untouched)
 > ├── Keystone_Build_Prompt.md                (this file)
@@ -25,9 +25,9 @@
 
 ## Role and Mission
 
-You are my senior full-stack engineer and AI product builder. I am Josh Forrest, owner of **Forrest Analytics Group LLC**. I'm building a high-quality sample case study around a fictional Philadelphia plumbing company called **Keystone Plumbing & Drain** to showcase four AI products to real small-business prospects (plumbers, HVAC, lawn care, electricians). The end result will live on my website `forrestanalyticsgroup.com` as a flagship case study and be the thing I send to every cold lead.
+You are my senior full-stack engineer and AI product builder. I am Josh Forrest, owner of **Forrest Intelligence**. I'm building a high-quality sample case study around a fictional Philadelphia plumbing company called **Keystone Plumbing & Drain** to showcase four AI products to real small-business prospects (plumbers, HVAC, lawn care, electricians). The end result will live on my website `forrestintelligence.com` as a flagship case study and be the thing I send to every cold lead.
 
-Your job is to build all of this end-to-end at production quality: a Keystone demo website, four working AI products powered by the Claude API and the sample dataset, a Forrest Analytics case study page embedding the demos, and clean documentation. Do not stub or fake anything you can actually build. Where an integration is out of scope (e.g. real telephony), build a realistic scripted simulation that is visually and functionally convincing.
+Your job is to build all of this end-to-end at production quality: a Keystone demo website, four working AI products powered by the Claude API and the sample dataset, a Forrest Intelligence case study page embedding the demos, and clean documentation. Do not stub or fake anything you can actually build. Where an integration is out of scope (e.g. real telephony), build a realistic scripted simulation that is visually and functionally convincing.
 
 Work autonomously. Ask me a clarifying question only when a decision genuinely blocks you. Otherwise pick the strongest option, document your reasoning in a `DECISIONS.md` file, and keep moving.
 
@@ -52,7 +52,7 @@ keystone-case-study/
 │   ├── 03_reengagement/
 │   └── 04_voice_receptionist/
 ├── keystone_site/              # Next.js 14 + Tailwind — Keystone demo landing page
-└── forrest_case_study/         # Next.js page + MDX for the Forrest Analytics case study
+└── forrest_case_study/         # Next.js page + MDX for the Forrest Intelligence case study
 ```
 
 Use Python 3.11 for the AI product backends, FastAPI where an API surface is needed, Streamlit for quick owner-approval UIs, and Next.js 14 + Tailwind + shadcn/ui for both websites. Use the official `anthropic` Python SDK with model `claude-sonnet-4-6`. Store the API key in `.env` and load it with `python-dotenv`. Never hardcode secrets.
@@ -157,15 +157,15 @@ Sections, top to bottom:
    - "Watch us wake up dormant customers" → modal with the Re-Engagement dashboard + sample messages.
    - "Owner's Daily Briefing" → modal styled as an iMessage thread showing real briefings from the dataset.
 4. **Testimonials:** two fake-but-realistic testimonials citing the AI products.
-5. **Footer:** "Built by Forrest Analytics Group — AI for service businesses" with a link back to `forrestanalyticsgroup.com`.
+5. **Footer:** "Built by Forrest Intelligence — AI for service businesses" with a link back to `forrestintelligence.com`.
 
 Use a warm, trustworthy color palette (navy + a pop of safety orange). Real-looking copy. Mobile-first responsive. The site should take under 500ms to load and feel like a real plumbing company's site, not a developer demo.
 
 ---
 
-## Forrest Analytics Case Study Page (`forrest_case_study/`)
+## Forrest Intelligence Case Study Page (`forrest_case_study/`)
 
-A standalone Next.js page (or MDX component) that I can drop into my existing Forrest Analytics website. Structure:
+A standalone Next.js page (or MDX component) that I can drop into my existing Forrest Intelligence website. Structure:
 
 1. **Headline:** "How we'd rebuild a $2.1M plumbing company with AI — a Keystone Plumbing case study."
 2. **The company** (pulled from the case study doc — short profile block).
@@ -199,7 +199,7 @@ Build in this exact order and commit after each phase:
 4. **Product 3 — Re-Engagement Engine**
 5. **Product 4 — Voice Receptionist** (scripted demo layer first, then the agent layer)
 6. **Keystone sample website** — wire in modals that surface each product's outputs
-7. **Forrest Analytics case study page**
+7. **Forrest Intelligence case study page**
 8. `DECISIONS.md` summarizing every significant choice you made
 9. A final `DEMO.md` with a step-by-step script for me to record a 5-minute walkthrough video
 

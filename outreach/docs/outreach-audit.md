@@ -1,4 +1,4 @@
-# Outreach System Audit — Forrest Analytics Group
+# Outreach System Audit — Forrest Intelligence
 **Date:** April 10, 2026  
 **System:** PhD researcher / professor cold outreach for analytics consulting leads  
 **Files audited:** `outreach.py`, `Director Outreach Template.md`, `leads_template.csv`, `.env.example`, `requirements.txt`
@@ -46,7 +46,7 @@ No diversity logic. Top 20 rows in creation order. If you imported 50 Penn State
 ```
 Hi {name},
 
-I came across {organization} and wanted to reach out. I run Forrest Analytics Group,
+I came across {organization} and wanted to reach out. I run Forrest Intelligence,
 a boutique analytics consulting firm that helps graduate researchers and organizations
 with statistical analysis, survey design, and applied data work.
 
@@ -58,8 +58,8 @@ Would you be open to a quick conversation?
 
 Best,
 Joshua Forrest
-Forrest Analytics Group
-forrestanalyticsgroup.com
+Forrest Intelligence
+forrestintelligence.com
 ```
 
 **FU1 subject:** `"Re: Data Analytics Support — {organization}"`  
@@ -77,7 +77,7 @@ Every item on the "AI giveaway" checklist was present in v1:
 | Em dash (—) | Initial body: "...data analysis — or have a project..." |
 | "I came across..." | Initial body line 1 |
 | No contractions | "I run", "I offer", "Would you be open" — 0 contractions in body |
-| Overly formal sign-off | "Best, Joshua Forrest, Forrest Analytics Group, forrestanalyticsgroup.com" — 4 lines for a cold email |
+| Overly formal sign-off | "Best, Joshua Forrest, Forrest Intelligence, forrestintelligence.com" — 4 lines for a cold email |
 | "I'd love to learn more" | Second paragraph |
 | Vague reference to org | "I came across {organization}" — not their research, not a specific paper |
 | Generic close | "Would you be open to a quick conversation?" |
@@ -104,7 +104,7 @@ The DB schema had no `research_focus` or `recent_work` columns. The template cou
 No way for a recipient to say "please don't email me." Academics talk. One polite "please remove me" is much better than them flagging the email to their IT department.
 
 ### 8. Sending from SJU Address
-The `.env.example` shows `GMAIL_ADDRESS=jf10747454@sju.edu`. Sending from a university student address introduces its own deliverability issues (recipients may dismiss it as a grad student fishing for clients) and doesn't build your professional brand. Should be `josh@forrestanalyticsgroup.com`.
+The `.env.example` shows `GMAIL_ADDRESS=jf10747454@sju.edu`. Sending from a university student address introduces its own deliverability issues (recipients may dismiss it as a grad student fishing for clients) and doesn't build your professional brand. Should be `josh@forrestintelligence.com`.
 
 ### 9. Director Template (`.md` file) Has Same Problems
 The manually-used director outreach template has all the same issues:
@@ -173,7 +173,7 @@ Status `'unsubscribed'` already appeared in `show_status()` but there was no CLI
 ### 7. Updated `leads_template.csv` and `.env.example`
 - CSV template now includes `research_focus` and `recent_work` headers
 - `.env.example` documents all new variables with inline explanations
-- `.env.example` notes that `josh@forrestanalyticsgroup.com` should be the sender
+- `.env.example` notes that `josh@forrestintelligence.com` should be the sender
 
 ### 8. Dry-Run Shows Full Email Content
 v1 dry-run only printed the recipient name and email. v2 prints subject + full body for every email in the batch.
@@ -188,7 +188,7 @@ v1 dry-run only printed the recipient name and email. v2 prints subject + full b
 Hi Sarah,
 
 Your work on Racial inequities in maternal mortality outcomes caught my attention, 
-particularly the health disparities angle. I run Forrest Analytics Group, a small 
+particularly the health disparities angle. I run Forrest Intelligence, a small 
 consulting firm that does stats and methodology work for researchers. The clients I 
 work with are usually faculty or grad students who need help getting through the 
 analytical side of applied projects.
@@ -206,7 +206,7 @@ Hi Robert,
 I read your Adaptive trial design for rare pediatric diseases and had a question about 
 the clinical trial design side.
 
-I do analytics and methodology consulting through Forrest Analytics Group. Mostly I 
+I do analytics and methodology consulting through Forrest Intelligence. Mostly I 
 work with researchers on stats, survey design, and data analysis when projects need it.
 
 Curious whether there's any overlap with what you're running in clinical trial design 
@@ -225,7 +225,7 @@ Hi Linda,
 
 I've been following the organizational behavior research at Boston University.
 
-I'm a data analyst who does research methods consulting through Forrest Analytics Group. 
+I'm a data analyst who does research methods consulting through Forrest Intelligence. 
 I work with faculty and doctoral students on applied projects, mostly on the quantitative 
 side (stats, methodology, data analysis).
 
@@ -236,7 +236,7 @@ I'd be happy to do a quick call if any of this resonates with what you're workin
 15 minutes is plenty. If it's not a fit, I'd honestly rather know that early.
 
 Josh Forrest
-forrestanalyticsgroup.com
+forrestintelligence.com
 ```
 
 ### Email 4: Dr. Marcus Webb, Ohio State University (variant 1, no research_focus match in FU2)
@@ -248,7 +248,7 @@ I've been thinking more about the behavioral economics angle since I last wrote.
 stats or methodology support is ever something on your radar, I'm easy to reach.
 
 Josh Forrest
-forrestanalyticsgroup.com
+forrestintelligence.com
 ```
 
 ---
@@ -309,7 +309,7 @@ I've been thinking more about the health disparities angle since I last wrote. I
 or methodology support is ever something on your radar, I'm easy to reach.
 
 Josh Forrest
-forrestanalyticsgroup.com
+forrestintelligence.com
 ```
 
 **FU3 (Day 14):**  
@@ -317,7 +317,7 @@ Subject: `re: quick question about your health disparities research`
 ```
 Hi Sarah,
 
-I'll leave it here. If the timing ever shifts, you can find me at forrestanalyticsgroup.com.
+I'll leave it here. If the timing ever shifts, you can find me at forrestintelligence.com.
 
 Josh
 ```
@@ -326,7 +326,7 @@ Josh
 
 ## Remaining Recommendations (Manual / Can't Automate)
 
-### 1. Switch Sending Domain to `josh@forrestanalyticsgroup.com`
+### 1. Switch Sending Domain to `josh@forrestintelligence.com`
 Update `.env` with your business Gmail credentials. The SJU address works but looks like a student freelancing, not a professional firm. Set up a Google Workspace account for the domain if you haven't already.
 
 ### 2. Populate `research_focus` and `recent_work` for Every Lead
@@ -343,7 +343,7 @@ Command: `python outreach.py --send`
 When a lead replies, mark them with `--mark-replied` immediately so they don't get follow-ups. Right now this is manual. Consider piping Gmail API or a webhook to auto-mark replied leads.
 
 ### 6. Add SPF/DKIM/DMARC Records for Your Domain
-If sending from `josh@forrestanalyticsgroup.com`, verify your domain's email authentication records are set up. Missing SPF/DKIM causes deliverability drops especially to `.edu` domains. Check with MXToolbox.
+If sending from `josh@forrestintelligence.com`, verify your domain's email authentication records are set up. Missing SPF/DKIM causes deliverability drops especially to `.edu` domains. Check with MXToolbox.
 
 ### 7. Test with 5-Lead Batch First
 Before your first real `--send` run, do a 5-lead test with people you know at different institutions. Verify the emails landed in inbox (not spam), look right in both mobile and desktop clients, and the threading works correctly on follow-ups.

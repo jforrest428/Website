@@ -1,12 +1,12 @@
 # Lead CRM Builder — Claude Code Prompt
 
-> Paste this entire prompt into Claude Code in VS Code. Open the **`Forrest Analytics Group LLC`** folder as your project root. Everything you build lives inside a new `lead-crm/` subfolder so the parent folder stays clean.
+> Paste this entire prompt into Claude Code in VS Code. Open the **`Forrest Intelligence`** folder as your project root. Everything you build lives inside a new `lead-crm/` subfolder so the parent folder stays clean.
 >
 > Put your `.env` file with API keys inside `lead-crm/`, not the parent folder.
 >
 > Expected final layout:
 > ```
-> Forrest Analytics Group LLC/
+> Forrest Intelligence/
 > ├── lead-crm/
 > │   ├── .env
 > │   ├── README.md
@@ -21,7 +21,7 @@
 > │   │   └── main.py            # orchestrator
 > │   ├── cache/                 # cached API responses so reruns are free
 > │   ├── output/
-> │   │   └── Forrest_Analytics_Lead_CRM.xlsx
+> │   │   └── Forrest_Intelligence_Lead_CRM.xlsx
 > │   └── logs/
 > ```
 
@@ -29,7 +29,7 @@
 
 ## Role and Mission
 
-You are my senior data engineer. I am Josh Forrest, owner of **Forrest Analytics Group LLC**, a one-person AI consultancy in the Philadelphia metro. I sell four AI products to small service businesses: a 24/7 AI Voice Receptionist, a Review Reply & Reputation Manager, a Customer Re-Engagement Engine, and an Owner's Daily Briefing. My average deal is around $1,995/month with an $18,500 setup fee.
+You are my senior data engineer. I am Josh Forrest, owner of **Forrest Intelligence**, a one-person AI consultancy in the Philadelphia metro. I sell four AI products to small service businesses: a 24/7 AI Voice Receptionist, a Review Reply & Reputation Manager, a Customer Re-Engagement Engine, and an Owner's Daily Briefing. My average deal is around $1,995/month with an $18,500 setup fee.
 
 I need a working Python pipeline that builds me a **high-quality lead CRM of exactly 800 small service businesses** across the Philadelphia / South Jersey / Delaware / Main Line region, delivered as a polished Excel workbook I can work from tomorrow morning. These are the businesses I'll cold-email and cold-call. Quality matters ten times more than quantity — I'd rather have 800 hand-picked leads with accurate contact info than 8,000 garbage rows.
 
@@ -141,7 +141,7 @@ For the top 50 leads (Priority A), also use Claude to generate a **2-sentence pe
 
 ## Excel Workbook Structure (this is the deliverable)
 
-Use `openpyxl` to build `output/Forrest_Analytics_Lead_CRM.xlsx` with the following sheets. Format it professionally — frozen header rows, filters on every column, banded rows, column widths auto-fit, navy header background with white bold text, Forrest Analytics branding in the first cell of each sheet.
+Use `openpyxl` to build `output/Forrest_Intelligence_Lead_CRM.xlsx` with the following sheets. Format it professionally — frozen header rows, filters on every column, banded rows, column widths auto-fit, navy header background with white bold text, Forrest Intelligence branding in the first cell of each sheet.
 
 **Sheet 1 — Dashboard**
 - Total leads, count by vertical, count by county, count by priority tier
@@ -199,7 +199,7 @@ Default run: `python src/main.py --mode=full --target=800`
 ## Deliverables
 
 1. The complete working pipeline in `lead-crm/`
-2. A populated `output/Forrest_Analytics_Lead_CRM.xlsx` with exactly 800 leads (or as close to 800 as the quality filters allow — never pad with junk to hit the number)
+2. A populated `output/Forrest_Intelligence_Lead_CRM.xlsx` with exactly 800 leads (or as close to 800 as the quality filters allow — never pad with junk to hit the number)
 3. A `README.md` with: setup steps, env vars required, how to get API keys, how to rerun, how to extend to new verticals or zip codes, and estimated API cost per run
 4. A `DECISIONS.md` explaining any tradeoffs you made
 
@@ -228,4 +228,4 @@ Before writing any code, do these things in order:
 4. Ask me any genuinely blocking questions in a single batched list
 5. Then build the scaffold, then the sources, then enrichment, then scoring, then export, then run it
 
-Quality bar: this CRM is the single asset that determines whether Forrest Analytics Group hits weekly revenue this quarter. Treat it like that.
+Quality bar: this CRM is the single asset that determines whether Forrest Intelligence hits weekly revenue this quarter. Treat it like that.

@@ -11,7 +11,7 @@ Dear Dr. [LAST NAME],
 
 I'm reaching out because I believe there's an opportunity to support the dissertation success of your doctoral students, and I'd appreciate 60 seconds of your time.
 
-My name is Josh Forrest. I'm the founder of Forrest Analytics Group LLC, a boutique research consulting firm that works exclusively with doctoral students navigating the quantitative and methodological demands of dissertation work. My background is in data science and applied research — I hold a Master's in Business Intelligence & Analytics and work as a Data Analyst at Tandigm Health — and I've channeled that expertise into helping PhD candidates in [NURSING / SOCIAL WORK / PSYCHOLOGY / PUBLIC HEALTH] move through the most technically demanding stages of their research.
+My name is Josh Forrest. I'm the founder of Forrest Intelligence, a boutique research consulting firm that works exclusively with doctoral students navigating the quantitative and methodological demands of dissertation work. My background is in data science and applied research — I hold a Master's in Business Intelligence & Analytics and work as a Data Analyst at Tandigm Health — and I've channeled that expertise into helping PhD candidates in [NURSING / SOCIAL WORK / PSYCHOLOGY / PUBLIC HEALTH] move through the most technically demanding stages of their research.
 
 Services I offer include:
 
@@ -31,8 +31,8 @@ Thank you for the important work you do in developing the next generation of res
 Warm regards,
 
 **Josh Forrest**
-Founder, Forrest Analytics Group LLC
-[Phone] | forrestanalyticsgroup.com | [Email]
+Founder, Forrest Intelligence
+[Phone] | forrestintelligence.com | [Email]
 
 ---
 

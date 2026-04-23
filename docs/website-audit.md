@@ -1,4 +1,4 @@
-# Website Audit: forrestanalyticsgroup.com/small-business/
+# Website Audit: forrestintelligence.com/small-business/
 **Audited:** April 10, 2026 | **Auditor:** Claude Code (Playwright browser audit)
 
 ---
@@ -69,7 +69,7 @@ This is a student ID email address displayed as the contact for a business charg
 - You're using institutional infrastructure you don't control
 - The email will stop working when you graduate
 
-**The fix:** Replace with either a custom domain email (`josh@forrestanalytics.com`) via Google Workspace ($6/mo) or, at minimum, a branded Gmail. Update everywhere it appears (footer, research page contact form, any email automations).
+**The fix:** Replace with either a custom domain email (`josh@forrestintelligence.com`) via Google Workspace ($6/mo) or, at minimum, a branded Gmail. Update everywhere it appears (footer, research page contact form, any email automations).
 
 ---
 
@@ -131,7 +131,7 @@ This is more honest and still impressive. It also prevents the trust damage from
 The page has no `og:title`, `og:description`, or `og:image` meta tags. When anyone shares your URL on LinkedIn, Facebook, or iMessage, it renders with either a blank card or Squarespace's default branding.
 
 **The fix:** In Squarespace > Pages > Small Business > SEO, add:
-- **og:title:** "AI Tools for Service Businesses | Forrest Analytics Group"
+- **og:title:** "AI Tools for Service Businesses | Forrest Intelligence"
 - **og:description:** "Stop losing jobs to missed calls, ignored reviews, and unbooked estimates. 5 AI tools built specifically for plumbers, HVAC, roofers, and service businesses."
 - **og:image:** A custom 1200×630px image (your hero section as a graphic, or a simple branded card)
 
@@ -463,7 +463,7 @@ Every change, ordered by impact, with effort estimate. **Fix items 1–6 before 
 | # | Action | Impact | Effort |
 |---|--------|--------|--------|
 | 1 | Fix "Book a Call" nav link — point to Calendly or `#sb-contact` | 🔴 Critical | Quick fix |
-| 2 | Replace `jf10747454@sju.edu` with `josh@forrestanalytics.com` in footer and all pages | 🔴 Critical | Quick fix |
+| 2 | Replace `jf10747454@sju.edu` with `josh@forrestintelligence.com` in footer and all pages | 🔴 Critical | Quick fix |
 | 3 | Fix mobile pricing overflow with CSS media query in Squarespace Custom CSS | 🔴 Critical | Quick fix |
 | 4 | Update main page case study copy to say "synthetic dataset" explicitly | 🟠 High | Quick fix |
 | 5 | Add OG tags (title, description, image) in Squarespace SEO panel | 🟠 High | Quick fix |
@@ -494,7 +494,7 @@ Every change, ordered by impact, with effort estimate. **Fix items 1–6 before 
 
 | Field | Value | Assessment |
 |-------|-------|------------|
-| Page title | "AI Tools for Local Service Businesses \| Forrest Analytics Group" | ✅ Good — keyword-rich |
+| Page title | "AI Tools for Local Service Businesses \| Forrest Intelligence" | ✅ Good — keyword-rich |
 | Meta description | "AI tools built for service businesses — missed-call SMS, review automation, estimate follow-up, and customer re-engagement. Designed by Josh Forrest, M.S. Business Intelligence & Analytics and Instructor of AI for Business at Saint Joseph's University." | ⚠️ Long and credential-heavy; should emphasize outcomes, not credentials |
 | OG title | None | ❌ Missing |
 | OG description | None | ❌ Missing |

@@ -17,7 +17,7 @@ Each entry documents what was chosen, why, and where it matters.
 
 **Decision:** Two separate `create-next-app` projects (`keystone_site/`, `forrest_case_study/`).
 
-**Why:** The prompt specified distinct directories. More importantly, these serve different audiences and deployment contexts: `keystone_site/` is a demo plumbing company site (standalone), while `forrest_case_study/` is a page to be dropped into `forrestanalyticsgroup.com`. Keeping them separate means each can be deployed independently to Vercel or any static host with no coupling.
+**Why:** The prompt specified distinct directories. More importantly, these serve different audiences and deployment contexts: `keystone_site/` is a demo plumbing company site (standalone), while `forrest_case_study/` is a page to be dropped into `forrestintelligence.com`. Keeping them separate means each can be deployed independently to Vercel or any static host with no coupling.
 
 ---
 
@@ -95,6 +95,6 @@ Each entry documents what was chosen, why, and where it matters.
 
 ## 12. Case study page: server component (no "use client")
 
-**Decision:** The FAG case study page is a pure server component (static render).
+**Decision:** The Forrest Intelligence case study page is a pure server component (static render).
 
 **Why:** It contains no interactivity. No useState, no event handlers. This makes it statically renderable, perfectly SEO-optimized, and trivially droppable into any Next.js app as a route. The `"use client"` directive is intentionally absent.

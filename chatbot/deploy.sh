@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Forrest Analytics Group — Chatbot Deploy Script
+# Forrest Intelligence — Chatbot Deploy Script
 # Usage: ./deploy.sh [railway|render|fly]
 
 set -e
@@ -7,7 +7,7 @@ set -e
 PLATFORM=${1:-railway}
 BACKEND_DIR="$(cd "$(dirname "$0")/backend" && pwd)"
 
-echo "=== Forrest Analytics Chatbot Deploy ==="
+echo "=== Forrest Intelligence Chatbot Deploy ==="
 echo "Platform: $PLATFORM"
 echo "Backend:  $BACKEND_DIR"
 echo ""
@@ -79,7 +79,7 @@ deploy_fly() {
   cd "$BACKEND_DIR"
 
   echo "Launching Fly app..."
-  fly launch --name fag-chatbot --region ewr --no-deploy
+  fly launch --name fi-chatbot --region ewr --no-deploy
 
   echo "Setting secrets..."
   fly secrets set ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY"

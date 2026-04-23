@@ -122,7 +122,7 @@ def main() -> None:
 
     console.print(Panel(
         f"[bold]{brand.COMPANY_NAME}[/bold]\nMissed-Call SMS Responder — Demo\n"
-        f"[dim]Built by Forrest Analytics Group LLC[/dim]",
+        f"[dim]Built by Forrest Intelligence[/dim]",
         border_style="gold1",
         expand=False,
     ))

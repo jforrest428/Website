@@ -1,5 +1,5 @@
 # Keystone Plumbing & Drain — AI Case Study
-**Built by Forrest Analytics Group LLC**
+**Built by Forrest Intelligence**
 
 A complete AI implementation portfolio piece: four working AI products built on a synthetic Philadelphia plumbing company's operational dataset. Every demo is live, every number is real, and nothing is mocked at the data layer.
 
@@ -14,7 +14,7 @@ A complete AI implementation portfolio piece: four working AI products built on 
 | **03 Re-Engagement** | 5-segment customer outreach with projected revenue | `streamlit run products/03_reengagement/app.py` |
 | **04 Voice Receptionist** | 24/7 call agent with booking + emergency escalation | `python products/04_voice_receptionist/scripted_demo.py` |
 | **Keystone Site** | Demo landing page with interactive modals | `cd keystone_site && npm run dev` |
-| **Case Study Page** | FAG case study for forrestanalyticsgroup.com | `cd forrest_case_study && npm run dev` |
+| **Case Study Page** | Forrest Intelligence case study for forrestintelligence.com | `cd forrest_case_study && npm run dev` |
 
 ---
 
@@ -143,7 +143,7 @@ keystone-case-study/
 │           ├── ReengagementModal.tsx
 │           └── ReceptionistModal.tsx
 │
-└── forrest_case_study/           ← Next.js 14 case study page for FAG website
+└── forrest_case_study/           ← Next.js 14 case study page for Forrest Intelligence website
     └── app/
         └── page.tsx              ← Full case study (pain points, products, ROI, CTA)
 ```
@@ -210,5 +210,5 @@ No environment variables needed — both apps use pre-generated static data.
 
 ---
 
-*© 2026 Forrest Analytics Group LLC — AI for service businesses*
-*[forrestanalyticsgroup.com](https://forrestanalyticsgroup.com)*
+*© 2026 Forrest Intelligence — AI for service businesses*
+*[forrestintelligence.com](https://forrestintelligence.com)*

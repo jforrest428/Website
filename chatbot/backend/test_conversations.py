@@ -70,7 +70,7 @@ def run_conversation(title, turns):
 
 def main():
     print(f"\n{'#'*70}")
-    print("  FORREST ANALYTICS CHATBOT — TEST CONVERSATIONS")
+    print("  FORREST INTELLIGENCE CHATBOT — TEST CONVERSATIONS")
     print(f"{'#'*70}")
     print("Running 5 simulated visitor conversations against the system prompt.")
     print("Model: claude-sonnet-4-6\n")

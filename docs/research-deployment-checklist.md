@@ -17,7 +17,7 @@
 
 | Section | What Changed |
 |---|---|
-| `<head>` meta title | Rewrote for SEO: "Statistical Consulting for PhD Students & Researchers \| Forrest Analytics Group" |
+| `<head>` meta title | Rewrote for SEO: "Statistical Consulting for PhD Students & Researchers \| Forrest Intelligence" |
 | `<head>` meta description | Rewrote to target researcher search queries; includes key terms: dissertation, PhD, Wharton, M.S. Analytics |
 | `<head>` `<style>` block | Added page-specific CSS for 3 new sections: methods belt, testimonials, pricing |
 | Hero eyebrow | "Data Analytics & Research Consulting" → "Statistical Consulting for Academic Researchers" |
@@ -49,7 +49,7 @@
 | Process step 2 | "Scope & Flat-Rate Proposal" → "Written Scope & Flat-Rate Quote" (clearer wording) |
 | Process step 4 | Minor edit — added "in front of your committee or anyone else" |
 | **NEW: Pricing section** | New section (off-white) after process — 3 tiers: Methodology Session ($150/session), Project Support (from $450/project), Research Retainer (from $800/month). Includes academic discount note. |
-| About — headshot alt text | "Forrest Analytics Group consultant" → "Josh Forrest, statistical consultant for academic researchers" |
+| About — headshot alt text | "Forrest Intelligence consultant" → "Josh Forrest, statistical consultant for academic researchers" |
 | About — paragraph 1 | Minor edit — added em dash for rhythm |
 | About — paragraph 2 | Full rewrite: leads with M.S. credential, current SJU role, Wharton exec ed client names (Aramco, T-Mobile, Apple), Duquesne dissertation work |
 | About — paragraph 3 | Minor edit — expanded outcomes list |
@@ -78,8 +78,8 @@
    ```
    GitHub Pages auto-deploys from `main`. Deployment typically takes 1–3 minutes.
 
-4. **Verify live site** — navigate to `forrestanalyticsgroup.com/research/` and check:
-   - [ ] Page title in browser tab reads "Statistical Consulting for PhD Students & Researchers | Forrest Analytics Group"
+4. **Verify live site** — navigate to `forrestintelligence.com/research/` and check:
+   - [ ] Page title in browser tab reads "Statistical Consulting for PhD Students & Researchers | Forrest Intelligence"
    - [ ] Hero headline reads "I Help Researchers Get Through the Analysis"
    - [ ] Wharton card mentions Aramco, T-Mobile, and Apple
    - [ ] SJU card reads "Instructor of AI for Business; M.S. Business Intelligence & Analytics"
@@ -100,7 +100,7 @@
 6. **Test the form** — submit a test inquiry and verify:
    - [ ] Form submits to Formspree without error
    - [ ] Success message appears: "Message Received / I'll be in touch within one business day"
-   - [ ] You receive the email at josh@forrestanalytics.com
+   - [ ] You receive the email at josh@forrestintelligence.com
 
 ---
 

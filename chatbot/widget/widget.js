@@ -1,9 +1,9 @@
 /**
- * Forrest Analytics Group — AI Chat Widget
+ * Forrest Intelligence — AI Chat Widget
  * Drop this single script tag into Squarespace Code Injection → Footer
  *
  * Configuration: edit WIDGET_CONFIG below, or override before the script loads:
- *   window.FAG_CHAT_CONFIG = { backendUrl: "https://your-api.railway.app" };
+ *   window.FI_CHAT_CONFIG = { backendUrl: "https://your-api.railway.app" };
  */
 (function () {
   "use strict";
@@ -13,7 +13,7 @@
     backendUrl: "https://noble-trust-production-f3ab.up.railway.app",
     accentColor: "#2563EB",
     accentHover: "#1d4ed8",
-    headerName: "Josh from Forrest Analytics",
+    headerName: "Josh from Forrest Intelligence",
     headerSubtitle: "AI Tools for Service Businesses",
     greeting: "Hey! I'm here to help you figure out which AI tools make the most sense for your business — no pitch, just honest answers.\n\nWhat kind of work do you run?",
     quickReplies: [
@@ -21,10 +21,10 @@
       "How much does it cost?",
       "I want a free audit call"
     ],
-    poweredBy: "Powered by Forrest Analytics",
+    poweredBy: "Powered by Forrest Intelligence",
   };
 
-  var config = Object.assign({}, defaultConfig, window.FAG_CHAT_CONFIG || {});
+  var config = Object.assign({}, defaultConfig, window.FI_CHAT_CONFIG || {});
 
   // ─── State ──────────────────────────────────────────────────────────────
   var state = {
@@ -44,92 +44,92 @@
   function injectStyles() {
     var css = [
       /* ── Reset scoped to widget ── */
-      "#fag-chat-widget * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }",
+      "#fi-chat-widget * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }",
 
       /* ── Bubble ── */
-      "#fag-bubble { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: " + config.accentColor + "; box-shadow: 0 4px 20px rgba(37,99,235,0.45); cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; z-index: 999998; transition: transform 0.2s ease, box-shadow 0.2s ease; }",
-      "#fag-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,99,235,0.55); }",
-      "#fag-bubble svg { transition: transform 0.3s ease, opacity 0.2s ease; }",
-      "#fag-bubble.fag-open .fag-icon-chat { transform: scale(0) rotate(45deg); opacity: 0; position: absolute; }",
-      "#fag-bubble.fag-open .fag-icon-close { transform: scale(1) rotate(0deg); opacity: 1; }",
-      "#fag-bubble .fag-icon-close { transform: scale(0) rotate(-45deg); opacity: 0; position: absolute; }",
-      "#fag-notif-dot { position: absolute; top: 2px; right: 2px; width: 12px; height: 12px; background: #ef4444; border-radius: 50%; border: 2px solid white; animation: fag-pulse 2s infinite; }",
-      "@keyframes fag-pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.2);opacity:.85} }",
+      "#fi-bubble { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: " + config.accentColor + "; box-shadow: 0 4px 20px rgba(37,99,235,0.45); cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; z-index: 999998; transition: transform 0.2s ease, box-shadow 0.2s ease; }",
+      "#fi-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,99,235,0.55); }",
+      "#fi-bubble svg { transition: transform 0.3s ease, opacity 0.2s ease; }",
+      "#fi-bubble.fi-open .fi-icon-chat { transform: scale(0) rotate(45deg); opacity: 0; position: absolute; }",
+      "#fi-bubble.fi-open .fi-icon-close { transform: scale(1) rotate(0deg); opacity: 1; }",
+      "#fi-bubble .fi-icon-close { transform: scale(0) rotate(-45deg); opacity: 0; position: absolute; }",
+      "#fi-notif-dot { position: absolute; top: 2px; right: 2px; width: 12px; height: 12px; background: #ef4444; border-radius: 50%; border: 2px solid white; animation: fi-pulse 2s infinite; }",
+      "@keyframes fi-pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.2);opacity:.85} }",
 
       /* ── Window ── */
-      "#fag-window { position: fixed; bottom: 92px; right: 24px; width: 380px; height: 520px; background: #fff; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; z-index: 999997; overflow: hidden; transform: scale(0.85) translateY(20px); transform-origin: bottom right; opacity: 0; pointer-events: none; transition: transform 0.25s cubic-bezier(.34,1.4,.64,1), opacity 0.2s ease; }",
-      "#fag-window.fag-visible { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }",
+      "#fi-window { position: fixed; bottom: 92px; right: 24px; width: 380px; height: 520px; background: #fff; border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column; z-index: 999997; overflow: hidden; transform: scale(0.85) translateY(20px); transform-origin: bottom right; opacity: 0; pointer-events: none; transition: transform 0.25s cubic-bezier(.34,1.4,.64,1), opacity 0.2s ease; }",
+      "#fi-window.fi-visible { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }",
 
       /* ── Header ── */
-      "#fag-header { background: #0f172a; padding: 16px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }",
-      "#fag-avatar { width: 38px; height: 38px; border-radius: 50%; background: " + config.accentColor + "; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; letter-spacing: -0.5px; }",
-      "#fag-header-text { flex: 1; min-width: 0; }",
-      "#fag-header-name { font-size: 14px; font-weight: 600; color: #f8fafc; line-height: 1.2; }",
-      "#fag-header-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }",
-      "#fag-status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 2px rgba(34,197,94,0.25); animation: fag-pulse 2.5s infinite; }",
-      "#fag-close-btn { background: none; border: none; cursor: pointer; color: #64748b; padding: 4px; border-radius: 4px; display: flex; align-items: center; line-height: 1; transition: color 0.15s; }",
-      "#fag-close-btn:hover { color: #f8fafc; }",
+      "#fi-header { background: #0f172a; padding: 16px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }",
+      "#fi-avatar { width: 38px; height: 38px; border-radius: 50%; background: " + config.accentColor + "; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; letter-spacing: -0.5px; }",
+      "#fi-header-text { flex: 1; min-width: 0; }",
+      "#fi-header-name { font-size: 14px; font-weight: 600; color: #f8fafc; line-height: 1.2; }",
+      "#fi-header-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }",
+      "#fi-status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 2px rgba(34,197,94,0.25); animation: fi-pulse 2.5s infinite; }",
+      "#fi-close-btn { background: none; border: none; cursor: pointer; color: #64748b; padding: 4px; border-radius: 4px; display: flex; align-items: center; line-height: 1; transition: color 0.15s; }",
+      "#fi-close-btn:hover { color: #f8fafc; }",
 
       /* ── Messages ── */
-      "#fag-messages { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }",
-      "#fag-messages::-webkit-scrollbar { width: 4px; }",
-      "#fag-messages::-webkit-scrollbar-track { background: transparent; }",
-      "#fag-messages::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }",
+      "#fi-messages { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }",
+      "#fi-messages::-webkit-scrollbar { width: 4px; }",
+      "#fi-messages::-webkit-scrollbar-track { background: transparent; }",
+      "#fi-messages::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }",
 
       /* ── Message bubbles ── */
-      ".fag-msg { max-width: 82%; display: flex; flex-direction: column; animation: fag-fadein 0.2s ease; }",
-      "@keyframes fag-fadein { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }",
-      ".fag-msg-user { align-self: flex-end; }",
-      ".fag-msg-assistant { align-self: flex-start; }",
-      ".fag-msg-bubble { padding: 10px 13px; border-radius: 14px; font-size: 13.5px; line-height: 1.55; word-wrap: break-word; white-space: pre-wrap; }",
-      ".fag-msg-user .fag-msg-bubble { background: " + config.accentColor + "; color: #fff; border-bottom-right-radius: 4px; }",
-      ".fag-msg-assistant .fag-msg-bubble { background: #f1f5f9; color: #1e293b; border-bottom-left-radius: 4px; }",
-      ".fag-msg-time { font-size: 10px; color: #94a3b8; margin-top: 3px; padding: 0 4px; }",
-      ".fag-msg-user .fag-msg-time { text-align: right; }",
+      ".fi-msg { max-width: 82%; display: flex; flex-direction: column; animation: fi-fadein 0.2s ease; }",
+      "@keyframes fi-fadein { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }",
+      ".fi-msg-user { align-self: flex-end; }",
+      ".fi-msg-assistant { align-self: flex-start; }",
+      ".fi-msg-bubble { padding: 10px 13px; border-radius: 14px; font-size: 13.5px; line-height: 1.55; word-wrap: break-word; white-space: pre-wrap; }",
+      ".fi-msg-user .fi-msg-bubble { background: " + config.accentColor + "; color: #fff; border-bottom-right-radius: 4px; }",
+      ".fi-msg-assistant .fi-msg-bubble { background: #f1f5f9; color: #1e293b; border-bottom-left-radius: 4px; }",
+      ".fi-msg-time { font-size: 10px; color: #94a3b8; margin-top: 3px; padding: 0 4px; }",
+      ".fi-msg-user .fi-msg-time { text-align: right; }",
 
       /* ── Typing indicator ── */
-      "#fag-typing { align-self: flex-start; display: none; }",
-      "#fag-typing.fag-show { display: flex; }",
-      "#fag-typing .fag-msg-bubble { background: #f1f5f9; padding: 12px 14px; }",
-      ".fag-typing-dots { display: flex; gap: 4px; align-items: center; }",
-      ".fag-typing-dots span { width: 7px; height: 7px; border-radius: 50%; background: #94a3b8; animation: fag-bounce 1.2s infinite; }",
-      ".fag-typing-dots span:nth-child(2) { animation-delay: 0.2s; }",
-      ".fag-typing-dots span:nth-child(3) { animation-delay: 0.4s; }",
-      "@keyframes fag-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }",
+      "#fi-typing { align-self: flex-start; display: none; }",
+      "#fi-typing.fi-show { display: flex; }",
+      "#fi-typing .fi-msg-bubble { background: #f1f5f9; padding: 12px 14px; }",
+      ".fi-typing-dots { display: flex; gap: 4px; align-items: center; }",
+      ".fi-typing-dots span { width: 7px; height: 7px; border-radius: 50%; background: #94a3b8; animation: fi-bounce 1.2s infinite; }",
+      ".fi-typing-dots span:nth-child(2) { animation-delay: 0.2s; }",
+      ".fi-typing-dots span:nth-child(3) { animation-delay: 0.4s; }",
+      "@keyframes fi-bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }",
 
       /* ── Streaming cursor ── */
-      ".fag-msg-bubble.fag-streaming::after { content: '|'; display: inline-block; margin-left: 1px; animation: fag-blink 0.7s step-end infinite; color: #64748b; }",
-      "@keyframes fag-blink { 0%,100%{opacity:1} 50%{opacity:0} }",
+      ".fi-msg-bubble.fi-streaming::after { content: '|'; display: inline-block; margin-left: 1px; animation: fi-blink 0.7s step-end infinite; color: #64748b; }",
+      "@keyframes fi-blink { 0%,100%{opacity:1} 50%{opacity:0} }",
 
       /* ── Quick replies ── */
-      "#fag-quick-replies { padding: 8px 14px 10px; display: flex; flex-direction: column; gap: 6px; }",
-      ".fag-qr { background: #fff; border: 1.5px solid #e2e8f0; color: #1e293b; border-radius: 20px; padding: 7px 14px; font-size: 12.5px; cursor: pointer; text-align: left; transition: border-color 0.15s, background 0.15s; line-height: 1.3; }",
-      ".fag-qr:hover { border-color: " + config.accentColor + "; background: #eff6ff; color: " + config.accentColor + "; }",
+      "#fi-quick-replies { padding: 8px 14px 10px; display: flex; flex-direction: column; gap: 6px; }",
+      ".fi-qr { background: #fff; border: 1.5px solid #e2e8f0; color: #1e293b; border-radius: 20px; padding: 7px 14px; font-size: 12.5px; cursor: pointer; text-align: left; transition: border-color 0.15s, background 0.15s; line-height: 1.3; }",
+      ".fi-qr:hover { border-color: " + config.accentColor + "; background: #eff6ff; color: " + config.accentColor + "; }",
 
       /* ── Input area ── */
-      "#fag-input-area { border-top: 1px solid #f1f5f9; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; background: #fff; }",
-      "#fag-input { flex: 1; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 9px 14px; font-size: 13.5px; color: #1e293b; resize: none; max-height: 100px; min-height: 38px; overflow-y: auto; line-height: 1.45; outline: none; transition: border-color 0.15s; background: #f8fafc; }",
-      "#fag-input:focus { border-color: " + config.accentColor + "; background: #fff; }",
-      "#fag-input::placeholder { color: #94a3b8; }",
-      "#fag-send-btn { width: 36px; height: 36px; border-radius: 50%; background: " + config.accentColor + "; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s, transform 0.1s; }",
-      "#fag-send-btn:hover { background: " + config.accentHover + "; }",
-      "#fag-send-btn:active { transform: scale(0.92); }",
-      "#fag-send-btn:disabled { background: #cbd5e1; cursor: not-allowed; }",
+      "#fi-input-area { border-top: 1px solid #f1f5f9; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; background: #fff; }",
+      "#fi-input { flex: 1; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 9px 14px; font-size: 13.5px; color: #1e293b; resize: none; max-height: 100px; min-height: 38px; overflow-y: auto; line-height: 1.45; outline: none; transition: border-color 0.15s; background: #f8fafc; }",
+      "#fi-input:focus { border-color: " + config.accentColor + "; background: #fff; }",
+      "#fi-input::placeholder { color: #94a3b8; }",
+      "#fi-send-btn { width: 36px; height: 36px; border-radius: 50%; background: " + config.accentColor + "; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s, transform 0.1s; }",
+      "#fi-send-btn:hover { background: " + config.accentHover + "; }",
+      "#fi-send-btn:active { transform: scale(0.92); }",
+      "#fi-send-btn:disabled { background: #cbd5e1; cursor: not-allowed; }",
 
       /* ── Footer ── */
-      "#fag-footer { text-align: center; padding: 6px 12px 8px; font-size: 10px; color: #94a3b8; border-top: 1px solid #f1f5f9; background: #fff; flex-shrink: 0; }",
-      "#fag-footer a { color: #94a3b8; text-decoration: none; }",
-      "#fag-footer a:hover { color: " + config.accentColor + "; }",
+      "#fi-footer { text-align: center; padding: 6px 12px 8px; font-size: 10px; color: #94a3b8; border-top: 1px solid #f1f5f9; background: #fff; flex-shrink: 0; }",
+      "#fi-footer a { color: #94a3b8; text-decoration: none; }",
+      "#fi-footer a:hover { color: " + config.accentColor + "; }",
 
       /* ── Mobile ── */
       "@media (max-width: 480px) {",
-      "  #fag-window { width: 100%; height: 100%; bottom: 0; right: 0; border-radius: 0; }",
-      "  #fag-bubble { bottom: 16px; right: 16px; }",
+      "  #fi-window { width: 100%; height: 100%; bottom: 0; right: 0; border-radius: 0; }",
+      "  #fi-bubble { bottom: 16px; right: 16px; }",
       "}",
     ].join("\n");
 
     var style = document.createElement("style");
-    style.id = "fag-chat-styles";
+    style.id = "fi-chat-styles";
     style.textContent = css;
     document.head.appendChild(style);
   }
@@ -137,56 +137,56 @@
   // ─── Build DOM ───────────────────────────────────────────────────────────
   function buildWidget() {
     var wrapper = document.createElement("div");
-    wrapper.id = "fag-chat-widget";
+    wrapper.id = "fi-chat-widget";
 
     // Chat bubble
     wrapper.innerHTML = [
-      '<button id="fag-bubble" aria-label="Open chat" aria-expanded="false">',
-      '  <span id="fag-notif-dot" aria-hidden="true"></span>',
-      '  <svg class="fag-icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">',
+      '<button id="fi-bubble" aria-label="Open chat" aria-expanded="false">',
+      '  <span id="fi-notif-dot" aria-hidden="true"></span>',
+      '  <svg class="fi-icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">',
       '    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#fff" stroke-width="2" stroke-linejoin="round" fill="none"/>',
       '  </svg>',
-      '  <svg class="fag-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">',
+      '  <svg class="fi-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">',
       '    <path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>',
       '  </svg>',
       '</button>',
 
       // Chat window
-      '<div id="fag-window" role="dialog" aria-label="Chat with Forrest Analytics" aria-hidden="true">',
+      '<div id="fi-window" role="dialog" aria-label="Chat with Forrest Intelligence" aria-hidden="true">',
 
-      '  <div id="fag-header">',
-      '    <div id="fag-avatar" aria-hidden="true">JF</div>',
-      '    <div id="fag-header-text">',
-      '      <div id="fag-header-name">' + escapeHtml(config.headerName) + '</div>',
-      '      <div id="fag-header-sub">' + escapeHtml(config.headerSubtitle) + '</div>',
+      '  <div id="fi-header">',
+      '    <div id="fi-avatar" aria-hidden="true">JF</div>',
+      '    <div id="fi-header-text">',
+      '      <div id="fi-header-name">' + escapeHtml(config.headerName) + '</div>',
+      '      <div id="fi-header-sub">' + escapeHtml(config.headerSubtitle) + '</div>',
       '    </div>',
-      '    <div id="fag-status-dot" aria-hidden="true" title="Online"></div>',
-      '    <button id="fag-close-btn" aria-label="Close chat">',
+      '    <div id="fi-status-dot" aria-hidden="true" title="Online"></div>',
+      '    <button id="fi-close-btn" aria-label="Close chat">',
       '      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
       '    </button>',
       '  </div>',
 
-      '  <div id="fag-messages" role="log" aria-live="polite" aria-label="Conversation">',
-      '    <div id="fag-typing" class="fag-msg fag-msg-assistant" aria-label="Assistant is typing">',
-      '      <div class="fag-msg-bubble">',
-      '        <div class="fag-typing-dots"><span></span><span></span><span></span></div>',
+      '  <div id="fi-messages" role="log" aria-live="polite" aria-label="Conversation">',
+      '    <div id="fi-typing" class="fi-msg fi-msg-assistant" aria-label="Assistant is typing">',
+      '      <div class="fi-msg-bubble">',
+      '        <div class="fi-typing-dots"><span></span><span></span><span></span></div>',
       '      </div>',
       '    </div>',
       '  </div>',
 
-      '  <div id="fag-quick-replies" aria-label="Quick reply options"></div>',
+      '  <div id="fi-quick-replies" aria-label="Quick reply options"></div>',
 
-      '  <div id="fag-input-area">',
-      '    <textarea id="fag-input" placeholder="Type a message…" rows="1" aria-label="Message input" maxlength="2000"></textarea>',
-      '    <button id="fag-send-btn" aria-label="Send message" disabled>',
+      '  <div id="fi-input-area">',
+      '    <textarea id="fi-input" placeholder="Type a message…" rows="1" aria-label="Message input" maxlength="2000"></textarea>',
+      '    <button id="fi-send-btn" aria-label="Send message" disabled>',
       '      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">',
       '        <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>',
       '      </svg>',
       '    </button>',
       '  </div>',
 
-      '  <div id="fag-footer">',
-      '    <a href="https://forrestanalyticsgroup.com" target="_blank" rel="noopener">' + escapeHtml(config.poweredBy) + '</a>',
+      '  <div id="fi-footer">',
+      '    <a href="https://forrestintelligence.com" target="_blank" rel="noopener">' + escapeHtml(config.poweredBy) + '</a>',
       '  </div>',
 
       '</div>',
@@ -195,15 +195,15 @@
     document.body.appendChild(wrapper);
 
     // Cache refs
-    els.bubble = document.getElementById("fag-bubble");
-    els.window = document.getElementById("fag-window");
-    els.messages = document.getElementById("fag-messages");
-    els.typing = document.getElementById("fag-typing");
-    els.quickReplies = document.getElementById("fag-quick-replies");
-    els.input = document.getElementById("fag-input");
-    els.sendBtn = document.getElementById("fag-send-btn");
-    els.closeBtn = document.getElementById("fag-close-btn");
-    els.notifDot = document.getElementById("fag-notif-dot");
+    els.bubble = document.getElementById("fi-bubble");
+    els.window = document.getElementById("fi-window");
+    els.messages = document.getElementById("fi-messages");
+    els.typing = document.getElementById("fi-typing");
+    els.quickReplies = document.getElementById("fi-quick-replies");
+    els.input = document.getElementById("fi-input");
+    els.sendBtn = document.getElementById("fi-send-btn");
+    els.closeBtn = document.getElementById("fi-close-btn");
+    els.notifDot = document.getElementById("fi-notif-dot");
   }
 
   // ─── Widget open/close ───────────────────────────────────────────────────
@@ -213,9 +213,9 @@
 
   function openWidget() {
     state.isOpen = true;
-    els.bubble.classList.add("fag-open");
+    els.bubble.classList.add("fi-open");
     els.bubble.setAttribute("aria-expanded", "true");
-    els.window.classList.add("fag-visible");
+    els.window.classList.add("fi-visible");
     els.window.setAttribute("aria-hidden", "false");
 
     // Hide notification dot
@@ -240,9 +240,9 @@
 
   function closeWidget() {
     state.isOpen = false;
-    els.bubble.classList.remove("fag-open");
+    els.bubble.classList.remove("fi-open");
     els.bubble.setAttribute("aria-expanded", "false");
-    els.window.classList.remove("fag-visible");
+    els.window.classList.remove("fi-visible");
     els.window.setAttribute("aria-hidden", "true");
   }
 
@@ -252,14 +252,14 @@
     state.messages.push({ role: role, text: text, ts: ts });
 
     var msgEl = document.createElement("div");
-    msgEl.className = "fag-msg fag-msg-" + role;
+    msgEl.className = "fi-msg fi-msg-" + role;
 
     var bubble = document.createElement("div");
-    bubble.className = "fag-msg-bubble";
+    bubble.className = "fi-msg-bubble";
     bubble.textContent = text;
 
     var timeEl = document.createElement("div");
-    timeEl.className = "fag-msg-time";
+    timeEl.className = "fi-msg-time";
     timeEl.textContent = formatTime(ts);
     timeEl.setAttribute("aria-hidden", "true");
 
@@ -274,13 +274,13 @@
 
   function showTyping() {
     state.isTyping = true;
-    els.typing.classList.add("fag-show");
+    els.typing.classList.add("fi-show");
     scrollToBottom();
   }
 
   function hideTyping() {
     state.isTyping = false;
-    els.typing.classList.remove("fag-show");
+    els.typing.classList.remove("fi-show");
   }
 
   function scrollToBottom() {
@@ -294,7 +294,7 @@
     els.quickReplies.innerHTML = "";
     config.quickReplies.forEach(function (text) {
       var btn = document.createElement("button");
-      btn.className = "fag-qr";
+      btn.className = "fi-qr";
       btn.textContent = text;
       btn.addEventListener("click", function () {
         hideQuickReplies();
@@ -342,13 +342,13 @@
 
         function initBubble() {
           if (msgEl) return;
-          els.typing.classList.remove("fag-show");
+          els.typing.classList.remove("fi-show");
           msgEl = document.createElement("div");
-          msgEl.className = "fag-msg fag-msg-assistant";
+          msgEl.className = "fi-msg fi-msg-assistant";
           bubble = document.createElement("div");
-          bubble.className = "fag-msg-bubble fag-streaming";
+          bubble.className = "fi-msg-bubble fi-streaming";
           timeEl = document.createElement("div");
-          timeEl.className = "fag-msg-time";
+          timeEl.className = "fi-msg-time";
           timeEl.setAttribute("aria-hidden", "true");
           msgEl.appendChild(bubble);
           msgEl.appendChild(timeEl);
@@ -360,7 +360,7 @@
             if (result.done) {
               // Stream complete — remove cursor, unlock, restore send button
               if (bubble) {
-                bubble.classList.remove("fag-streaming");
+                bubble.classList.remove("fi-streaming");
                 bubble.textContent = fullText.replace(/\[LEAD_CAPTURE:[^\]]*\]?/g, "").trimEnd();
               }
               if (timeEl) {
@@ -394,7 +394,7 @@
                   if (evt.lead_captured) onLeadCaptured();
                 } else if (evt.type === "error") {
                   initBubble();
-                  bubble.classList.remove("fag-streaming");
+                  bubble.classList.remove("fi-streaming");
                   bubble.textContent = evt.text;
                   state.isTyping = false;
                   els.sendBtn.disabled = els.input.value.trim().length === 0;
@@ -410,10 +410,10 @@
       })
       .catch(function (err) {
         state.isTyping = false;
-        els.typing.classList.remove("fag-show");
+        els.typing.classList.remove("fi-show");
         els.sendBtn.disabled = els.input.value.trim().length === 0;
-        addMessage("assistant", "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestanalytics.com");
-        console.error("FAG Chat error:", err);
+        addMessage("assistant", "Sorry, I'm having a moment — try again in a sec, or reach out directly at josh@forrestintelligence.com");
+        console.error("FI Chat error:", err);
       });
   }
 
@@ -421,7 +421,7 @@
     // Subtle visual confirmation — nothing intrusive
     var confirmEl = document.createElement("div");
     confirmEl.style.cssText =
-      "text-align:center;font-size:11px;color:#22c55e;padding:4px 0;animation:fag-fadein 0.3s ease;";
+      "text-align:center;font-size:11px;color:#22c55e;padding:4px 0;animation:fi-fadein 0.3s ease;";
     confirmEl.textContent = "✓ Info sent to Josh";
     els.messages.insertBefore(confirmEl, els.typing);
     scrollToBottom();

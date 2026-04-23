@@ -109,7 +109,7 @@ open invoices, and any reputation issues — in under 180 words.
         st.success("All briefings generated!")
 
     st.divider()
-    st.caption("Built by [Forrest Analytics Group](https://forrestanalyticsgroup.com)")
+    st.caption("Built by [Forrest Intelligence](https://forrestintelligence.com)")
 
 # ── Main ────────────────────────────────────────────────────────────────────────
 st.markdown("## 📱 Daily Briefing — iMessage View")

@@ -1,5 +1,5 @@
 # AI Website Chatbot — Website Copy
-**For: forrestanalyticsgroup.com/small-business/**
+**For: forrestintelligence.com/small-business/**
 **Instructions:** Each section below shows the OLD text (for finding it in Squarespace) and the NEW text to replace it with, or NEW-ONLY for net-new blocks. Paste everything exactly as written.
 
 ---
@@ -281,7 +281,7 @@ $297 one-time setup + $149/mo
 • 100 conversations per month
 • Configured with your services, hours, and service area
 • Lead capture and contact collection
-• Forrest Analytics Group branding footer
+• Forrest Intelligence branding footer
 • Monthly summary report
 
 Good for: Smaller shops, slower web traffic, or owners who want to start lean and scale up.

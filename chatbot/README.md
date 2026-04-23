@@ -1,6 +1,6 @@
-# Forrest Analytics Group — AI Chat Widget
+# Forrest Intelligence — AI Chat Widget
 
-A consultative AI chatbot for `forrestanalyticsgroup.com/small-business/` that greets visitors, answers product questions, qualifies leads, and books discovery calls — powered by Claude.
+A consultative AI chatbot for `forrestintelligence.com/small-business/` that greets visitors, answers product questions, qualifies leads, and books discovery calls — powered by Claude.
 
 ---
 
@@ -84,10 +84,10 @@ Then open any local HTML file and paste the widget script tag in.
 3. Select your repo, set the **Root Directory** to `chatbot/backend`
 4. Add environment variables in the Railway dashboard:
    - `ANTHROPIC_API_KEY` = your key
-   - `ZOHO_EMAIL` = josh@forrestanalytics.com
+   - `ZOHO_EMAIL` = josh@forrestintelligence.com
    - `ZOHO_APP_PASSWORD` = your Zoho app password
 5. Railway auto-detects the Dockerfile and deploys. You'll get a URL like:
-   `https://forrest-analytics-chatbot.up.railway.app`
+   `https://noble-trust-production-f3ab.up.railway.app`
 
 Or use the deploy script (requires Railway CLI):
 ```bash
@@ -104,15 +104,15 @@ chmod +x deploy.sh
 4. Build command: `pip install -r requirements.txt`
 5. Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
 6. Add the same 3 environment variables
-7. Deploy → get your URL like `https://fag-chatbot.onrender.com`
+7. Deploy → get your URL like `https://fi-chatbot.onrender.com`
 
 ### Option C: Fly.io
 
 ```bash
 cd chatbot/backend
-fly launch --name fag-chatbot
+fly launch --name fi-chatbot
 fly secrets set ANTHROPIC_API_KEY=sk-ant-...
-fly secrets set ZOHO_EMAIL=josh@forrestanalytics.com
+fly secrets set ZOHO_EMAIL=josh@forrestintelligence.com
 fly secrets set ZOHO_APP_PASSWORD=your-password
 fly deploy
 ```
@@ -136,7 +136,7 @@ Paste this into **Settings → Advanced → Code Injection → Footer**:
 ```html
 <script>
 // Optional: override config before loading
-window.FAG_CHAT_CONFIG = {
+window.FI_CHAT_CONFIG = {
   backendUrl: "https://YOUR-DEPLOYED-URL.railway.app"
 };
 </script>
