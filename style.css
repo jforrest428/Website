@@ -41,7 +41,7 @@ ul, ol { list-style: none; }
   --gray-900: #111827;
 
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
 
   --max-w: 1100px;
   --section-py: 96px;
@@ -115,16 +115,17 @@ p { max-width: 68ch; }
               transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
   white-space: nowrap;
 }
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
 
 .btn-gold {
   background: var(--gold-500);
   color: var(--navy-900);
+  letter-spacing: 0.01em;
 }
 .btn-gold:hover {
   background: var(--gold-400);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.40);
 }
 .btn-ghost {
   background: transparent;
@@ -464,8 +465,9 @@ p { max-width: 68ch; }
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .problem-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), inset 3px 0 0 var(--gold-500);
   transform: translateY(-2px);
+  border-color: var(--gray-200);
 }
 .problem-icon {
   width: 44px;
@@ -509,19 +511,14 @@ p { max-width: 68ch; }
 }
 .process-step { text-align: center; }
 .process-num {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(201,168,76,0.10);
-  border: 1.5px solid rgba(201,168,76,0.30);
-  color: var(--gold-400);
   font-family: var(--font-serif);
-  font-size: 1.0625rem;
+  font-size: 3.25rem;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
+  color: var(--gold-500);
+  line-height: 1;
+  margin: 0 auto 12px;
+  opacity: 0.35;
+  letter-spacing: -0.03em;
 }
 .process-step h3 {
   font-size: 0.9375rem;
@@ -558,7 +555,7 @@ p { max-width: 68ch; }
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .service-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), inset 3px 0 0 var(--gold-500);
   transform: translateY(-3px);
 }
 .service-featured {
@@ -1008,8 +1005,8 @@ footer {
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .hub-path-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), inset 4px 0 0 var(--gold-500);
+  transform: translateY(-5px);
 }
 .hub-path-card.hub-path-dark {
   background: var(--navy-900);
@@ -1202,8 +1199,9 @@ footer {
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .industry-tile:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
+  border-color: var(--gold-400);
 }
 .industry-icon {
   width: 44px;
@@ -1241,7 +1239,7 @@ footer {
   transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 .sb-product-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), inset 3px 0 0 var(--gold-500);
   transform: translateY(-3px);
 }
 .sb-product-icon {
@@ -1273,6 +1271,30 @@ footer {
 }
 .sb-product-link:hover { color: var(--gold-500); gap: 10px; }
 .sb-product-link svg { flex-shrink: 0; }
+
+/* ── Wide product card (5th card spans full row) ── */
+.sb-product-card--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  text-align: left;
+  align-items: flex-start;
+  gap: 28px;
+}
+.sb-product-card--wide .sb-product-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.sb-product-card--wide .sb-product-tagline {
+  max-width: 56ch;
+}
+@media (max-width: 1024px) {
+  .sb-product-card--wide {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .sb-product-card--wide .sb-product-tagline { max-width: none; }
+}
 
 /* ── 3-step process override ── */
 .process-steps-3 {
@@ -2731,4 +2753,136 @@ footer {
   .cs-phone-frame { border-radius: 24px; }
   .cs-reeng-demo { grid-template-columns: 1fr; }
   .cs-roi-card { padding: 20px 16px; }
+}
+
+/* ================================================
+   HUMAN DESIGN LAYER — breaks template patterns
+   ================================================ */
+
+/* ── Pull Quote — typographic personality moment ── */
+.pull-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--navy-800);
+  line-height: 1.45;
+  border-left: 3px solid var(--gold-500);
+  padding: 4px 0 4px 28px;
+  margin: 40px 0;
+  max-width: 52ch;
+}
+.pull-quote--light {
+  color: rgba(255,255,255,0.85);
+  border-left-color: var(--gold-400);
+}
+
+/* ── Statement Band — full-bleed accent section that breaks the card-grid rhythm ── */
+.statement-band {
+  background: var(--gold-500);
+}
+.statement-band .section-inner {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  text-align: center;
+}
+.statement-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 52ch;
+  margin: 0 auto 14px;
+  color: var(--navy-900);
+}
+.statement-source {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--navy-700);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  max-width: none;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ── Left-aligned hero variant (research page) ── */
+.hero-content--left {
+  text-align: left;
+  max-width: 740px;
+  margin: 0;
+}
+.hero-content--left .hero-sub {
+  margin-left: 0;
+  max-width: 54ch;
+}
+.hero-content--left .hero-actions {
+  justify-content: flex-start;
+}
+.hero-content--left .eyebrow {
+  /* inherits from .eyebrow */
+}
+.hero-inner--left {
+  align-items: flex-start;
+}
+.hero-inner--left .hero-stat-row {
+  align-self: stretch;
+  max-width: 740px;
+}
+
+/* ── Section header left-aligned variant ── */
+.section-header--left {
+  text-align: left;
+}
+.section-header--left .gold-rule {
+  margin: 20px 0 0;
+}
+.section-header--left .section-sub {
+  text-align: left;
+  margin: 16px 0 0;
+}
+
+/* ── Body copy link underline treatment ── */
+.about-content a:not(.btn),
+.faq-a a:not(.btn),
+.contact-info a:not(.btn),
+.why-content a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--gold-500);
+  transition: text-decoration-color var(--dur);
+}
+.about-content a:not(.btn):hover,
+.faq-a a:not(.btn):hover,
+.contact-info a:not(.btn):hover {
+  text-decoration-color: var(--gold-300);
+}
+
+/* ── Affiliation card hover — left border reveal ── */
+.affiliation-card:hover {
+  box-shadow: var(--shadow-md), inset 3px 0 0 var(--gold-500);
+}
+
+/* ── Outcome card hover ── */
+.outcome-card:hover {
+  box-shadow: var(--shadow-md), inset 3px 0 0 var(--gold-500);
+}
+
+/* ── Responsive adjustments for new sections ── */
+@media (max-width: 768px) {
+  .pull-quote { padding-left: 20px; }
+  .statement-band .section-inner { padding-top: 56px; padding-bottom: 56px; }
+  .hero-inner--left { align-items: center; }
+  .hero-content--left {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-content--left .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-content--left .hero-actions { justify-content: center; }
+  .section-header--left { text-align: center; }
+  .section-header--left .gold-rule { margin: 20px auto 0; }
+  .section-header--left .section-sub { text-align: center; margin: 16px auto 0; }
 }
